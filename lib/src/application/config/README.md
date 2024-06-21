@@ -1,0 +1,1 @@
+Reasoning: Environment configuration is essential for application setup and behavior but should not clutter the domain layer. Placing configuration under the application folder keeps it distinct from domain logic while allowing easy access across the application.

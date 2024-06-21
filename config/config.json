@@ -1,0 +1,10 @@
+{
+    "clientID": "7992d59a67d84835abd5be89ff76fb56",
+    "clientSecret": "34102cf49dc048338effd6f655e500fd",
+    "content-Type": "application/x-www-form-urlencoded",
+    "fontFamily": "circular",
+    "grant_type": "client_credentials",
+    "spotifyApiBaseUrl": "https://api.spotify.com/v1",
+    "tokenAuthLocalKey": "token",
+    "tokenBaseUrl": "https://accounts.spotify.com/api"
+}

@@ -1,0 +1,1 @@
+Literally known as DTO or Model
