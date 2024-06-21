@@ -1,4 +1,5 @@
 import 'package:domain_driven/src/application/usecase/blocs/token_bloc/token_bloc.dart';
+import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_failure.dart';
 import 'package:domain_driven/src/presentation/pages/home_screen/components/horizontal_scroll_section.dart';
 import 'package:domain_driven/utils/extensions/extended_padding.dart';
 import 'package:domain_driven/utils/injectors/injector.dart';
@@ -30,6 +31,14 @@ class HomeScreen extends StatelessWidget {
               },
               loaded: (token) {
                 return Center(child: Text(token));
+              },
+              failure: (ACopifyFailure failure) {
+                return Center(
+                  child: Container(
+                    color: Colors.red,
+                    child: Text(failure.description),
+                  ),
+                );
               },
             );
             // return SingleChildScrollView(

@@ -1,6 +1,7 @@
 //Compiled time variables
 class Environment {
   //A
+  static const String artistIdList = String.fromEnvironment("artistIdList");
   //B
   static const String baseUrl = String.fromEnvironment("spotifyApiBaseUrl");
   //C

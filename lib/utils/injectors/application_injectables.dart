@@ -19,4 +19,11 @@ Future<void> injectApplications(GetIt serviceLocator) async {
       api: serviceLocator<AApiCopifyRepository>(),
     ),
   );
+
+  //Artist bloc
+  serviceLocator.registerFactory(
+    () => ArtistBloc(
+      api: serviceLocator<AApiCopifyRepository>(),
+    ),
+  );
 }

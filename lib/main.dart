@@ -1,3 +1,4 @@
+import 'package:domain_driven/src/presentation/pages/category_screen/category_playlist_screen.dart';
 import 'package:domain_driven/src/presentation/pages/home_screen/home_screen.dart';
 import 'package:domain_driven/src/presentation/theme/theme.dart';
 import 'package:domain_driven/utils/injectors/injector.dart';
@@ -17,7 +18,7 @@ class CopifyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Spotify',
       theme: CopifyTheme.copifyTheme,
-      home: const HomeScreen(),
+      home: const CategoryPlaylistScreen(),
     );
   }
 }

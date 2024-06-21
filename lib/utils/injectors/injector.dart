@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:domain_driven/src/application/config/environment.dart';
+import 'package:domain_driven/src/application/usecase/blocs/artist_bloc/artist_bloc.dart';
 import 'package:domain_driven/src/application/usecase/blocs/category_bloc/category_bloc.dart';
 import 'package:domain_driven/src/application/usecase/blocs/token_bloc/token_bloc.dart';
 import 'package:domain_driven/src/domain/model/abstracts/a_api_auth_repository.dart';
