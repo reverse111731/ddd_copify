@@ -19,10 +19,11 @@ class _AApiCopifyClient implements AApiCopifyClient {
   String? baseUrl;
 
   @override
-  Future<CategoryModel> getCategory() async {
+  Future<CategoryModel> getCategory(String auth) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': auth};
+    _headers.removeWhere((k, v) => v == null);
     final Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<CategoryModel>(Options(

@@ -14,7 +14,7 @@ abstract class AApiCopifyClient {
       _AApiCopifyClient;
 
   @GET("/browse/categories")
-  Future<CategoryModel> getCategory();
+  Future<CategoryModel> getCategory(@Header("Authorization") String auth);
 
   @GET("/artists")
   Future<ArtistModel> getArtist(

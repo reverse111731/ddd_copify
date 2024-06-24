@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 
 class HorizontalScrollSection extends StatelessWidget {
   final String title;
-  // final BuildContext context;
 
-  HorizontalScrollSection({
-    required this.title,
-    // required this.context,
+  const HorizontalScrollSection(
+    this.title, {
+    super.key,
   });
 
   @override

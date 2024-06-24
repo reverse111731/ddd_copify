@@ -18,7 +18,7 @@ class CopifyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Spotify',
       theme: CopifyTheme.copifyTheme,
-      home: const CategoryPlaylistScreen(),
+      home: const HomeScreen(),
     );
   }
 }

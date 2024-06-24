@@ -9,9 +9,12 @@ class ApiCopifyRepository extends AApiCopifyRepository {
   final AApiCopifyClient client;
   ApiCopifyRepository({required this.client});
 
+  String auth =
+      "Bearer BQBsec-uSvwQZSFxloUKryJ4CJXVLPVt0YDt7BNzBR2V1WurkHyvcURZAITsSlmDaoaXUqlEJj6JMUlFbBMIC1MECOetAzE2qo7EfXFV8GU3a-lIKR4";
+
   @override
   Future<CategoryModel> getCategory() async {
-    return await client.getCategory();
+    return await client.getCategory(auth);
   }
 
   @override

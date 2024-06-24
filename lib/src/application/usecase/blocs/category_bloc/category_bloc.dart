@@ -31,5 +31,6 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
         ),
       );
     }
+    emit(CategoryState.loaded(categoryList));
   }
 }
