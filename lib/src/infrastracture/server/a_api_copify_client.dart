@@ -1,7 +1,9 @@
 import 'package:domain_driven/src/application/config/environment.dart';
 import 'package:dio/dio.dart';
+import 'package:domain_driven/src/domain/model/valueobjects/album_model/album_list_model.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/artist_model/artist_model.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/category_model/category_model.dart';
+import 'package:retrofit/http.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'a_api_copify_client.g.dart';
@@ -15,7 +17,14 @@ abstract class AApiCopifyClient {
   Future<CategoryModel> getCategory();
 
   @GET("/artists")
-  Future<ArtitstModel> getArtist(@Query("ids") String ids);
+  Future<ArtistModel> getArtist(
+    @Query("ids") String ids,
+  );
+
+  @GET("/albums")
+  Future<AlbumListModel> getAlbum(
+    @Query("ids") String ids,
+  );
 
   // @GET("/browse/categories/{categoryType}/playlists")
   // Futture<> getCategoryPlaylist

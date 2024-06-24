@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'artist_bloc.dart';
+part of 'album_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$ArtistEvent {
+mixin _$AlbumEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
@@ -51,16 +51,16 @@ mixin _$ArtistEvent {
 }
 
 /// @nodoc
-abstract class $ArtistEventCopyWith<$Res> {
-  factory $ArtistEventCopyWith(
-          ArtistEvent value, $Res Function(ArtistEvent) then) =
-      _$ArtistEventCopyWithImpl<$Res, ArtistEvent>;
+abstract class $AlbumEventCopyWith<$Res> {
+  factory $AlbumEventCopyWith(
+          AlbumEvent value, $Res Function(AlbumEvent) then) =
+      _$AlbumEventCopyWithImpl<$Res, AlbumEvent>;
 }
 
 /// @nodoc
-class _$ArtistEventCopyWithImpl<$Res, $Val extends ArtistEvent>
-    implements $ArtistEventCopyWith<$Res> {
-  _$ArtistEventCopyWithImpl(this._value, this._then);
+class _$AlbumEventCopyWithImpl<$Res, $Val extends AlbumEvent>
+    implements $AlbumEventCopyWith<$Res> {
+  _$AlbumEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -77,7 +77,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$ArtistEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$AlbumEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -86,12 +86,18 @@ class __$$StartedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StartedImpl implements _Started {
+class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
   const _$StartedImpl();
 
   @override
-  String toString() {
-    return 'ArtistEvent.started()';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AlbumEvent.started()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'AlbumEvent.started'));
   }
 
   @override
@@ -160,75 +166,75 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements ArtistEvent {
+abstract class _Started implements AlbumEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-mixin _$ArtistState {
+mixin _$AlbumState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ArtistModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function(AlbumListModel collections) loaded,
+    required TResult Function(AApiCopifyRepository failure) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ArtistModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function(AlbumListModel collections)? loaded,
+    TResult? Function(AApiCopifyRepository failure)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ArtistModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function(AlbumListModel collections)? loaded,
+    TResult Function(AApiCopifyRepository failure)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_ArtistStateLoading value) loading,
-    required TResult Function(_ArtistStateLoaded value) loaded,
-    required TResult Function(_ArtistStateError value) error,
+    required TResult Function(_AlbumStateLoading value) loading,
+    required TResult Function(_AlbumStateLoaded value) loaded,
+    required TResult Function(_AlbumStateError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_ArtistStateLoading value)? loading,
-    TResult? Function(_ArtistStateLoaded value)? loaded,
-    TResult? Function(_ArtistStateError value)? error,
+    TResult? Function(_AlbumStateLoading value)? loading,
+    TResult? Function(_AlbumStateLoaded value)? loaded,
+    TResult? Function(_AlbumStateError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_ArtistStateLoading value)? loading,
-    TResult Function(_ArtistStateLoaded value)? loaded,
-    TResult Function(_ArtistStateError value)? error,
+    TResult Function(_AlbumStateLoading value)? loading,
+    TResult Function(_AlbumStateLoaded value)? loaded,
+    TResult Function(_AlbumStateError value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ArtistStateCopyWith<$Res> {
-  factory $ArtistStateCopyWith(
-          ArtistState value, $Res Function(ArtistState) then) =
-      _$ArtistStateCopyWithImpl<$Res, ArtistState>;
+abstract class $AlbumStateCopyWith<$Res> {
+  factory $AlbumStateCopyWith(
+          AlbumState value, $Res Function(AlbumState) then) =
+      _$AlbumStateCopyWithImpl<$Res, AlbumState>;
 }
 
 /// @nodoc
-class _$ArtistStateCopyWithImpl<$Res, $Val extends ArtistState>
-    implements $ArtistStateCopyWith<$Res> {
-  _$ArtistStateCopyWithImpl(this._value, this._then);
+class _$AlbumStateCopyWithImpl<$Res, $Val extends AlbumState>
+    implements $AlbumStateCopyWith<$Res> {
+  _$AlbumStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -245,7 +251,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$ArtistStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$AlbumStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -254,12 +260,18 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
+class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   const _$InitialImpl();
 
   @override
-  String toString() {
-    return 'ArtistState.initial()';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AlbumState.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'AlbumState.initial'));
   }
 
   @override
@@ -276,8 +288,8 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ArtistModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function(AlbumListModel collections) loaded,
+    required TResult Function(AApiCopifyRepository failure) error,
   }) {
     return initial();
   }
@@ -287,8 +299,8 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ArtistModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function(AlbumListModel collections)? loaded,
+    TResult? Function(AApiCopifyRepository failure)? error,
   }) {
     return initial?.call();
   }
@@ -298,8 +310,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ArtistModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function(AlbumListModel collections)? loaded,
+    TResult Function(AApiCopifyRepository failure)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -312,9 +324,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_ArtistStateLoading value) loading,
-    required TResult Function(_ArtistStateLoaded value) loaded,
-    required TResult Function(_ArtistStateError value) error,
+    required TResult Function(_AlbumStateLoading value) loading,
+    required TResult Function(_AlbumStateLoaded value) loaded,
+    required TResult Function(_AlbumStateError value) error,
   }) {
     return initial(this);
   }
@@ -323,9 +335,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_ArtistStateLoading value)? loading,
-    TResult? Function(_ArtistStateLoaded value)? loaded,
-    TResult? Function(_ArtistStateError value)? error,
+    TResult? Function(_AlbumStateLoading value)? loading,
+    TResult? Function(_AlbumStateLoaded value)? loaded,
+    TResult? Function(_AlbumStateError value)? error,
   }) {
     return initial?.call(this);
   }
@@ -334,9 +346,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_ArtistStateLoading value)? loading,
-    TResult Function(_ArtistStateLoaded value)? loaded,
-    TResult Function(_ArtistStateError value)? error,
+    TResult Function(_AlbumStateLoading value)? loading,
+    TResult Function(_AlbumStateLoaded value)? loaded,
+    TResult Function(_AlbumStateError value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -346,40 +358,48 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements ArtistState {
+abstract class _Initial implements AlbumState {
   const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$ArtistStateLoadingImplCopyWith<$Res> {
-  factory _$$ArtistStateLoadingImplCopyWith(_$ArtistStateLoadingImpl value,
-          $Res Function(_$ArtistStateLoadingImpl) then) =
-      __$$ArtistStateLoadingImplCopyWithImpl<$Res>;
+abstract class _$$AlbumStateLoadingImplCopyWith<$Res> {
+  factory _$$AlbumStateLoadingImplCopyWith(_$AlbumStateLoadingImpl value,
+          $Res Function(_$AlbumStateLoadingImpl) then) =
+      __$$AlbumStateLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ArtistStateLoadingImplCopyWithImpl<$Res>
-    extends _$ArtistStateCopyWithImpl<$Res, _$ArtistStateLoadingImpl>
-    implements _$$ArtistStateLoadingImplCopyWith<$Res> {
-  __$$ArtistStateLoadingImplCopyWithImpl(_$ArtistStateLoadingImpl _value,
-      $Res Function(_$ArtistStateLoadingImpl) _then)
+class __$$AlbumStateLoadingImplCopyWithImpl<$Res>
+    extends _$AlbumStateCopyWithImpl<$Res, _$AlbumStateLoadingImpl>
+    implements _$$AlbumStateLoadingImplCopyWith<$Res> {
+  __$$AlbumStateLoadingImplCopyWithImpl(_$AlbumStateLoadingImpl _value,
+      $Res Function(_$AlbumStateLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ArtistStateLoadingImpl implements _ArtistStateLoading {
-  const _$ArtistStateLoadingImpl();
+class _$AlbumStateLoadingImpl
+    with DiagnosticableTreeMixin
+    implements _AlbumStateLoading {
+  const _$AlbumStateLoadingImpl();
 
   @override
-  String toString() {
-    return 'ArtistState.loading()';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AlbumState.loading()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'AlbumState.loading'));
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ArtistStateLoadingImpl);
+        (other.runtimeType == runtimeType && other is _$AlbumStateLoadingImpl);
   }
 
   @override
@@ -390,8 +410,8 @@ class _$ArtistStateLoadingImpl implements _ArtistStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ArtistModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function(AlbumListModel collections) loaded,
+    required TResult Function(AApiCopifyRepository failure) error,
   }) {
     return loading();
   }
@@ -401,8 +421,8 @@ class _$ArtistStateLoadingImpl implements _ArtistStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ArtistModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function(AlbumListModel collections)? loaded,
+    TResult? Function(AApiCopifyRepository failure)? error,
   }) {
     return loading?.call();
   }
@@ -412,8 +432,8 @@ class _$ArtistStateLoadingImpl implements _ArtistStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ArtistModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function(AlbumListModel collections)? loaded,
+    TResult Function(AApiCopifyRepository failure)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -426,9 +446,9 @@ class _$ArtistStateLoadingImpl implements _ArtistStateLoading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_ArtistStateLoading value) loading,
-    required TResult Function(_ArtistStateLoaded value) loaded,
-    required TResult Function(_ArtistStateError value) error,
+    required TResult Function(_AlbumStateLoading value) loading,
+    required TResult Function(_AlbumStateLoaded value) loaded,
+    required TResult Function(_AlbumStateError value) error,
   }) {
     return loading(this);
   }
@@ -437,9 +457,9 @@ class _$ArtistStateLoadingImpl implements _ArtistStateLoading {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_ArtistStateLoading value)? loading,
-    TResult? Function(_ArtistStateLoaded value)? loaded,
-    TResult? Function(_ArtistStateError value)? error,
+    TResult? Function(_AlbumStateLoading value)? loading,
+    TResult? Function(_AlbumStateLoaded value)? loaded,
+    TResult? Function(_AlbumStateError value)? error,
   }) {
     return loading?.call(this);
   }
@@ -448,9 +468,9 @@ class _$ArtistStateLoadingImpl implements _ArtistStateLoading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_ArtistStateLoading value)? loading,
-    TResult Function(_ArtistStateLoaded value)? loaded,
-    TResult Function(_ArtistStateError value)? error,
+    TResult Function(_AlbumStateLoading value)? loading,
+    TResult Function(_AlbumStateLoaded value)? loaded,
+    TResult Function(_AlbumStateError value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -460,27 +480,27 @@ class _$ArtistStateLoadingImpl implements _ArtistStateLoading {
   }
 }
 
-abstract class _ArtistStateLoading implements ArtistState {
-  const factory _ArtistStateLoading() = _$ArtistStateLoadingImpl;
+abstract class _AlbumStateLoading implements AlbumState {
+  const factory _AlbumStateLoading() = _$AlbumStateLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$ArtistStateLoadedImplCopyWith<$Res> {
-  factory _$$ArtistStateLoadedImplCopyWith(_$ArtistStateLoadedImpl value,
-          $Res Function(_$ArtistStateLoadedImpl) then) =
-      __$$ArtistStateLoadedImplCopyWithImpl<$Res>;
+abstract class _$$AlbumStateLoadedImplCopyWith<$Res> {
+  factory _$$AlbumStateLoadedImplCopyWith(_$AlbumStateLoadedImpl value,
+          $Res Function(_$AlbumStateLoadedImpl) then) =
+      __$$AlbumStateLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ArtistModel collections});
+  $Res call({AlbumListModel collections});
 
-  $ArtistModelCopyWith<$Res> get collections;
+  $AlbumListModelCopyWith<$Res> get collections;
 }
 
 /// @nodoc
-class __$$ArtistStateLoadedImplCopyWithImpl<$Res>
-    extends _$ArtistStateCopyWithImpl<$Res, _$ArtistStateLoadedImpl>
-    implements _$$ArtistStateLoadedImplCopyWith<$Res> {
-  __$$ArtistStateLoadedImplCopyWithImpl(_$ArtistStateLoadedImpl _value,
-      $Res Function(_$ArtistStateLoadedImpl) _then)
+class __$$AlbumStateLoadedImplCopyWithImpl<$Res>
+    extends _$AlbumStateCopyWithImpl<$Res, _$AlbumStateLoadedImpl>
+    implements _$$AlbumStateLoadedImplCopyWith<$Res> {
+  __$$AlbumStateLoadedImplCopyWithImpl(_$AlbumStateLoadedImpl _value,
+      $Res Function(_$AlbumStateLoadedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -488,18 +508,18 @@ class __$$ArtistStateLoadedImplCopyWithImpl<$Res>
   $Res call({
     Object? collections = null,
   }) {
-    return _then(_$ArtistStateLoadedImpl(
+    return _then(_$AlbumStateLoadedImpl(
       null == collections
           ? _value.collections
           : collections // ignore: cast_nullable_to_non_nullable
-              as ArtistModel,
+              as AlbumListModel,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ArtistModelCopyWith<$Res> get collections {
-    return $ArtistModelCopyWith<$Res>(_value.collections, (value) {
+  $AlbumListModelCopyWith<$Res> get collections {
+    return $AlbumListModelCopyWith<$Res>(_value.collections, (value) {
       return _then(_value.copyWith(collections: value));
     });
   }
@@ -507,22 +527,32 @@ class __$$ArtistStateLoadedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ArtistStateLoadedImpl implements _ArtistStateLoaded {
-  const _$ArtistStateLoadedImpl(this.collections);
+class _$AlbumStateLoadedImpl
+    with DiagnosticableTreeMixin
+    implements _AlbumStateLoaded {
+  const _$AlbumStateLoadedImpl(this.collections);
 
   @override
-  final ArtistModel collections;
+  final AlbumListModel collections;
 
   @override
-  String toString() {
-    return 'ArtistState.loaded(collections: $collections)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AlbumState.loaded(collections: $collections)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AlbumState.loaded'))
+      ..add(DiagnosticsProperty('collections', collections));
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ArtistStateLoadedImpl &&
+            other is _$AlbumStateLoadedImpl &&
             (identical(other.collections, collections) ||
                 other.collections == collections));
   }
@@ -533,8 +563,8 @@ class _$ArtistStateLoadedImpl implements _ArtistStateLoaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ArtistStateLoadedImplCopyWith<_$ArtistStateLoadedImpl> get copyWith =>
-      __$$ArtistStateLoadedImplCopyWithImpl<_$ArtistStateLoadedImpl>(
+  _$$AlbumStateLoadedImplCopyWith<_$AlbumStateLoadedImpl> get copyWith =>
+      __$$AlbumStateLoadedImplCopyWithImpl<_$AlbumStateLoadedImpl>(
           this, _$identity);
 
   @override
@@ -542,8 +572,8 @@ class _$ArtistStateLoadedImpl implements _ArtistStateLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ArtistModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function(AlbumListModel collections) loaded,
+    required TResult Function(AApiCopifyRepository failure) error,
   }) {
     return loaded(collections);
   }
@@ -553,8 +583,8 @@ class _$ArtistStateLoadedImpl implements _ArtistStateLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ArtistModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function(AlbumListModel collections)? loaded,
+    TResult? Function(AApiCopifyRepository failure)? error,
   }) {
     return loaded?.call(collections);
   }
@@ -564,8 +594,8 @@ class _$ArtistStateLoadedImpl implements _ArtistStateLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ArtistModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function(AlbumListModel collections)? loaded,
+    TResult Function(AApiCopifyRepository failure)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -578,9 +608,9 @@ class _$ArtistStateLoadedImpl implements _ArtistStateLoaded {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_ArtistStateLoading value) loading,
-    required TResult Function(_ArtistStateLoaded value) loaded,
-    required TResult Function(_ArtistStateError value) error,
+    required TResult Function(_AlbumStateLoading value) loading,
+    required TResult Function(_AlbumStateLoaded value) loaded,
+    required TResult Function(_AlbumStateError value) error,
   }) {
     return loaded(this);
   }
@@ -589,9 +619,9 @@ class _$ArtistStateLoadedImpl implements _ArtistStateLoaded {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_ArtistStateLoading value)? loading,
-    TResult? Function(_ArtistStateLoaded value)? loaded,
-    TResult? Function(_ArtistStateError value)? error,
+    TResult? Function(_AlbumStateLoading value)? loading,
+    TResult? Function(_AlbumStateLoaded value)? loaded,
+    TResult? Function(_AlbumStateError value)? error,
   }) {
     return loaded?.call(this);
   }
@@ -600,9 +630,9 @@ class _$ArtistStateLoadedImpl implements _ArtistStateLoaded {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_ArtistStateLoading value)? loading,
-    TResult Function(_ArtistStateLoaded value)? loaded,
-    TResult Function(_ArtistStateError value)? error,
+    TResult Function(_AlbumStateLoading value)? loading,
+    TResult Function(_AlbumStateLoaded value)? loaded,
+    TResult Function(_AlbumStateError value)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -612,31 +642,31 @@ class _$ArtistStateLoadedImpl implements _ArtistStateLoaded {
   }
 }
 
-abstract class _ArtistStateLoaded implements ArtistState {
-  const factory _ArtistStateLoaded(final ArtistModel collections) =
-      _$ArtistStateLoadedImpl;
+abstract class _AlbumStateLoaded implements AlbumState {
+  const factory _AlbumStateLoaded(final AlbumListModel collections) =
+      _$AlbumStateLoadedImpl;
 
-  ArtistModel get collections;
+  AlbumListModel get collections;
   @JsonKey(ignore: true)
-  _$$ArtistStateLoadedImplCopyWith<_$ArtistStateLoadedImpl> get copyWith =>
+  _$$AlbumStateLoadedImplCopyWith<_$AlbumStateLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ArtistStateErrorImplCopyWith<$Res> {
-  factory _$$ArtistStateErrorImplCopyWith(_$ArtistStateErrorImpl value,
-          $Res Function(_$ArtistStateErrorImpl) then) =
-      __$$ArtistStateErrorImplCopyWithImpl<$Res>;
+abstract class _$$AlbumStateErrorImplCopyWith<$Res> {
+  factory _$$AlbumStateErrorImplCopyWith(_$AlbumStateErrorImpl value,
+          $Res Function(_$AlbumStateErrorImpl) then) =
+      __$$AlbumStateErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ACopifyFailure failure});
+  $Res call({AApiCopifyRepository failure});
 }
 
 /// @nodoc
-class __$$ArtistStateErrorImplCopyWithImpl<$Res>
-    extends _$ArtistStateCopyWithImpl<$Res, _$ArtistStateErrorImpl>
-    implements _$$ArtistStateErrorImplCopyWith<$Res> {
-  __$$ArtistStateErrorImplCopyWithImpl(_$ArtistStateErrorImpl _value,
-      $Res Function(_$ArtistStateErrorImpl) _then)
+class __$$AlbumStateErrorImplCopyWithImpl<$Res>
+    extends _$AlbumStateCopyWithImpl<$Res, _$AlbumStateErrorImpl>
+    implements _$$AlbumStateErrorImplCopyWith<$Res> {
+  __$$AlbumStateErrorImplCopyWithImpl(
+      _$AlbumStateErrorImpl _value, $Res Function(_$AlbumStateErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -644,33 +674,43 @@ class __$$ArtistStateErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? failure = null,
   }) {
-    return _then(_$ArtistStateErrorImpl(
+    return _then(_$AlbumStateErrorImpl(
       null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
-              as ACopifyFailure,
+              as AApiCopifyRepository,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ArtistStateErrorImpl implements _ArtistStateError {
-  const _$ArtistStateErrorImpl(this.failure);
+class _$AlbumStateErrorImpl
+    with DiagnosticableTreeMixin
+    implements _AlbumStateError {
+  const _$AlbumStateErrorImpl(this.failure);
 
   @override
-  final ACopifyFailure failure;
+  final AApiCopifyRepository failure;
 
   @override
-  String toString() {
-    return 'ArtistState.error(failure: $failure)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AlbumState.error(failure: $failure)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AlbumState.error'))
+      ..add(DiagnosticsProperty('failure', failure));
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ArtistStateErrorImpl &&
+            other is _$AlbumStateErrorImpl &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
@@ -680,8 +720,8 @@ class _$ArtistStateErrorImpl implements _ArtistStateError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ArtistStateErrorImplCopyWith<_$ArtistStateErrorImpl> get copyWith =>
-      __$$ArtistStateErrorImplCopyWithImpl<_$ArtistStateErrorImpl>(
+  _$$AlbumStateErrorImplCopyWith<_$AlbumStateErrorImpl> get copyWith =>
+      __$$AlbumStateErrorImplCopyWithImpl<_$AlbumStateErrorImpl>(
           this, _$identity);
 
   @override
@@ -689,8 +729,8 @@ class _$ArtistStateErrorImpl implements _ArtistStateError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ArtistModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function(AlbumListModel collections) loaded,
+    required TResult Function(AApiCopifyRepository failure) error,
   }) {
     return error(failure);
   }
@@ -700,8 +740,8 @@ class _$ArtistStateErrorImpl implements _ArtistStateError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ArtistModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function(AlbumListModel collections)? loaded,
+    TResult? Function(AApiCopifyRepository failure)? error,
   }) {
     return error?.call(failure);
   }
@@ -711,8 +751,8 @@ class _$ArtistStateErrorImpl implements _ArtistStateError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ArtistModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function(AlbumListModel collections)? loaded,
+    TResult Function(AApiCopifyRepository failure)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -725,9 +765,9 @@ class _$ArtistStateErrorImpl implements _ArtistStateError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_ArtistStateLoading value) loading,
-    required TResult Function(_ArtistStateLoaded value) loaded,
-    required TResult Function(_ArtistStateError value) error,
+    required TResult Function(_AlbumStateLoading value) loading,
+    required TResult Function(_AlbumStateLoaded value) loaded,
+    required TResult Function(_AlbumStateError value) error,
   }) {
     return error(this);
   }
@@ -736,9 +776,9 @@ class _$ArtistStateErrorImpl implements _ArtistStateError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_ArtistStateLoading value)? loading,
-    TResult? Function(_ArtistStateLoaded value)? loaded,
-    TResult? Function(_ArtistStateError value)? error,
+    TResult? Function(_AlbumStateLoading value)? loading,
+    TResult? Function(_AlbumStateLoaded value)? loaded,
+    TResult? Function(_AlbumStateError value)? error,
   }) {
     return error?.call(this);
   }
@@ -747,9 +787,9 @@ class _$ArtistStateErrorImpl implements _ArtistStateError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_ArtistStateLoading value)? loading,
-    TResult Function(_ArtistStateLoaded value)? loaded,
-    TResult Function(_ArtistStateError value)? error,
+    TResult Function(_AlbumStateLoading value)? loading,
+    TResult Function(_AlbumStateLoaded value)? loaded,
+    TResult Function(_AlbumStateError value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -759,12 +799,12 @@ class _$ArtistStateErrorImpl implements _ArtistStateError {
   }
 }
 
-abstract class _ArtistStateError implements ArtistState {
-  const factory _ArtistStateError(final ACopifyFailure failure) =
-      _$ArtistStateErrorImpl;
+abstract class _AlbumStateError implements AlbumState {
+  const factory _AlbumStateError(final AApiCopifyRepository failure) =
+      _$AlbumStateErrorImpl;
 
-  ACopifyFailure get failure;
+  AApiCopifyRepository get failure;
   @JsonKey(ignore: true)
-  _$$ArtistStateErrorImplCopyWith<_$ArtistStateErrorImpl> get copyWith =>
+  _$$AlbumStateErrorImplCopyWith<_$AlbumStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

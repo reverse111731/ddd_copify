@@ -5,11 +5,11 @@ part 'artist_model.g.dart';
 part 'artist_model.freezed.dart';
 
 @freezed
-class ArtitstModel with _$ArtitstModel {
-  factory ArtitstModel({
+class ArtistModel with _$ArtistModel {
+  factory ArtistModel({
     @Default([]) List<ArtistCollectionModel> artists,
   }) = _ArtitstModel;
 
-  factory ArtitstModel.fromJson(Map<String, dynamic> json) =>
-      _$ArtitstModelFromJson(json);
+  factory ArtistModel.fromJson(Map<String, dynamic> json) =>
+      _$ArtistModelFromJson(json);
 }

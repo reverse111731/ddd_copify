@@ -8,7 +8,7 @@ part of 'category_model.dart';
 
 _$CategoryModelImpl _$$CategoryModelImplFromJson(Map<String, dynamic> json) =>
     _$CategoryModelImpl(
-      categories: CateogryCollectionModel.fromJson(
+      categories: CategoryCollectionModel.fromJson(
           json['categories'] as Map<String, dynamic>),
     );
 

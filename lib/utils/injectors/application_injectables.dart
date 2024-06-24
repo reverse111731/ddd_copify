@@ -26,4 +26,11 @@ Future<void> injectApplications(GetIt serviceLocator) async {
       api: serviceLocator<AApiCopifyRepository>(),
     ),
   );
+
+  //Album bloc
+  serviceLocator.registerFactory(
+    () => AlbumBloc(
+      api: serviceLocator<AApiCopifyRepository>(),
+    ),
+  );
 }

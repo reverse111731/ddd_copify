@@ -46,13 +46,13 @@ class _AApiCopifyClient implements AApiCopifyClient {
   }
 
   @override
-  Future<ArtitstModel> getArtist(String ids) async {
+  Future<ArtistModel> getArtist(String ids) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'ids': ids};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<ArtitstModel>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<ArtistModel>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -68,7 +68,34 @@ class _AApiCopifyClient implements AApiCopifyClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = ArtitstModel.fromJson(_result.data!);
+    final value = ArtistModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<AlbumListModel> getAlbum(String ids) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'ids': ids};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<AlbumListModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/albums',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = AlbumListModel.fromJson(_result.data!);
     return value;
   }
 

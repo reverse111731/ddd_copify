@@ -20,7 +20,7 @@ CategoryModel _$CategoryModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CategoryModel {
-  CateogryCollectionModel get categories => throw _privateConstructorUsedError;
+  CategoryCollectionModel get categories => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,9 +34,9 @@ abstract class $CategoryModelCopyWith<$Res> {
           CategoryModel value, $Res Function(CategoryModel) then) =
       _$CategoryModelCopyWithImpl<$Res, CategoryModel>;
   @useResult
-  $Res call({CateogryCollectionModel categories});
+  $Res call({CategoryCollectionModel categories});
 
-  $CateogryCollectionModelCopyWith<$Res> get categories;
+  $CategoryCollectionModelCopyWith<$Res> get categories;
 }
 
 /// @nodoc
@@ -58,14 +58,14 @@ class _$CategoryModelCopyWithImpl<$Res, $Val extends CategoryModel>
       categories: null == categories
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as CateogryCollectionModel,
+              as CategoryCollectionModel,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $CateogryCollectionModelCopyWith<$Res> get categories {
-    return $CateogryCollectionModelCopyWith<$Res>(_value.categories, (value) {
+  $CategoryCollectionModelCopyWith<$Res> get categories {
+    return $CategoryCollectionModelCopyWith<$Res>(_value.categories, (value) {
       return _then(_value.copyWith(categories: value) as $Val);
     });
   }
@@ -79,10 +79,10 @@ abstract class _$$CategoryModelImplCopyWith<$Res>
       __$$CategoryModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({CateogryCollectionModel categories});
+  $Res call({CategoryCollectionModel categories});
 
   @override
-  $CateogryCollectionModelCopyWith<$Res> get categories;
+  $CategoryCollectionModelCopyWith<$Res> get categories;
 }
 
 /// @nodoc
@@ -102,7 +102,7 @@ class __$$CategoryModelImplCopyWithImpl<$Res>
       categories: null == categories
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as CateogryCollectionModel,
+              as CategoryCollectionModel,
     ));
   }
 }
@@ -116,7 +116,7 @@ class _$CategoryModelImpl implements _CategoryModel {
       _$$CategoryModelImplFromJson(json);
 
   @override
-  final CateogryCollectionModel categories;
+  final CategoryCollectionModel categories;
 
   @override
   String toString() {
@@ -151,14 +151,14 @@ class _$CategoryModelImpl implements _CategoryModel {
 }
 
 abstract class _CategoryModel implements CategoryModel {
-  factory _CategoryModel({required final CateogryCollectionModel categories}) =
+  factory _CategoryModel({required final CategoryCollectionModel categories}) =
       _$CategoryModelImpl;
 
   factory _CategoryModel.fromJson(Map<String, dynamic> json) =
       _$CategoryModelImpl.fromJson;
 
   @override
-  CateogryCollectionModel get categories;
+  CategoryCollectionModel get categories;
   @override
   @JsonKey(ignore: true)
   _$$CategoryModelImplCopyWith<_$CategoryModelImpl> get copyWith =>

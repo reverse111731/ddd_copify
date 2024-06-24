@@ -14,33 +14,33 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-ArtitstModel _$ArtitstModelFromJson(Map<String, dynamic> json) {
+ArtistModel _$ArtistModelFromJson(Map<String, dynamic> json) {
   return _ArtitstModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ArtitstModel {
+mixin _$ArtistModel {
   List<ArtistCollectionModel> get artists => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ArtitstModelCopyWith<ArtitstModel> get copyWith =>
+  $ArtistModelCopyWith<ArtistModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ArtitstModelCopyWith<$Res> {
-  factory $ArtitstModelCopyWith(
-          ArtitstModel value, $Res Function(ArtitstModel) then) =
-      _$ArtitstModelCopyWithImpl<$Res, ArtitstModel>;
+abstract class $ArtistModelCopyWith<$Res> {
+  factory $ArtistModelCopyWith(
+          ArtistModel value, $Res Function(ArtistModel) then) =
+      _$ArtistModelCopyWithImpl<$Res, ArtistModel>;
   @useResult
   $Res call({List<ArtistCollectionModel> artists});
 }
 
 /// @nodoc
-class _$ArtitstModelCopyWithImpl<$Res, $Val extends ArtitstModel>
-    implements $ArtitstModelCopyWith<$Res> {
-  _$ArtitstModelCopyWithImpl(this._value, this._then);
+class _$ArtistModelCopyWithImpl<$Res, $Val extends ArtistModel>
+    implements $ArtistModelCopyWith<$Res> {
+  _$ArtistModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -63,7 +63,7 @@ class _$ArtitstModelCopyWithImpl<$Res, $Val extends ArtitstModel>
 
 /// @nodoc
 abstract class _$$ArtitstModelImplCopyWith<$Res>
-    implements $ArtitstModelCopyWith<$Res> {
+    implements $ArtistModelCopyWith<$Res> {
   factory _$$ArtitstModelImplCopyWith(
           _$ArtitstModelImpl value, $Res Function(_$ArtitstModelImpl) then) =
       __$$ArtitstModelImplCopyWithImpl<$Res>;
@@ -74,7 +74,7 @@ abstract class _$$ArtitstModelImplCopyWith<$Res>
 
 /// @nodoc
 class __$$ArtitstModelImplCopyWithImpl<$Res>
-    extends _$ArtitstModelCopyWithImpl<$Res, _$ArtitstModelImpl>
+    extends _$ArtistModelCopyWithImpl<$Res, _$ArtitstModelImpl>
     implements _$$ArtitstModelImplCopyWith<$Res> {
   __$$ArtitstModelImplCopyWithImpl(
       _$ArtitstModelImpl _value, $Res Function(_$ArtitstModelImpl) _then)
@@ -114,7 +114,7 @@ class _$ArtitstModelImpl implements _ArtitstModel {
 
   @override
   String toString() {
-    return 'ArtitstModel(artists: $artists)';
+    return 'ArtistModel(artists: $artists)';
   }
 
   @override
@@ -144,7 +144,7 @@ class _$ArtitstModelImpl implements _ArtitstModel {
   }
 }
 
-abstract class _ArtitstModel implements ArtitstModel {
+abstract class _ArtitstModel implements ArtistModel {
   factory _ArtitstModel({final List<ArtistCollectionModel> artists}) =
       _$ArtitstModelImpl;
 
