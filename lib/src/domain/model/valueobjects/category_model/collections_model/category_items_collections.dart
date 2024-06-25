@@ -9,7 +9,7 @@ class CategoryItemsCollections with _$CategoryItemsCollections {
   factory CategoryItemsCollections({
     @Default("") String id,
     @Default("") String name,
-    required IconModel icons,
+    required List<IconModel> icons,
   }) = _CategoryItemsCollections;
 
   factory CategoryItemsCollections.fromJson(Map<String, dynamic> json) =>

@@ -13,21 +13,24 @@ abstract class AApiCopifyClient {
   factory AApiCopifyClient(Dio dio, {required String baseUrl}) =
       _AApiCopifyClient;
 
-  @GET("/browse/categories")
-  Future<CategoryModel> getCategory(@Header("Authorization") String auth);
+  @GET('/browse/categories')
+  Future<CategoryModel> getCategory();
 
-  @GET("/artists")
+  @GET('/artists')
   Future<ArtistModel> getArtist(
-    @Query("ids") String ids,
+    @Query('ids') String ids,
   );
 
-  @GET("/albums")
+  @GET('/albums')
   Future<AlbumListModel> getAlbum(
-    @Query("ids") String ids,
+    @Query('ids') String ids,
+  );
+
+  @GET('/artists/{artistID}/top-tracks')
+  Future<void> getArtistTrack(
+    @Path('artistID') String id,
   );
 
   // @GET("/browse/categories/{categoryType}/playlists")
   // Futture<> getCategoryPlaylist
-
-  // @GET("")
 }

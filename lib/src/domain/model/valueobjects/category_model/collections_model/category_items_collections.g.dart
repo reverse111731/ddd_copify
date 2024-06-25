@@ -11,7 +11,9 @@ _$CategoryItemsCollectionsImpl _$$CategoryItemsCollectionsImplFromJson(
     _$CategoryItemsCollectionsImpl(
       id: json['id'] as String? ?? "",
       name: json['name'] as String? ?? "",
-      icons: IconModel.fromJson(json['icons'] as Map<String, dynamic>),
+      icons: (json['icons'] as List<dynamic>)
+          .map((e) => IconModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$CategoryItemsCollectionsImplToJson(

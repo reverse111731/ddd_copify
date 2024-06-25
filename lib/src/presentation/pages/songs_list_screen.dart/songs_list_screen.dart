@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SpotifySongListScreen extends StatelessWidget {
+  const SpotifySongListScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +35,8 @@ class SongsListScreen extends StatelessWidget {
     Track("Song 3", "Artist 3", "Album 3", "5:10"),
     // Add more tracks as needed
   ];
+
+  SongsListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +77,7 @@ class Track {
 class TrackListItem extends StatelessWidget {
   final Track track;
 
-  TrackListItem({required this.track});
+  const TrackListItem({super.key, required this.track});
 
   @override
   Widget build(BuildContext context) {

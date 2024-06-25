@@ -6,6 +6,5 @@ class AlbumState with _$AlbumState {
   const factory AlbumState.loading() = _AlbumStateLoading;
   const factory AlbumState.loaded(AlbumListModel collections) =
       _AlbumStateLoaded;
-  const factory AlbumState.error(AApiCopifyRepository failure) =
-      _AlbumStateError;
+  const factory AlbumState.error(ACopifyFailure failure) = _AlbumStateError;
 }

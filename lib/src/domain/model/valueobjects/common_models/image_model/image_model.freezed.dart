@@ -86,7 +86,7 @@ class __$$ImageModelImplCopyWithImpl<$Res>
     Object? url = null,
   }) {
     return _then(_$ImageModelImpl(
-      null == url
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
@@ -97,12 +97,13 @@ class __$$ImageModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ImageModelImpl with DiagnosticableTreeMixin implements _ImageModel {
-  _$ImageModelImpl(this.url);
+  _$ImageModelImpl({this.url = ""});
 
   factory _$ImageModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ImageModelImplFromJson(json);
 
   @override
+  @JsonKey()
   final String url;
 
   @override
@@ -145,7 +146,7 @@ class _$ImageModelImpl with DiagnosticableTreeMixin implements _ImageModel {
 }
 
 abstract class _ImageModel implements ImageModel {
-  factory _ImageModel(final String url) = _$ImageModelImpl;
+  factory _ImageModel({final String url}) = _$ImageModelImpl;
 
   factory _ImageModel.fromJson(Map<String, dynamic> json) =
       _$ImageModelImpl.fromJson;

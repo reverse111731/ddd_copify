@@ -6,6 +6,7 @@ part 'token_model.freezed.dart';
 
 @freezed
 class TokenModel with _$TokenModel {
+  // ignore: non_constant_identifier_names
   factory TokenModel({required String access_token}) = _TokenModel;
 
   factory TokenModel.fromJson(Map<String, dynamic> json) =>

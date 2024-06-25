@@ -8,7 +8,7 @@ part of 'album_model.dart';
 
 _$AlbumModelImpl _$$AlbumModelImplFromJson(Map<String, dynamic> json) =>
     _$AlbumModelImpl(
-      artist: (json['artist'] as List<dynamic>)
+      artists: (json['artists'] as List<dynamic>)
           .map((e) => AlbumArtistModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       id: json['id'] as String,
@@ -21,7 +21,7 @@ _$AlbumModelImpl _$$AlbumModelImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$AlbumModelImplToJson(_$AlbumModelImpl instance) =>
     <String, dynamic>{
-      'artist': instance.artist,
+      'artists': instance.artists,
       'id': instance.id,
       'images': instance.images,
       'name': instance.name,

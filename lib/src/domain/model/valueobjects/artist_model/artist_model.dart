@@ -7,7 +7,7 @@ part 'artist_model.freezed.dart';
 @freezed
 class ArtistModel with _$ArtistModel {
   factory ArtistModel({
-    @Default([]) List<ArtistCollectionModel> artists,
+    required List<ArtistCollectionModel> artists,
   }) = _ArtitstModel;
 
   factory ArtistModel.fromJson(Map<String, dynamic> json) =>

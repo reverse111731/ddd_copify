@@ -9,7 +9,7 @@ part 'album_model.freezed.dart';
 @freezed
 class AlbumModel with _$AlbumModel {
   factory AlbumModel({
-    required List<AlbumArtistModel> artist,
+    required List<AlbumArtistModel> artists,
     required String id,
     required List<ImageModel> images,
     required String name,

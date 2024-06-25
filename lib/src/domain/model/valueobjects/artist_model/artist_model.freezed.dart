@@ -97,7 +97,7 @@ class __$$ArtitstModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ArtitstModelImpl implements _ArtitstModel {
-  _$ArtitstModelImpl({final List<ArtistCollectionModel> artists = const []})
+  _$ArtitstModelImpl({required final List<ArtistCollectionModel> artists})
       : _artists = artists;
 
   factory _$ArtitstModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -105,7 +105,6 @@ class _$ArtitstModelImpl implements _ArtitstModel {
 
   final List<ArtistCollectionModel> _artists;
   @override
-  @JsonKey()
   List<ArtistCollectionModel> get artists {
     if (_artists is EqualUnmodifiableListView) return _artists;
     // ignore: implicit_dynamic_type
@@ -145,7 +144,7 @@ class _$ArtitstModelImpl implements _ArtitstModel {
 }
 
 abstract class _ArtitstModel implements ArtistModel {
-  factory _ArtitstModel({final List<ArtistCollectionModel> artists}) =
+  factory _ArtitstModel({required final List<ArtistCollectionModel> artists}) =
       _$ArtitstModelImpl;
 
   factory _ArtitstModel.fromJson(Map<String, dynamic> json) =

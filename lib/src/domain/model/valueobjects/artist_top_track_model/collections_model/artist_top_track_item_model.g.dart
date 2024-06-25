@@ -1,25 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'artist_collection_model.dart';
+part of 'artist_top_track_item_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ArtistCollectionModelImpl _$$ArtistCollectionModelImplFromJson(
+_$ArtistTopTrackItemModelImpl _$$ArtistTopTrackItemModelImplFromJson(
         Map<String, dynamic> json) =>
-    _$ArtistCollectionModelImpl(
+    _$ArtistTopTrackItemModelImpl(
       id: json['id'] as String,
       name: json['name'] as String,
-      images: (json['images'] as List<dynamic>)
-          .map((e) => ImageModel.fromJson(e as Map<String, dynamic>))
-          .toList(),
     );
 
-Map<String, dynamic> _$$ArtistCollectionModelImplToJson(
-        _$ArtistCollectionModelImpl instance) =>
+Map<String, dynamic> _$$ArtistTopTrackItemModelImplToJson(
+        _$ArtistTopTrackItemModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'images': instance.images,
     };

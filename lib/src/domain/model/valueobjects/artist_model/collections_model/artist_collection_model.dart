@@ -9,7 +9,7 @@ class ArtistCollectionModel with _$ArtistCollectionModel {
   factory ArtistCollectionModel({
     required String id,
     required String name,
-    required ImageModel images,
+    required List<ImageModel> images,
   }) = _ArtistCollectionModel;
 
   factory ArtistCollectionModel.fromJson(Map<String, dynamic> json) =>

@@ -6,7 +6,9 @@ part 'image_model.freezed.dart';
 
 @freezed
 class ImageModel with _$ImageModel {
-  factory ImageModel(String url) = _ImageModel;
+  factory ImageModel({
+    @Default("") String url,
+  }) = _ImageModel;
 
   factory ImageModel.fromJson(Map<String, dynamic> json) =>
       _$ImageModelFromJson(json);

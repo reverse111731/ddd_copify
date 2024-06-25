@@ -23,7 +23,7 @@ ArtistCollectionModel _$ArtistCollectionModelFromJson(
 mixin _$ArtistCollectionModel {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  ImageModel get images => throw _privateConstructorUsedError;
+  List<ImageModel> get images => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,9 +37,7 @@ abstract class $ArtistCollectionModelCopyWith<$Res> {
           $Res Function(ArtistCollectionModel) then) =
       _$ArtistCollectionModelCopyWithImpl<$Res, ArtistCollectionModel>;
   @useResult
-  $Res call({String id, String name, ImageModel images});
-
-  $ImageModelCopyWith<$Res> get images;
+  $Res call({String id, String name, List<ImageModel> images});
 }
 
 /// @nodoc
@@ -72,16 +70,8 @@ class _$ArtistCollectionModelCopyWithImpl<$Res,
       images: null == images
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
-              as ImageModel,
+              as List<ImageModel>,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ImageModelCopyWith<$Res> get images {
-    return $ImageModelCopyWith<$Res>(_value.images, (value) {
-      return _then(_value.copyWith(images: value) as $Val);
-    });
   }
 }
 
@@ -94,10 +84,7 @@ abstract class _$$ArtistCollectionModelImplCopyWith<$Res>
       __$$ArtistCollectionModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, ImageModel images});
-
-  @override
-  $ImageModelCopyWith<$Res> get images;
+  $Res call({String id, String name, List<ImageModel> images});
 }
 
 /// @nodoc
@@ -126,9 +113,9 @@ class __$$ArtistCollectionModelImplCopyWithImpl<$Res>
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       images: null == images
-          ? _value.images
+          ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
-              as ImageModel,
+              as List<ImageModel>,
     ));
   }
 }
@@ -137,7 +124,10 @@ class __$$ArtistCollectionModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ArtistCollectionModelImpl implements _ArtistCollectionModel {
   _$ArtistCollectionModelImpl(
-      {required this.id, required this.name, required this.images});
+      {required this.id,
+      required this.name,
+      required final List<ImageModel> images})
+      : _images = images;
 
   factory _$ArtistCollectionModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ArtistCollectionModelImplFromJson(json);
@@ -146,8 +136,13 @@ class _$ArtistCollectionModelImpl implements _ArtistCollectionModel {
   final String id;
   @override
   final String name;
+  final List<ImageModel> _images;
   @override
-  final ImageModel images;
+  List<ImageModel> get images {
+    if (_images is EqualUnmodifiableListView) return _images;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_images);
+  }
 
   @override
   String toString() {
@@ -161,12 +156,13 @@ class _$ArtistCollectionModelImpl implements _ArtistCollectionModel {
             other is _$ArtistCollectionModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.images, images) || other.images == images));
+            const DeepCollectionEquality().equals(other._images, _images));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, images);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, const DeepCollectionEquality().hash(_images));
 
   @JsonKey(ignore: true)
   @override
@@ -187,7 +183,7 @@ abstract class _ArtistCollectionModel implements ArtistCollectionModel {
   factory _ArtistCollectionModel(
       {required final String id,
       required final String name,
-      required final ImageModel images}) = _$ArtistCollectionModelImpl;
+      required final List<ImageModel> images}) = _$ArtistCollectionModelImpl;
 
   factory _ArtistCollectionModel.fromJson(Map<String, dynamic> json) =
       _$ArtistCollectionModelImpl.fromJson;
@@ -197,7 +193,7 @@ abstract class _ArtistCollectionModel implements ArtistCollectionModel {
   @override
   String get name;
   @override
-  ImageModel get images;
+  List<ImageModel> get images;
   @override
   @JsonKey(ignore: true)
   _$$ArtistCollectionModelImplCopyWith<_$ArtistCollectionModelImpl>

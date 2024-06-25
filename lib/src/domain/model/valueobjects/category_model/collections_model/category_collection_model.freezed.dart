@@ -104,7 +104,7 @@ class __$$CategoryCollectionModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CategoryCollectionModelImpl implements _CategoryCollectionModel {
   _$CategoryCollectionModelImpl(
-      {final List<CategoryItemsCollections> items = const []})
+      {required final List<CategoryItemsCollections> items})
       : _items = items;
 
   factory _$CategoryCollectionModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -112,7 +112,6 @@ class _$CategoryCollectionModelImpl implements _CategoryCollectionModel {
 
   final List<CategoryItemsCollections> _items;
   @override
-  @JsonKey()
   List<CategoryItemsCollections> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
@@ -154,7 +153,7 @@ class _$CategoryCollectionModelImpl implements _CategoryCollectionModel {
 
 abstract class _CategoryCollectionModel implements CategoryCollectionModel {
   factory _CategoryCollectionModel(
-          {final List<CategoryItemsCollections> items}) =
+          {required final List<CategoryItemsCollections> items}) =
       _$CategoryCollectionModelImpl;
 
   factory _CategoryCollectionModel.fromJson(Map<String, dynamic> json) =

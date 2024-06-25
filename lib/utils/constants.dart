@@ -7,6 +7,8 @@ class Constants {
     "client_secret": Environment.clientSecret,
   };
 
+  static const Map<String, dynamic> emptyBody = {};
+
   static const int httpSuccess = 200;
   static const int httpUnAuthorized = 401;
   static const int httpNotFound = 404;

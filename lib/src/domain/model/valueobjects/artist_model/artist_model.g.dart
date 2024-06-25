@@ -8,11 +8,9 @@ part of 'artist_model.dart';
 
 _$ArtitstModelImpl _$$ArtitstModelImplFromJson(Map<String, dynamic> json) =>
     _$ArtitstModelImpl(
-      artists: (json['artists'] as List<dynamic>?)
-              ?.map((e) =>
-                  ArtistCollectionModel.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
+      artists: (json['artists'] as List<dynamic>)
+          .map((e) => ArtistCollectionModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$ArtitstModelImplToJson(_$ArtitstModelImpl instance) =>

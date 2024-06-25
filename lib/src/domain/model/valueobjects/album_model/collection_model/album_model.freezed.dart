@@ -20,7 +20,7 @@ AlbumModel _$AlbumModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AlbumModel {
-  List<AlbumArtistModel> get artist => throw _privateConstructorUsedError;
+  List<AlbumArtistModel> get artists => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   List<ImageModel> get images => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ abstract class $AlbumModelCopyWith<$Res> {
       _$AlbumModelCopyWithImpl<$Res, AlbumModel>;
   @useResult
   $Res call(
-      {List<AlbumArtistModel> artist,
+      {List<AlbumArtistModel> artists,
       String id,
       List<ImageModel> images,
       String name,
@@ -61,16 +61,16 @@ class _$AlbumModelCopyWithImpl<$Res, $Val extends AlbumModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? artist = null,
+    Object? artists = null,
     Object? id = null,
     Object? images = null,
     Object? name = null,
     Object? tracks = null,
   }) {
     return _then(_value.copyWith(
-      artist: null == artist
-          ? _value.artist
-          : artist // ignore: cast_nullable_to_non_nullable
+      artists: null == artists
+          ? _value.artists
+          : artists // ignore: cast_nullable_to_non_nullable
               as List<AlbumArtistModel>,
       id: null == id
           ? _value.id
@@ -109,7 +109,7 @@ abstract class _$$AlbumModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<AlbumArtistModel> artist,
+      {List<AlbumArtistModel> artists,
       String id,
       List<ImageModel> images,
       String name,
@@ -130,16 +130,16 @@ class __$$AlbumModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? artist = null,
+    Object? artists = null,
     Object? id = null,
     Object? images = null,
     Object? name = null,
     Object? tracks = null,
   }) {
     return _then(_$AlbumModelImpl(
-      artist: null == artist
-          ? _value._artist
-          : artist // ignore: cast_nullable_to_non_nullable
+      artists: null == artists
+          ? _value._artists
+          : artists // ignore: cast_nullable_to_non_nullable
               as List<AlbumArtistModel>,
       id: null == id
           ? _value.id
@@ -165,23 +165,23 @@ class __$$AlbumModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AlbumModelImpl implements _AlbumModel {
   _$AlbumModelImpl(
-      {required final List<AlbumArtistModel> artist,
+      {required final List<AlbumArtistModel> artists,
       required this.id,
       required final List<ImageModel> images,
       required this.name,
       required this.tracks})
-      : _artist = artist,
+      : _artists = artists,
         _images = images;
 
   factory _$AlbumModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$AlbumModelImplFromJson(json);
 
-  final List<AlbumArtistModel> _artist;
+  final List<AlbumArtistModel> _artists;
   @override
-  List<AlbumArtistModel> get artist {
-    if (_artist is EqualUnmodifiableListView) return _artist;
+  List<AlbumArtistModel> get artists {
+    if (_artists is EqualUnmodifiableListView) return _artists;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_artist);
+    return EqualUnmodifiableListView(_artists);
   }
 
   @override
@@ -201,7 +201,7 @@ class _$AlbumModelImpl implements _AlbumModel {
 
   @override
   String toString() {
-    return 'AlbumModel(artist: $artist, id: $id, images: $images, name: $name, tracks: $tracks)';
+    return 'AlbumModel(artists: $artists, id: $id, images: $images, name: $name, tracks: $tracks)';
   }
 
   @override
@@ -209,7 +209,7 @@ class _$AlbumModelImpl implements _AlbumModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AlbumModelImpl &&
-            const DeepCollectionEquality().equals(other._artist, _artist) &&
+            const DeepCollectionEquality().equals(other._artists, _artists) &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._images, _images) &&
             (identical(other.name, name) || other.name == name) &&
@@ -220,7 +220,7 @@ class _$AlbumModelImpl implements _AlbumModel {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(_artist),
+      const DeepCollectionEquality().hash(_artists),
       id,
       const DeepCollectionEquality().hash(_images),
       name,
@@ -242,7 +242,7 @@ class _$AlbumModelImpl implements _AlbumModel {
 
 abstract class _AlbumModel implements AlbumModel {
   factory _AlbumModel(
-      {required final List<AlbumArtistModel> artist,
+      {required final List<AlbumArtistModel> artists,
       required final String id,
       required final List<ImageModel> images,
       required final String name,
@@ -252,7 +252,7 @@ abstract class _AlbumModel implements AlbumModel {
       _$AlbumModelImpl.fromJson;
 
   @override
-  List<AlbumArtistModel> get artist;
+  List<AlbumArtistModel> get artists;
   @override
   String get id;
   @override

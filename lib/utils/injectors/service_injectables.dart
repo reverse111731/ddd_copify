@@ -21,7 +21,7 @@ Future<void> serviceInjectables(GetIt serviceLocator) async {
   // Copify API DI------
   // Copify Client
   serviceLocator.registerLazySingleton<AApiCopifyClient>(
-    () => AApiCopifyClient(serviceLocator<Dio>(), //..addCoreInterceptor(),
+    () => AApiCopifyClient(serviceLocator<Dio>()..addCoreInterceptor(),
         baseUrl: Environment.baseUrl),
   );
 

@@ -9,6 +9,6 @@ extension DioInterceptorExtension on Dio {
   }
 
   void addCoreInterceptor() {
-    // interceptors.add(dependencyLocator<DioCopifyInterceptor>());
+    interceptors.add(dependencyLocator<DioCopifyInterceptor>());
   }
 }

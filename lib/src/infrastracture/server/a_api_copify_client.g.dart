@@ -19,11 +19,10 @@ class _AApiCopifyClient implements AApiCopifyClient {
   String? baseUrl;
 
   @override
-  Future<CategoryModel> getCategory(String auth) async {
+  Future<CategoryModel> getCategory() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': auth};
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<CategoryModel>(Options(
@@ -98,6 +97,30 @@ class _AApiCopifyClient implements AApiCopifyClient {
             ))));
     final value = AlbumListModel.fromJson(_result.data!);
     return value;
+  }
+
+  @override
+  Future<void> getArtistTrack(String id) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    await _dio.fetch<void>(_setStreamType<void>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/artists/${id}/top-tracks',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

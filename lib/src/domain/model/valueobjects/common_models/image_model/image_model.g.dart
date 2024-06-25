@@ -8,7 +8,7 @@ part of 'image_model.dart';
 
 _$ImageModelImpl _$$ImageModelImplFromJson(Map<String, dynamic> json) =>
     _$ImageModelImpl(
-      json['url'] as String,
+      url: json['url'] as String? ?? "",
     );
 
 Map<String, dynamic> _$$ImageModelImplToJson(_$ImageModelImpl instance) =>

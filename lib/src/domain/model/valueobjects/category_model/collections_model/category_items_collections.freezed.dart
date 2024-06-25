@@ -23,7 +23,7 @@ CategoryItemsCollections _$CategoryItemsCollectionsFromJson(
 mixin _$CategoryItemsCollections {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  IconModel get icons => throw _privateConstructorUsedError;
+  List<IconModel> get icons => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,9 +37,7 @@ abstract class $CategoryItemsCollectionsCopyWith<$Res> {
           $Res Function(CategoryItemsCollections) then) =
       _$CategoryItemsCollectionsCopyWithImpl<$Res, CategoryItemsCollections>;
   @useResult
-  $Res call({String id, String name, IconModel icons});
-
-  $IconModelCopyWith<$Res> get icons;
+  $Res call({String id, String name, List<IconModel> icons});
 }
 
 /// @nodoc
@@ -72,16 +70,8 @@ class _$CategoryItemsCollectionsCopyWithImpl<$Res,
       icons: null == icons
           ? _value.icons
           : icons // ignore: cast_nullable_to_non_nullable
-              as IconModel,
+              as List<IconModel>,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $IconModelCopyWith<$Res> get icons {
-    return $IconModelCopyWith<$Res>(_value.icons, (value) {
-      return _then(_value.copyWith(icons: value) as $Val);
-    });
   }
 }
 
@@ -94,10 +84,7 @@ abstract class _$$CategoryItemsCollectionsImplCopyWith<$Res>
       __$$CategoryItemsCollectionsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, IconModel icons});
-
-  @override
-  $IconModelCopyWith<$Res> get icons;
+  $Res call({String id, String name, List<IconModel> icons});
 }
 
 /// @nodoc
@@ -127,9 +114,9 @@ class __$$CategoryItemsCollectionsImplCopyWithImpl<$Res>
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       icons: null == icons
-          ? _value.icons
+          ? _value._icons
           : icons // ignore: cast_nullable_to_non_nullable
-              as IconModel,
+              as List<IconModel>,
     ));
   }
 }
@@ -138,7 +125,8 @@ class __$$CategoryItemsCollectionsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CategoryItemsCollectionsImpl implements _CategoryItemsCollections {
   _$CategoryItemsCollectionsImpl(
-      {this.id = "", this.name = "", required this.icons});
+      {this.id = "", this.name = "", required final List<IconModel> icons})
+      : _icons = icons;
 
   factory _$CategoryItemsCollectionsImpl.fromJson(Map<String, dynamic> json) =>
       _$$CategoryItemsCollectionsImplFromJson(json);
@@ -149,8 +137,13 @@ class _$CategoryItemsCollectionsImpl implements _CategoryItemsCollections {
   @override
   @JsonKey()
   final String name;
+  final List<IconModel> _icons;
   @override
-  final IconModel icons;
+  List<IconModel> get icons {
+    if (_icons is EqualUnmodifiableListView) return _icons;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_icons);
+  }
 
   @override
   String toString() {
@@ -164,12 +157,13 @@ class _$CategoryItemsCollectionsImpl implements _CategoryItemsCollections {
             other is _$CategoryItemsCollectionsImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.icons, icons) || other.icons == icons));
+            const DeepCollectionEquality().equals(other._icons, _icons));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, icons);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, const DeepCollectionEquality().hash(_icons));
 
   @JsonKey(ignore: true)
   @override
@@ -190,7 +184,7 @@ abstract class _CategoryItemsCollections implements CategoryItemsCollections {
   factory _CategoryItemsCollections(
       {final String id,
       final String name,
-      required final IconModel icons}) = _$CategoryItemsCollectionsImpl;
+      required final List<IconModel> icons}) = _$CategoryItemsCollectionsImpl;
 
   factory _CategoryItemsCollections.fromJson(Map<String, dynamic> json) =
       _$CategoryItemsCollectionsImpl.fromJson;
@@ -200,7 +194,7 @@ abstract class _CategoryItemsCollections implements CategoryItemsCollections {
   @override
   String get name;
   @override
-  IconModel get icons;
+  List<IconModel> get icons;
   @override
   @JsonKey(ignore: true)
   _$$CategoryItemsCollectionsImplCopyWith<_$CategoryItemsCollectionsImpl>

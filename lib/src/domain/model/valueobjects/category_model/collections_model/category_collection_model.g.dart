@@ -9,11 +9,10 @@ part of 'category_collection_model.dart';
 _$CategoryCollectionModelImpl _$$CategoryCollectionModelImplFromJson(
         Map<String, dynamic> json) =>
     _$CategoryCollectionModelImpl(
-      items: (json['items'] as List<dynamic>?)
-              ?.map((e) =>
-                  CategoryItemsCollections.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
+      items: (json['items'] as List<dynamic>)
+          .map((e) =>
+              CategoryItemsCollections.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$CategoryCollectionModelImplToJson(

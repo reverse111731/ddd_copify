@@ -7,7 +7,7 @@ part 'category_collection_model.freezed.dart';
 @freezed
 class CategoryCollectionModel with _$CategoryCollectionModel {
   factory CategoryCollectionModel({
-    @Default([]) List<CategoryItemsCollections> items,
+    required List<CategoryItemsCollections> items,
   }) = _CategoryCollectionModel;
 
   factory CategoryCollectionModel.fromJson(Map<String, dynamic> json) =>
