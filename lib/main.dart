@@ -1,6 +1,8 @@
 import 'package:domain_driven/src/presentation/pages/home_screen/home_screen.dart';
+import 'package:domain_driven/src/presentation/pages/songs_list_screen.dart/spotify_song_list_screen.dart';
 import 'package:domain_driven/src/presentation/theme/theme.dart';
 import 'package:domain_driven/utils/injectors/injector.dart';
+import 'package:domain_driven/utils/routes/route.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,27 +16,10 @@ class CopifyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Spotify',
-      theme: CopifyTheme.copifyTheme,
-      home: const HomeScreen(),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Spotify',
+        theme: CopifyTheme.copifyTheme,
+        initialRoute: '/home',
+        onGenerateRoute: routes);
   }
 }
-
-
- // onGenerateRoute: (settings) {
-      //   switch (settings.name) {
-      //     case '/homescreen':
-      //       final args = settings.arguments;
-
-      //       break;
-      //     default:
-      //   }
-      // },
-      // routes: {
-      //   "/homescreen": (context) => const HomeScreen(),
-      //   "/songlistscreen": (context) => SongsListScreen(),
-      //   "/favoritescreen": (context) => const FavoritesScreen(),
-      //   "/categoryplaylistscreen": (context) => const CategoryPlaylistScreen(),
-      // },

@@ -26,16 +26,22 @@ class CopifyTheme {
           fontFamily: Environment.fontFamily,
           fontSize: 32,
           color: ColorPalette.primaryTextColor),
-      bodyMedium: TextStyle(
+      labelMedium: TextStyle(
         fontFamily: Environment.fontFamily,
         fontSize: 24,
+        color: ColorPalette.secondaryTextColor,
+        overflow: TextOverflow.ellipsis,
+      ),
+      labelSmall: TextStyle(
+        fontFamily: Environment.fontFamily,
+        fontSize: 16,
         color: ColorPalette.secondaryTextColor,
         overflow: TextOverflow.ellipsis,
       ),
       bodySmall: TextStyle(
         fontFamily: Environment.fontFamily,
         fontSize: 16,
-        color: ColorPalette.secondaryTextColor,
+        color: ColorPalette.primaryButtonTextColor,
         overflow: TextOverflow.ellipsis,
       ),
     ),

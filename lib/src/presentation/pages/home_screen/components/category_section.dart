@@ -1,7 +1,11 @@
 import 'package:domain_driven/src/application/usecase/blocs/category_bloc/category_bloc.dart';
 import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_failure.dart';
+import 'package:domain_driven/src/domain/model/valueobjects/category_model/category_model.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/home_screen_section_collection_model/home_screen_section_model.dart';
+import 'package:domain_driven/src/presentation/pages/category_screen/category_playlist_screen.dart';
 import 'package:domain_driven/src/presentation/pages/home_screen/widgets/section_list_view.dart';
+import 'package:domain_driven/src/presentation/pages/songs_list_screen.dart/spotify_song_list_screen.dart';
+import 'package:domain_driven/utils/extensions/build_context_extension.dart';
 import 'package:domain_driven/utils/extensions/extended_padding.dart';
 import 'package:domain_driven/utils/injectors/injector.dart';
 import 'package:flutter/material.dart';
@@ -13,11 +17,31 @@ class CategorySection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          "Category",
-          style: Theme.of(context).textTheme.headlineLarge,
-        ).paddingVerticalOnly(16),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              "Category",
+              style: Theme.of(context).textTheme.headlineLarge,
+            ).paddingVerticalOnly(16),
+            TextButton(
+              onPressed: () {
+                context.toView(route: "/categoryPlaylistScreen");
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //       builder: (context) => const CategoryPlaylistScreen()),
+                // );
+              },
+              child: Text(
+                "Show More",
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+            ),
+          ],
+        ),
         BlocProvider(
           create: (context) => dependencyLocator<CategoryBloc>()
             ..add(const CategoryEvent.started()),
@@ -28,8 +52,11 @@ class CategorySection extends StatelessWidget {
               }, loading: () {
                 return const CircularProgressIndicator();
               }, loaded: (categories) {
-                return SectionListView(
-                    sections: HomeScreenSectionModel(categories: categories));
+                return SectionListView<CategoryModel>(
+                  onPressCard: (String id) =>
+                      context.toView(route: '/songList', arguments: id),
+                  sections: HomeScreenSectionModel(categories: categories),
+                );
               }, error: (ACopifyFailure failure) {
                 return Center(
                   child: Container(

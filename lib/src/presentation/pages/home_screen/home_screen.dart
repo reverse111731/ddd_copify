@@ -3,6 +3,7 @@ import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_failu
 import 'package:domain_driven/src/presentation/pages/home_screen/components/album_section.dart';
 import 'package:domain_driven/src/presentation/pages/home_screen/components/artist_section.dart';
 import 'package:domain_driven/src/presentation/pages/home_screen/components/category_section.dart';
+import 'package:domain_driven/src/presentation/widgets/global_app_bar.dart';
 // import 'package:domain_driven/src/presentation/widgets/hook_bloc.dart';
 import 'package:domain_driven/utils/extensions/extended_padding.dart';
 import 'package:domain_driven/utils/injectors/injector.dart';
@@ -18,10 +19,8 @@ class HomeScreen extends StatelessWidget {
       create: (context) =>
           dependencyLocator<TokenBloc>()..add(const TokenEvent.started()),
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Spotify - Home',
-          ),
+        appBar: const GlobalAppBar(
+          title: "Spotify - home",
         ),
         body: BlocBuilder<TokenBloc, TokenState>(
           builder: (context, state) {
@@ -35,6 +34,7 @@ class HomeScreen extends StatelessWidget {
               loaded: (token) {
                 return SingleChildScrollView(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       // optimized this with the global bloc
                       const AlbumSection().paddingAll(8),

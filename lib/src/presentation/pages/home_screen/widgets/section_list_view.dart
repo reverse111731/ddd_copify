@@ -1,3 +1,6 @@
+import 'package:domain_driven/src/domain/model/valueobjects/album_model/album_list_model.dart';
+import 'package:domain_driven/src/domain/model/valueobjects/artist_model/artist_model.dart';
+import 'package:domain_driven/src/domain/model/valueobjects/category_model/category_model.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/home_screen_section_collection_model/home_screen_section_model.dart';
 import 'package:flutter/material.dart';
 
@@ -8,20 +11,22 @@ typedef HomeSection = (
   String image,
 });
 
-class SectionListView extends StatefulWidget {
+class SectionListView<Type> extends StatefulWidget {
   final HomeScreenSectionModel sections;
+  final void Function(String arg) onPressCard;
 
   const SectionListView({
+    required this.onPressCard,
     required this.sections,
     super.key,
-  });
-  //assert(Type is! Type, "Always put the data type model"); //? This is an assertion making sure to check and pass the model type properly
+  }) : assert(Type is! Type,
+            "Always put the data type model"); //? This is an assertion making sure to check and pass the model type properly
 
   @override
-  State<SectionListView> createState() => _SectionListViewState();
+  State<SectionListView<Type>> createState() => _SectionListViewState<Type>();
 }
 
-class _SectionListViewState extends State<SectionListView> {
+class _SectionListViewState<Type> extends State<SectionListView<Type>> {
   List<HomeSection> homeSection = [];
 
   // This is for initial state
@@ -29,20 +34,19 @@ class _SectionListViewState extends State<SectionListView> {
   void initState() {
     super.initState();
 
-    if (widget.sections.album != null) {
+    if (widget.sections.album != null && Type == AlbumListModel) {
       homeSection = List.generate(
         widget.sections.album!.albums.length,
         (index) {
-          return ("sample", id: "test", image: "return");
-          // return (
-          //   widget.sections.album?.albums[index].name ?? "Sample Album name",
-          //   id: widget.sections.album?.albums[index].id ?? "Sample Album id",
-          //   image: widget.sections.album?.albums[index].images.first.url ??
-          //       "Sample Album ImageURL",
-          // );
+          return (
+            widget.sections.album?.albums[index].name ?? "Sample Album name",
+            id: widget.sections.album?.albums[index].id ?? "Sample Album id",
+            image: widget.sections.album?.albums[index].images.first.url ??
+                "Sample Album ImageURL",
+          );
         },
       );
-    } else if (widget.sections.artist != null) {
+    } else if (widget.sections.artist != null && Type == ArtistModel) {
       homeSection = List.generate(
         widget.sections.artist!.artists.length,
         (index) {
@@ -54,7 +58,7 @@ class _SectionListViewState extends State<SectionListView> {
           );
         },
       );
-    } else if (widget.sections.categories != null) {
+    } else if (widget.sections.categories != null && Type == CategoryModel) {
       homeSection = List.generate(8, (index) {
         return (
           widget.sections.categories?.categories.items[index].name ??
@@ -83,10 +87,19 @@ class _SectionListViewState extends State<SectionListView> {
         scrollDirection: Axis.horizontal,
         itemCount: homeSection.length,
         itemBuilder: (BuildContext context, int index) {
-          return _SectionListViewCard(
-            id: homeSection[index].id,
-            name: homeSection[index].$1, //if no parameter name then its $#
-            image: homeSection[index].image,
+          return GestureDetector(
+            onTap: () {
+              if (Type == CategoryModel) {
+                widget.onPressCard(homeSection[index].$1);
+                return;
+              }
+              widget.onPressCard(homeSection[index].id);
+            },
+            child: _SectionListViewCard(
+              id: homeSection[index].id,
+              name: homeSection[index].$1, //if no parameter name then its $#
+              image: homeSection[index].image,
+            ),
           );
         },
       ),

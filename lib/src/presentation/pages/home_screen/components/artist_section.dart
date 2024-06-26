@@ -1,7 +1,9 @@
 import 'package:domain_driven/src/application/usecase/blocs/artist_bloc/artist_bloc.dart';
 import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_failure.dart';
+import 'package:domain_driven/src/domain/model/valueobjects/artist_model/artist_model.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/home_screen_section_collection_model/home_screen_section_model.dart';
 import 'package:domain_driven/src/presentation/pages/home_screen/widgets/section_list_view.dart';
+import 'package:domain_driven/utils/extensions/build_context_extension.dart';
 import 'package:domain_driven/utils/extensions/extended_padding.dart';
 import 'package:domain_driven/utils/injectors/injector.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +15,7 @@ class ArtistSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           "Artist",
@@ -28,7 +31,9 @@ class ArtistSection extends StatelessWidget {
               }, loading: () {
                 return const CircularProgressIndicator();
               }, loaded: (artists) {
-                return SectionListView(
+                return SectionListView<ArtistModel>(
+                  onPressCard: (String id) =>
+                      context.toView(route: '/songList', arguments: id),
                   sections: HomeScreenSectionModel(artist: artists),
                 );
               }, error: (ACopifyFailure failure) {

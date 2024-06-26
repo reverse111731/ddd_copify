@@ -33,4 +33,7 @@ Future<void> injectApplications(GetIt serviceLocator) async {
       api: serviceLocator<AApiCopifyRepository>(),
     ),
   );
+
+  //Song List bloc
+  // serviceLocator.registerFactory(() => );
 }

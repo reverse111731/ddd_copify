@@ -9,6 +9,16 @@ extension DioInterceptorExtension on Dio {
   }
 
   void addCoreInterceptor() {
-    interceptors.add(dependencyLocator<DioCopifyInterceptor>());
+    interceptors.addAll([
+      dependencyLocator<DioCopifyInterceptor>(),
+      // LogInterceptor(
+      //   request: true, // log request
+      //   requestHeader: true, // log request header
+      //   requestBody: true, // log request body
+      //   responseHeader: true, // log response header
+      //   responseBody: true, // log response body
+      //   error: true, // log errors
+      // )
+    ]);
   }
 }

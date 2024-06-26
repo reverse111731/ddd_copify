@@ -4,4 +4,5 @@ class ColorPalette {
   static const Color primaryAppColor = Colors.black;
   static const Color primaryTextColor = Colors.white;
   static const Color secondaryTextColor = Colors.grey;
+  static const Color primaryButtonTextColor = Colors.green;
 }
