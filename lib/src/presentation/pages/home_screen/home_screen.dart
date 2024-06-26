@@ -20,33 +20,30 @@ class HomeScreen extends StatelessWidget {
           dependencyLocator<TokenBloc>()..add(const TokenEvent.started()),
       child: Scaffold(
         appBar: const GlobalAppBar(
+          hasBackButton: false,
           title: "Spotify - home",
         ),
         body: BlocBuilder<TokenBloc, TokenState>(
           builder: (context, state) {
             return state.when(
               initial: () {
-                return const SizedBox();
+                return Container(
+                  color: Colors.blue,
+                );
               },
               loading: () {
-                return const CircularProgressIndicator();
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
               },
               loaded: (token) {
                 return SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // optimized this with the global bloc
                       const AlbumSection().paddingAll(8),
                       const ArtistSection().paddingAll(8),
                       const CategorySection().paddingAll(8),
-                      // SpotifyHookBloc<CategoryBloc, CategoryState>(
-                      //   bloc: dependencyLocator<CategoryBloc>()
-                      //     ..add(const CategoryEvent.started()),
-                      //   buildWidget: (context, state) {
-                      //     return Text("WELCOME");
-                      //   },
-                      // ),
                     ],
                   ),
                 );

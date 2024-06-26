@@ -1,8 +1,16 @@
+import 'package:domain_driven/utils/extensions/build_context_extension.dart';
 import 'package:flutter/material.dart';
 
 class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-  const GlobalAppBar({required this.title, super.key});
+  final bool hasBackButton;
+
+  const GlobalAppBar({
+    required this.hasBackButton,
+    // hasBackButton = false,
+    required this.title,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -11,11 +19,13 @@ class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
         title,
         style: Theme.of(context).textTheme.labelMedium,
       ),
-      automaticallyImplyLeading: true,
-      // leading: IconButton(
-      //   icon: const Icon(Icons.backspace),
-      //   onPressed: () => context.back(),
-      // ),
+      automaticallyImplyLeading: false,
+      leading: hasBackButton
+          ? IconButton(
+              icon: const Icon(Icons.backspace),
+              onPressed: () => context.back(),
+            )
+          : null,
     );
   }
 

@@ -1,5 +1,3 @@
-import 'package:domain_driven/src/presentation/pages/home_screen/home_screen.dart';
-import 'package:domain_driven/src/presentation/pages/songs_list_screen.dart/spotify_song_list_screen.dart';
 import 'package:domain_driven/src/presentation/theme/theme.dart';
 import 'package:domain_driven/utils/injectors/injector.dart';
 import 'package:domain_driven/utils/routes/route.dart';

@@ -1,8 +1,10 @@
 import 'package:domain_driven/src/presentation/pages/songs_list_screen.dart/widgets/song_list_track.dart';
 import 'package:flutter/material.dart';
 
-// This should be a component
+typedef SongListSection = ();
+
 class SongListComponent extends StatelessWidget {
+  bool hasImage = true;
   final List<SongTrack> trackMusic = [
     SongTrack("Song 1", "Artist 1", "id 1"),
     SongTrack("Song 2", "Artist 2", "id 2"),
@@ -30,10 +32,15 @@ class SongListComponent extends StatelessWidget {
           expandedHeight: 200.0,
           flexibleSpace: FlexibleSpaceBar(
             title: const Text('Pop Right Now'),
-            background: Image.network(
-              'https://via.placeholder.com/500x200', // Placeholder for album/artist/playlist image
-              fit: BoxFit.cover,
-            ),
+            background: hasImage
+                ? Image.network(
+                    'https://via.placeholder.com/500x200', // Placeholder for album/artist/playlist image
+                    fit: BoxFit.cover,
+                  )
+                : Image.asset(
+                    'assets/images/logo.png',
+                    fit: BoxFit.cover,
+                  ),
           ),
         ),
         SliverList(

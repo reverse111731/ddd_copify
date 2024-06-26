@@ -170,7 +170,7 @@ mixin _$SongListState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() loaded,
+    required TResult Function(ArtistTopTrackModel collections) loaded,
     required TResult Function(ACopifyFailure failure) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -178,7 +178,7 @@ mixin _$SongListState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? loaded,
+    TResult? Function(ArtistTopTrackModel collections)? loaded,
     TResult? Function(ACopifyFailure failure)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -186,7 +186,7 @@ mixin _$SongListState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(ArtistTopTrackModel collections)? loaded,
     TResult Function(ACopifyFailure failure)? error,
     required TResult orElse(),
   }) =>
@@ -276,7 +276,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() loaded,
+    required TResult Function(ArtistTopTrackModel collections) loaded,
     required TResult Function(ACopifyFailure failure) error,
   }) {
     return initial();
@@ -287,7 +287,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? loaded,
+    TResult? Function(ArtistTopTrackModel collections)? loaded,
     TResult? Function(ACopifyFailure failure)? error,
   }) {
     return initial?.call();
@@ -298,7 +298,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(ArtistTopTrackModel collections)? loaded,
     TResult Function(ACopifyFailure failure)? error,
     required TResult orElse(),
   }) {
@@ -391,7 +391,7 @@ class _$SongListStateLoadingImpl implements _SongListStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() loaded,
+    required TResult Function(ArtistTopTrackModel collections) loaded,
     required TResult Function(ACopifyFailure failure) error,
   }) {
     return loading();
@@ -402,7 +402,7 @@ class _$SongListStateLoadingImpl implements _SongListStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? loaded,
+    TResult? Function(ArtistTopTrackModel collections)? loaded,
     TResult? Function(ACopifyFailure failure)? error,
   }) {
     return loading?.call();
@@ -413,7 +413,7 @@ class _$SongListStateLoadingImpl implements _SongListStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(ArtistTopTrackModel collections)? loaded,
     TResult Function(ACopifyFailure failure)? error,
     required TResult orElse(),
   }) {
@@ -470,6 +470,10 @@ abstract class _$$SongListStateLoadedImplCopyWith<$Res> {
   factory _$$SongListStateLoadedImplCopyWith(_$SongListStateLoadedImpl value,
           $Res Function(_$SongListStateLoadedImpl) then) =
       __$$SongListStateLoadedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ArtistTopTrackModel collections});
+
+  $ArtistTopTrackModelCopyWith<$Res> get collections;
 }
 
 /// @nodoc
@@ -479,37 +483,70 @@ class __$$SongListStateLoadedImplCopyWithImpl<$Res>
   __$$SongListStateLoadedImplCopyWithImpl(_$SongListStateLoadedImpl _value,
       $Res Function(_$SongListStateLoadedImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? collections = null,
+  }) {
+    return _then(_$SongListStateLoadedImpl(
+      null == collections
+          ? _value.collections
+          : collections // ignore: cast_nullable_to_non_nullable
+              as ArtistTopTrackModel,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ArtistTopTrackModelCopyWith<$Res> get collections {
+    return $ArtistTopTrackModelCopyWith<$Res>(_value.collections, (value) {
+      return _then(_value.copyWith(collections: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$SongListStateLoadedImpl implements _SongListStateLoaded {
-  const _$SongListStateLoadedImpl();
+  const _$SongListStateLoadedImpl(this.collections);
+
+  @override
+  final ArtistTopTrackModel collections;
 
   @override
   String toString() {
-    return 'SongListState.loaded()';
+    return 'SongListState.loaded(collections: $collections)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SongListStateLoadedImpl);
+            other is _$SongListStateLoadedImpl &&
+            (identical(other.collections, collections) ||
+                other.collections == collections));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, collections);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SongListStateLoadedImplCopyWith<_$SongListStateLoadedImpl> get copyWith =>
+      __$$SongListStateLoadedImplCopyWithImpl<_$SongListStateLoadedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() loaded,
+    required TResult Function(ArtistTopTrackModel collections) loaded,
     required TResult Function(ACopifyFailure failure) error,
   }) {
-    return loaded();
+    return loaded(collections);
   }
 
   @override
@@ -517,10 +554,10 @@ class _$SongListStateLoadedImpl implements _SongListStateLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? loaded,
+    TResult? Function(ArtistTopTrackModel collections)? loaded,
     TResult? Function(ACopifyFailure failure)? error,
   }) {
-    return loaded?.call();
+    return loaded?.call(collections);
   }
 
   @override
@@ -528,12 +565,12 @@ class _$SongListStateLoadedImpl implements _SongListStateLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(ArtistTopTrackModel collections)? loaded,
     TResult Function(ACopifyFailure failure)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded();
+      return loaded(collections);
     }
     return orElse();
   }
@@ -577,7 +614,13 @@ class _$SongListStateLoadedImpl implements _SongListStateLoaded {
 }
 
 abstract class _SongListStateLoaded implements SongListState {
-  const factory _SongListStateLoaded() = _$SongListStateLoadedImpl;
+  const factory _SongListStateLoaded(final ArtistTopTrackModel collections) =
+      _$SongListStateLoadedImpl;
+
+  ArtistTopTrackModel get collections;
+  @JsonKey(ignore: true)
+  _$$SongListStateLoadedImplCopyWith<_$SongListStateLoadedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -600,10 +643,10 @@ class __$$SongListStateErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failure = freezed,
+    Object? failure = null,
   }) {
     return _then(_$SongListStateErrorImpl(
-      freezed == failure
+      null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as ACopifyFailure,
@@ -629,12 +672,11 @@ class _$SongListStateErrorImpl implements _SongListStateError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SongListStateErrorImpl &&
-            const DeepCollectionEquality().equals(other.failure, failure));
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -648,7 +690,7 @@ class _$SongListStateErrorImpl implements _SongListStateError {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() loaded,
+    required TResult Function(ArtistTopTrackModel collections) loaded,
     required TResult Function(ACopifyFailure failure) error,
   }) {
     return error(failure);
@@ -659,7 +701,7 @@ class _$SongListStateErrorImpl implements _SongListStateError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? loaded,
+    TResult? Function(ArtistTopTrackModel collections)? loaded,
     TResult? Function(ACopifyFailure failure)? error,
   }) {
     return error?.call(failure);
@@ -670,7 +712,7 @@ class _$SongListStateErrorImpl implements _SongListStateError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? loaded,
+    TResult Function(ArtistTopTrackModel collections)? loaded,
     TResult Function(ACopifyFailure failure)? error,
     required TResult orElse(),
   }) {

@@ -1,3 +1,4 @@
+import 'package:domain_driven/src/presentation/widgets/global_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class FavoritesScreen extends StatelessWidget {
@@ -6,8 +7,9 @@ class FavoritesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('My Playlist'),
+      appBar: const GlobalAppBar(
+        hasBackButton: false,
+        title: "Favorite Screen",
       ),
       body: ListView(
         children: const [

@@ -9,19 +9,24 @@ class SongTrack {
   SongTrack(this.title, this.artist, this.id);
 }
 
-class SongListTrack extends StatelessWidget {
+class SongListTrack extends StatefulWidget {
   final SongTrack songTracks;
   const SongListTrack({required this.songTracks, super.key});
 
   @override
+  State<SongListTrack> createState() => _SongListTrackState();
+}
+
+class _SongListTrackState extends State<SongListTrack> {
+  @override
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(
-        songTracks.title,
+        widget.songTracks.title,
         style: Theme.of(context).textTheme.bodySmall,
       ),
       subtitle: Text(
-        songTracks.id,
+        widget.songTracks.id,
         style: Theme.of(context).textTheme.labelSmall,
       ),
       trailing: IconButton(
@@ -33,35 +38,3 @@ class SongListTrack extends StatelessWidget {
     );
   }
 }
-
-
-// class TrackListItem extends StatelessWidget {
-//   final Track track;
-
-//   const TrackListItem({super.key, required this.track});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return ListTile(
-//       leading: const CircleAvatar(
-//         child: Text('test....'), // Placeholder for artist/album/playlist image
-//       ),
-//       title: Text(track.title),
-//       subtitle: Text('${track.artist} • ${track.album} • ${track.duration}'),
-//       trailing: Row(
-//         mainAxisSize: MainAxisSize.min,
-//         children: [
-//           IconButton(
-//             icon: const Icon(Icons.favorite_border),
-//             onPressed: () {
-//               // Handle saving the track
-//             },
-//           ),
-//         ],
-//       ),
-//       onTap: () {
-//         // Handle playing the track or navigating to track details
-//       },
-//     );
-//   }
-// }

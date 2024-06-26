@@ -12,6 +12,8 @@ class CategoryListView extends StatelessWidget {
       itemCount: category.categories.items.length,
       itemBuilder: (context, index) {
         return ListTile(
+          trailing:
+              Image.network(category.categories.items[index].icons.first.url),
           title: Text(
             category.categories.items[index].name,
             style: Theme.of(context).textTheme.bodySmall,

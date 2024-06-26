@@ -89,10 +89,16 @@ class _SectionListViewState<Type> extends State<SectionListView<Type>> {
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
             onTap: () {
-              if (Type == CategoryModel) {
-                widget.onPressCard(homeSection[index].$1);
-                return;
-              }
+              // if (Type == CategoryModel) {
+              //   widget.onPressCard(
+              //     homeSection[index]
+              //         .$1
+              //         .trim()
+              //         .toLowerCase()
+              //         .replaceAll(RegExp(r"\s+\b|\b\s|\s|\b\-"), ""),
+              //   );
+              //   return;
+              // }
               widget.onPressCard(homeSection[index].id);
             },
             child: _SectionListViewCard(
