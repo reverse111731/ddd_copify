@@ -7,9 +7,9 @@ part 'category_playlist_items_model.freezed.dart';
 @freezed
 class CategoryPlaylistItemsModel with _$CategoryPlaylistItemsModel {
   factory CategoryPlaylistItemsModel({
-    required String id,
-    required List<ImageModel> images,
-    required String name,
+    required String id, // track id
+    required List<ImageModel> images, //
+    required String name, //track name
   }) = _CategoryPlaylistItemsModel;
 
   factory CategoryPlaylistItemsModel.fromJson(Map<String, dynamic> json) =>

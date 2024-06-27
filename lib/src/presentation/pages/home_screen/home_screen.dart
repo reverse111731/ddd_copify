@@ -3,6 +3,7 @@ import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_failu
 import 'package:domain_driven/src/presentation/pages/home_screen/components/album_section.dart';
 import 'package:domain_driven/src/presentation/pages/home_screen/components/artist_section.dart';
 import 'package:domain_driven/src/presentation/pages/home_screen/components/category_section.dart';
+import 'package:domain_driven/src/presentation/pages/home_screen/components/favorite_sections.dart';
 import 'package:domain_driven/src/presentation/widgets/global_app_bar.dart';
 // import 'package:domain_driven/src/presentation/widgets/hook_bloc.dart';
 import 'package:domain_driven/utils/extensions/extended_padding.dart';
@@ -44,6 +45,7 @@ class HomeScreen extends StatelessWidget {
                       const AlbumSection().paddingAll(8),
                       const ArtistSection().paddingAll(8),
                       const CategorySection().paddingAll(8),
+                      // const FavoriteSections().paddingAll(8),
                     ],
                   ),
                 );

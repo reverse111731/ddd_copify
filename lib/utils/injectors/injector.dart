@@ -1,9 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:domain_driven/src/application/config/environment.dart';
 import 'package:domain_driven/src/application/usecase/blocs/album_bloc/album_bloc.dart';
+import 'package:domain_driven/src/application/usecase/blocs/album_song_list_bloc/album_song_list_bloc.dart';
 import 'package:domain_driven/src/application/usecase/blocs/artist_bloc/artist_bloc.dart';
 import 'package:domain_driven/src/application/usecase/blocs/category_bloc/category_bloc.dart';
-import 'package:domain_driven/src/application/usecase/blocs/song_list_bloc/song_list_bloc.dart';
+import 'package:domain_driven/src/application/usecase/blocs/category_song_list_bloc/category_song_list_bloc.dart';
+import 'package:domain_driven/src/application/usecase/blocs/favorite_bloc/favorite_bloc.dart';
+import 'package:domain_driven/src/application/usecase/blocs/artist_song_list_bloc/artist_song_list_bloc.dart';
 import 'package:domain_driven/src/application/usecase/blocs/token_bloc/token_bloc.dart';
 import 'package:domain_driven/src/domain/model/abstracts/a_api_auth_repository.dart';
 import 'package:domain_driven/src/domain/model/abstracts/a_api_copify_repository.dart';

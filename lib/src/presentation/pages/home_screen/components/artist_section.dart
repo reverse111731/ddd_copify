@@ -33,7 +33,7 @@ class ArtistSection extends StatelessWidget {
               }, loaded: (artists) {
                 return SectionListView<ArtistModel>(
                   onPressCard: (String id) =>
-                      context.toView(route: '/songList', arguments: id),
+                      context.toView(route: '/artistSongList', arguments: id),
                   sections: HomeScreenSectionModel(artist: artists),
                 );
               }, error: (ACopifyFailure failure) {

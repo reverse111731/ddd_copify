@@ -8,7 +8,7 @@ part 'category_playlist_item_collection_model.freezed.dart';
 class CategoryPlaylistItemCollectionModel
     with _$CategoryPlaylistItemCollectionModel {
   factory CategoryPlaylistItemCollectionModel({
-    required List<CategoryPlaylistItemsModel> items,
+    required List<CategoryPlaylistItemsModel> items, // this are the tracks
   }) = _CategoryPlaylistItemCollectionModel;
 
   factory CategoryPlaylistItemCollectionModel.fromJson(

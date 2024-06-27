@@ -21,6 +21,7 @@ CategoryPlaylistModel _$CategoryPlaylistModelFromJson(
 
 /// @nodoc
 mixin _$CategoryPlaylistModel {
+  String get message => throw _privateConstructorUsedError;
   CategoryPlaylistItemCollectionModel get playlists =>
       throw _privateConstructorUsedError;
 
@@ -36,7 +37,7 @@ abstract class $CategoryPlaylistModelCopyWith<$Res> {
           $Res Function(CategoryPlaylistModel) then) =
       _$CategoryPlaylistModelCopyWithImpl<$Res, CategoryPlaylistModel>;
   @useResult
-  $Res call({CategoryPlaylistItemCollectionModel playlists});
+  $Res call({String message, CategoryPlaylistItemCollectionModel playlists});
 
   $CategoryPlaylistItemCollectionModelCopyWith<$Res> get playlists;
 }
@@ -55,9 +56,14 @@ class _$CategoryPlaylistModelCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? message = null,
     Object? playlists = null,
   }) {
     return _then(_value.copyWith(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
       playlists: null == playlists
           ? _value.playlists
           : playlists // ignore: cast_nullable_to_non_nullable
@@ -84,7 +90,7 @@ abstract class _$$CategoryPlaylistModelImplCopyWith<$Res>
       __$$CategoryPlaylistModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({CategoryPlaylistItemCollectionModel playlists});
+  $Res call({String message, CategoryPlaylistItemCollectionModel playlists});
 
   @override
   $CategoryPlaylistItemCollectionModelCopyWith<$Res> get playlists;
@@ -102,9 +108,14 @@ class __$$CategoryPlaylistModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? message = null,
     Object? playlists = null,
   }) {
     return _then(_$CategoryPlaylistModelImpl(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
       playlists: null == playlists
           ? _value.playlists
           : playlists // ignore: cast_nullable_to_non_nullable
@@ -116,17 +127,19 @@ class __$$CategoryPlaylistModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$CategoryPlaylistModelImpl implements _CategoryPlaylistModel {
-  _$CategoryPlaylistModelImpl({required this.playlists});
+  _$CategoryPlaylistModelImpl({required this.message, required this.playlists});
 
   factory _$CategoryPlaylistModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$CategoryPlaylistModelImplFromJson(json);
 
   @override
+  final String message;
+  @override
   final CategoryPlaylistItemCollectionModel playlists;
 
   @override
   String toString() {
-    return 'CategoryPlaylistModel(playlists: $playlists)';
+    return 'CategoryPlaylistModel(message: $message, playlists: $playlists)';
   }
 
   @override
@@ -134,13 +147,14 @@ class _$CategoryPlaylistModelImpl implements _CategoryPlaylistModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CategoryPlaylistModelImpl &&
+            (identical(other.message, message) || other.message == message) &&
             (identical(other.playlists, playlists) ||
                 other.playlists == playlists));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, playlists);
+  int get hashCode => Object.hash(runtimeType, message, playlists);
 
   @JsonKey(ignore: true)
   @override
@@ -159,12 +173,15 @@ class _$CategoryPlaylistModelImpl implements _CategoryPlaylistModel {
 
 abstract class _CategoryPlaylistModel implements CategoryPlaylistModel {
   factory _CategoryPlaylistModel(
-          {required final CategoryPlaylistItemCollectionModel playlists}) =
+          {required final String message,
+          required final CategoryPlaylistItemCollectionModel playlists}) =
       _$CategoryPlaylistModelImpl;
 
   factory _CategoryPlaylistModel.fromJson(Map<String, dynamic> json) =
       _$CategoryPlaylistModelImpl.fromJson;
 
+  @override
+  String get message;
   @override
   CategoryPlaylistItemCollectionModel get playlists;
   @override

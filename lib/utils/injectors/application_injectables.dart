@@ -34,10 +34,28 @@ Future<void> injectApplications(GetIt serviceLocator) async {
     ),
   );
 
-  //Song List bloc
+  //Favorite bloc
   serviceLocator.registerFactory(
-    () => SongListBloc(
-      "29zSTMejPhY0m7kwNQ9SPI",
+    () => FavoriteBloc(),
+  );
+
+  //Artist Song List bloc
+  serviceLocator.registerFactory(
+    () => ArtistSongListBloc(
+      api: serviceLocator<AApiCopifyRepository>(),
+    ),
+  );
+
+  //Album Song List bloc
+  serviceLocator.registerFactory(
+    () => AlbumSongListBloc(
+      api: serviceLocator<AApiCopifyRepository>(),
+    ),
+  );
+
+  //Categoty Song List bloc
+  serviceLocator.registerFactory(
+    () => CategorySongListBloc(
       api: serviceLocator<AApiCopifyRepository>(),
     ),
   );

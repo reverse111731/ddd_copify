@@ -1,36 +1,30 @@
-import 'package:domain_driven/src/application/usecase/blocs/song_list_bloc/song_list_bloc.dart';
+import 'package:domain_driven/src/application/usecase/blocs/category_song_list_bloc/category_song_list_bloc.dart';
 import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_failure.dart';
-import 'package:domain_driven/src/presentation/pages/songs_list_screen.dart/components/song_list_component.dart';
+import 'package:domain_driven/src/presentation/pages/category_song_list_screen/component/category_song_list_component.dart';
 import 'package:domain_driven/utils/injectors/injector.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SpotifySongListScreen extends StatefulWidget {
+class CategorySongListScreen extends StatefulWidget {
   final String id;
 
-  const SpotifySongListScreen({required this.id, super.key});
+  const CategorySongListScreen({
+    required this.id,
+    super.key,
+  });
 
   @override
-  State<SpotifySongListScreen> createState() => _SpotifySongListScreenState();
+  State<CategorySongListScreen> createState() => _CategorySongListScreenState();
 }
 
-class _SpotifySongListScreenState extends State<SpotifySongListScreen> {
+class _CategorySongListScreenState extends State<CategorySongListScreen> {
   @override
   Widget build(BuildContext context) {
-    // return Scaffold(
-    //   body: Center(
-    //       child: Text(
-    //     widget.id,
-    //     style: Theme.of(context).textTheme.headlineLarge,
-    //   )),
-    // );
     return BlocProvider(
-      create: (context) => dependencyLocator<SongListBloc>()
-        ..add(
-          const SongListEvent.started(),
-        ),
+      create: (context) => dependencyLocator<CategorySongListBloc>()
+        ..add(CategorySongListEvent.started(id: widget.id)),
       child: Scaffold(
-        body: BlocBuilder<SongListBloc, SongListState>(
+        body: BlocBuilder<CategorySongListBloc, CategorySongListState>(
           builder: (context, state) {
             return state.when(
               initial: () {
@@ -44,7 +38,9 @@ class _SpotifySongListScreenState extends State<SpotifySongListScreen> {
                 );
               },
               loaded: (songList) {
-                return SongListComponent();
+                return CategorySongListComponent(
+                  songsList: songList,
+                );
               },
               error: (ACopifyFailure failure) {
                 return Center(
@@ -61,7 +57,3 @@ class _SpotifySongListScreenState extends State<SpotifySongListScreen> {
     );
   }
 }
-
-
-
-//SongListComponent(),

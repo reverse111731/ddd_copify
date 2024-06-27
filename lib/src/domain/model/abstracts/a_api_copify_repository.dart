@@ -12,7 +12,7 @@ abstract class AApiCopifyRepository {
 
   Future<AlbumListModel> getAlbum();
 
-  Future<ArtistTopTrackModel> getTracks(String id);
+  Future<ArtistTopTrackModel> getArtistTrack(String id);
 
   Future<CategoryPlaylistModel> getCategoryPlaylist(String categoryType);
 

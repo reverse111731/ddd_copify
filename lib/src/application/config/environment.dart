@@ -1,4 +1,6 @@
 //Compiled time variables
+import 'package:domain_driven/utils/gen/fonts.gen.dart';
+
 class Environment {
   //A
   static const String albumIdList = String.fromEnvironment("albumIdList");
@@ -12,7 +14,8 @@ class Environment {
   //D
   //E
   //F
-  static const String fontFamily = String.fromEnvironment("fontFamily");
+  static const String fontFamily =
+      FontFamily.circular; //String.fromEnvironment("fontFamily");
   //G
   static const String grantType = String.fromEnvironment("grant_type");
   //H
@@ -38,3 +41,5 @@ class Environment {
   //Y
   //Z
 }
+
+class Fonts {}

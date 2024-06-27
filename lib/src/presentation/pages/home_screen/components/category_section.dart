@@ -52,7 +52,7 @@ class CategorySection extends StatelessWidget {
               }, loaded: (categories) {
                 return SectionListView<CategoryModel>(
                   onPressCard: (String id) =>
-                      context.toView(route: '/songList', arguments: id),
+                      context.toView(route: '/categorySongList', arguments: id),
                   sections: HomeScreenSectionModel(categories: categories),
                 );
               }, error: (ACopifyFailure failure) {

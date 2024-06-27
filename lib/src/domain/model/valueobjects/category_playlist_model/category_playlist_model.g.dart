@@ -9,6 +9,7 @@ part of 'category_playlist_model.dart';
 _$CategoryPlaylistModelImpl _$$CategoryPlaylistModelImplFromJson(
         Map<String, dynamic> json) =>
     _$CategoryPlaylistModelImpl(
+      message: json['message'] as String,
       playlists: CategoryPlaylistItemCollectionModel.fromJson(
           json['playlists'] as Map<String, dynamic>),
     );
@@ -16,5 +17,6 @@ _$CategoryPlaylistModelImpl _$$CategoryPlaylistModelImplFromJson(
 Map<String, dynamic> _$$CategoryPlaylistModelImplToJson(
         _$CategoryPlaylistModelImpl instance) =>
     <String, dynamic>{
+      'message': instance.message,
       'playlists': instance.playlists,
     };

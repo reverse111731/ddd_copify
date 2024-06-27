@@ -7,6 +7,7 @@ part 'category_playlist_model.freezed.dart';
 @freezed
 class CategoryPlaylistModel with _$CategoryPlaylistModel {
   factory CategoryPlaylistModel({
+    required String message,
     required CategoryPlaylistItemCollectionModel playlists,
   }) = _CategoryPlaylistModel;
 

@@ -28,7 +28,7 @@ class ApiCopifyRepository extends AApiCopifyRepository {
   }
 
   @override
-  Future<ArtistTopTrackModel> getTracks(String id) async {
+  Future<ArtistTopTrackModel> getArtistTrack(String id) async {
     return await client.getArtistTrack(id);
   }
 

@@ -33,7 +33,7 @@ class AlbumSection extends StatelessWidget {
               }, loaded: (album) {
                 return SectionListView<AlbumListModel>(
                   onPressCard: (String id) =>
-                      context.toView(route: '/songList', arguments: id),
+                      context.toView(route: '/albumSongList', arguments: id),
                   sections: HomeScreenSectionModel(album: album),
                 );
               }, error: (ACopifyFailure failure) {
