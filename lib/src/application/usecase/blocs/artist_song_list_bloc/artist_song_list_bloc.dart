@@ -1,7 +1,6 @@
 import 'package:domain_driven/src/domain/model/abstracts/a_api_copify_repository.dart';
-import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_failure.dart';
+import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_status.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/artist_top_track_model/artist_top_track_model.dart';
-import 'package:domain_driven/src/domain/services/failures/empty_items_failure.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -28,7 +27,7 @@ class ArtistSongListBloc
     final songList = await api.getArtistTrack(event.id);
 
     if (songList.tracks.isEmpty) {
-      emit(ArtistSongListState.error(EmptyItemsFailure()));
+      emit(const ArtistSongListState.error());
       return;
     }
     emit(ArtistSongListState.loaded(songList));

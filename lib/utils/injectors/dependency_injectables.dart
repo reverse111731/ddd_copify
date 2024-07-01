@@ -6,4 +6,5 @@ part of 'injector.dart';
 Future<void> dependencyInjectables(GetIt serviceLocator) async {
   serviceLocator.registerLazySingleton(() => Dio());
   serviceLocator.registerSingletonAsync(() => SharedPreferences.getInstance());
+  serviceLocator.registerSingleton(() => FavoritesAdaptersAdapter());
 }

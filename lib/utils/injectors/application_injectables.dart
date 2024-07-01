@@ -4,7 +4,7 @@ part of 'injector.dart'; // This is part of injector in a way extension
 Future<void> injectApplications(GetIt serviceLocator) async {
   //Token bloc
   serviceLocator.registerFactory(
-    () => TokenBloc(
+    () => TokenInitializerBloc(
       api: serviceLocator<AApiAuthRepository>(),
     ),
   );
@@ -34,11 +34,6 @@ Future<void> injectApplications(GetIt serviceLocator) async {
     ),
   );
 
-  //Favorite bloc
-  serviceLocator.registerFactory(
-    () => FavoriteBloc(),
-  );
-
   //Artist Song List bloc
   serviceLocator.registerFactory(
     () => ArtistSongListBloc(
@@ -58,5 +53,10 @@ Future<void> injectApplications(GetIt serviceLocator) async {
     () => CategorySongListBloc(
       api: serviceLocator<AApiCopifyRepository>(),
     ),
+  );
+
+  //Favorite bloc
+  serviceLocator.registerFactory(
+    () => FavoriteBloc(),
   );
 }

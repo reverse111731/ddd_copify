@@ -14,10 +14,11 @@ class CopifyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Spotify',
-        theme: CopifyTheme.copifyTheme,
-        initialRoute: '/home',
-        onGenerateRoute: routes);
+      debugShowCheckedModeBanner: false,
+      title: 'Spotify',
+      theme: CopifyTheme.copifyTheme,
+      initialRoute: '/initial',
+      onGenerateRoute: routes,
+    );
   }
 }

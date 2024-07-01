@@ -3,7 +3,7 @@ import 'package:domain_driven/src/application/config/environment.dart';
 import 'package:domain_driven/utils/constants.dart';
 import 'package:flutter/foundation.dart';
 
-class DioAuthInterceptor extends Interceptor {
+class DioAuthInterceptor extends QueuedInterceptor {
   @override
   Future<void> onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {

@@ -22,7 +22,7 @@ CategoryPlaylistItemsModel _$CategoryPlaylistItemsModelFromJson(
 /// @nodoc
 mixin _$CategoryPlaylistItemsModel {
   String get id => throw _privateConstructorUsedError; // track id
-  List<ImageModel> get images => throw _privateConstructorUsedError; //
+  List<ImageModel> get images => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -147,7 +147,6 @@ class _$CategoryPlaylistItemsModelImpl implements _CategoryPlaylistItemsModel {
     return EqualUnmodifiableListView(_images);
   }
 
-//
   @override
   final String name;
 
@@ -200,7 +199,7 @@ abstract class _CategoryPlaylistItemsModel
   String get id;
   @override // track id
   List<ImageModel> get images;
-  @override //
+  @override
   String get name;
   @override
   @JsonKey(ignore: true)

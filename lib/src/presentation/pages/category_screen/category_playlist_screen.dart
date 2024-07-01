@@ -1,5 +1,4 @@
 import 'package:domain_driven/src/application/usecase/blocs/category_bloc/category_bloc.dart';
-import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_failure.dart';
 import 'package:domain_driven/src/presentation/pages/category_screen/widgets/category_grid_view.dart';
 import 'package:domain_driven/src/presentation/pages/category_screen/widgets/category_list_view.dart';
 import 'package:domain_driven/src/presentation/widgets/global_app_bar.dart';
@@ -70,11 +69,11 @@ class _CategoryPlaylistScreenState extends State<CategoryPlaylistScreen> {
                     ],
                   );
                 },
-                error: (ACopifyFailure failure) {
+                error: () {
                   return Center(
                     child: Container(
                       color: Colors.red,
-                      child: Text(failure.description),
+                      child: const Text("Something went wrong"),
                     ),
                   );
                 },

@@ -6,6 +6,5 @@ class AlbumSongListState with _$AlbumSongListState {
   const factory AlbumSongListState.loading() = _AlbumSongListScreenStateLoading;
   const factory AlbumSongListState.loaded(SelectedAlbumTrackModel collections) =
       _AlbumSongListScreenStateLoaded;
-  const factory AlbumSongListState.error(ACopifyFailure failure) =
-      _AlbumSongListScreenStateError;
+  const factory AlbumSongListState.error() = _AlbumSongListScreenStateError;
 }

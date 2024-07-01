@@ -177,7 +177,7 @@ mixin _$CategoryState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(CategoryModel collections) loaded,
-    required TResult Function(ACopifyFailure failures) error,
+    required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -185,7 +185,7 @@ mixin _$CategoryState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(CategoryModel collections)? loaded,
-    TResult? Function(ACopifyFailure failures)? error,
+    TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -193,7 +193,7 @@ mixin _$CategoryState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(CategoryModel collections)? loaded,
-    TResult Function(ACopifyFailure failures)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -289,7 +289,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(CategoryModel collections) loaded,
-    required TResult Function(ACopifyFailure failures) error,
+    required TResult Function() error,
   }) {
     return initial();
   }
@@ -300,7 +300,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(CategoryModel collections)? loaded,
-    TResult? Function(ACopifyFailure failures)? error,
+    TResult? Function()? error,
   }) {
     return initial?.call();
   }
@@ -311,7 +311,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(CategoryModel collections)? loaded,
-    TResult Function(ACopifyFailure failures)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -412,7 +412,7 @@ class _$CategoryStateLoadingImpl
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(CategoryModel collections) loaded,
-    required TResult Function(ACopifyFailure failures) error,
+    required TResult Function() error,
   }) {
     return loading();
   }
@@ -423,7 +423,7 @@ class _$CategoryStateLoadingImpl
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(CategoryModel collections)? loaded,
-    TResult? Function(ACopifyFailure failures)? error,
+    TResult? Function()? error,
   }) {
     return loading?.call();
   }
@@ -434,7 +434,7 @@ class _$CategoryStateLoadingImpl
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(CategoryModel collections)? loaded,
-    TResult Function(ACopifyFailure failures)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -574,7 +574,7 @@ class _$CategoryStateLoadedImpl
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(CategoryModel collections) loaded,
-    required TResult Function(ACopifyFailure failures) error,
+    required TResult Function() error,
   }) {
     return loaded(collections);
   }
@@ -585,7 +585,7 @@ class _$CategoryStateLoadedImpl
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(CategoryModel collections)? loaded,
-    TResult? Function(ACopifyFailure failures)? error,
+    TResult? Function()? error,
   }) {
     return loaded?.call(collections);
   }
@@ -596,7 +596,7 @@ class _$CategoryStateLoadedImpl
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(CategoryModel collections)? loaded,
-    TResult Function(ACopifyFailure failures)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -658,8 +658,6 @@ abstract class _$$CategoryStateErrorImplCopyWith<$Res> {
   factory _$$CategoryStateErrorImplCopyWith(_$CategoryStateErrorImpl value,
           $Res Function(_$CategoryStateErrorImpl) then) =
       __$$CategoryStateErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ACopifyFailure failures});
 }
 
 /// @nodoc
@@ -669,19 +667,6 @@ class __$$CategoryStateErrorImplCopyWithImpl<$Res>
   __$$CategoryStateErrorImplCopyWithImpl(_$CategoryStateErrorImpl _value,
       $Res Function(_$CategoryStateErrorImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? failures = null,
-  }) {
-    return _then(_$CategoryStateErrorImpl(
-      null == failures
-          ? _value.failures
-          : failures // ignore: cast_nullable_to_non_nullable
-              as ACopifyFailure,
-    ));
-  }
 }
 
 /// @nodoc
@@ -689,42 +674,27 @@ class __$$CategoryStateErrorImplCopyWithImpl<$Res>
 class _$CategoryStateErrorImpl
     with DiagnosticableTreeMixin
     implements _CategoryStateError {
-  const _$CategoryStateErrorImpl(this.failures);
-
-  @override
-  final ACopifyFailure failures;
+  const _$CategoryStateErrorImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CategoryState.error(failures: $failures)';
+    return 'CategoryState.error()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CategoryState.error'))
-      ..add(DiagnosticsProperty('failures', failures));
+    properties.add(DiagnosticsProperty('type', 'CategoryState.error'));
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CategoryStateErrorImpl &&
-            (identical(other.failures, failures) ||
-                other.failures == failures));
+        (other.runtimeType == runtimeType && other is _$CategoryStateErrorImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, failures);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CategoryStateErrorImplCopyWith<_$CategoryStateErrorImpl> get copyWith =>
-      __$$CategoryStateErrorImplCopyWithImpl<_$CategoryStateErrorImpl>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -732,9 +702,9 @@ class _$CategoryStateErrorImpl
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(CategoryModel collections) loaded,
-    required TResult Function(ACopifyFailure failures) error,
+    required TResult Function() error,
   }) {
-    return error(failures);
+    return error();
   }
 
   @override
@@ -743,9 +713,9 @@ class _$CategoryStateErrorImpl
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(CategoryModel collections)? loaded,
-    TResult? Function(ACopifyFailure failures)? error,
+    TResult? Function()? error,
   }) {
-    return error?.call(failures);
+    return error?.call();
   }
 
   @override
@@ -754,11 +724,11 @@ class _$CategoryStateErrorImpl
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(CategoryModel collections)? loaded,
-    TResult Function(ACopifyFailure failures)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(failures);
+      return error();
     }
     return orElse();
   }
@@ -802,11 +772,5 @@ class _$CategoryStateErrorImpl
 }
 
 abstract class _CategoryStateError implements CategoryState {
-  const factory _CategoryStateError(final ACopifyFailure failures) =
-      _$CategoryStateErrorImpl;
-
-  ACopifyFailure get failures;
-  @JsonKey(ignore: true)
-  _$$CategoryStateErrorImplCopyWith<_$CategoryStateErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory _CategoryStateError() = _$CategoryStateErrorImpl;
 }

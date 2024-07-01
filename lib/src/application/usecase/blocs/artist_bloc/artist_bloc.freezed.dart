@@ -171,7 +171,7 @@ mixin _$ArtistState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(ArtistModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -179,7 +179,7 @@ mixin _$ArtistState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ArtistModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -187,7 +187,7 @@ mixin _$ArtistState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(ArtistModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -277,7 +277,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(ArtistModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
     return initial();
   }
@@ -288,7 +288,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ArtistModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
     return initial?.call();
   }
@@ -299,7 +299,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(ArtistModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -391,7 +391,7 @@ class _$ArtistStateLoadingImpl implements _ArtistStateLoading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(ArtistModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
     return loading();
   }
@@ -402,7 +402,7 @@ class _$ArtistStateLoadingImpl implements _ArtistStateLoading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ArtistModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
     return loading?.call();
   }
@@ -413,7 +413,7 @@ class _$ArtistStateLoadingImpl implements _ArtistStateLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(ArtistModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -543,7 +543,7 @@ class _$ArtistStateLoadedImpl implements _ArtistStateLoaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(ArtistModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
     return loaded(collections);
   }
@@ -554,7 +554,7 @@ class _$ArtistStateLoadedImpl implements _ArtistStateLoaded {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ArtistModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
     return loaded?.call(collections);
   }
@@ -565,7 +565,7 @@ class _$ArtistStateLoadedImpl implements _ArtistStateLoaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(ArtistModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -627,8 +627,6 @@ abstract class _$$ArtistStateErrorImplCopyWith<$Res> {
   factory _$$ArtistStateErrorImplCopyWith(_$ArtistStateErrorImpl value,
           $Res Function(_$ArtistStateErrorImpl) then) =
       __$$ArtistStateErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ACopifyFailure failure});
 }
 
 /// @nodoc
@@ -638,51 +636,26 @@ class __$$ArtistStateErrorImplCopyWithImpl<$Res>
   __$$ArtistStateErrorImplCopyWithImpl(_$ArtistStateErrorImpl _value,
       $Res Function(_$ArtistStateErrorImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? failure = null,
-  }) {
-    return _then(_$ArtistStateErrorImpl(
-      null == failure
-          ? _value.failure
-          : failure // ignore: cast_nullable_to_non_nullable
-              as ACopifyFailure,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$ArtistStateErrorImpl implements _ArtistStateError {
-  const _$ArtistStateErrorImpl(this.failure);
-
-  @override
-  final ACopifyFailure failure;
+  const _$ArtistStateErrorImpl();
 
   @override
   String toString() {
-    return 'ArtistState.error(failure: $failure)';
+    return 'ArtistState.error()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ArtistStateErrorImpl &&
-            (identical(other.failure, failure) || other.failure == failure));
+        (other.runtimeType == runtimeType && other is _$ArtistStateErrorImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, failure);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ArtistStateErrorImplCopyWith<_$ArtistStateErrorImpl> get copyWith =>
-      __$$ArtistStateErrorImplCopyWithImpl<_$ArtistStateErrorImpl>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -690,9 +663,9 @@ class _$ArtistStateErrorImpl implements _ArtistStateError {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(ArtistModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
-    return error(failure);
+    return error();
   }
 
   @override
@@ -701,9 +674,9 @@ class _$ArtistStateErrorImpl implements _ArtistStateError {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ArtistModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
-    return error?.call(failure);
+    return error?.call();
   }
 
   @override
@@ -712,11 +685,11 @@ class _$ArtistStateErrorImpl implements _ArtistStateError {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(ArtistModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(failure);
+      return error();
     }
     return orElse();
   }
@@ -760,11 +733,5 @@ class _$ArtistStateErrorImpl implements _ArtistStateError {
 }
 
 abstract class _ArtistStateError implements ArtistState {
-  const factory _ArtistStateError(final ACopifyFailure failure) =
-      _$ArtistStateErrorImpl;
-
-  ACopifyFailure get failure;
-  @JsonKey(ignore: true)
-  _$$ArtistStateErrorImplCopyWith<_$ArtistStateErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory _ArtistStateError() = _$ArtistStateErrorImpl;
 }

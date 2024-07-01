@@ -6,6 +6,5 @@ class ArtistSongListState with _$ArtistSongListState {
   const factory ArtistSongListState.loading() = _ArtistSongListStateLoading;
   const factory ArtistSongListState.loaded(ArtistTopTrackModel collections) =
       _ArtistSongListStateLoaded;
-  const factory ArtistSongListState.error(ACopifyFailure failure) =
-      _ArtistSongListStateError;
+  const factory ArtistSongListState.error() = _ArtistSongListStateError;
 }

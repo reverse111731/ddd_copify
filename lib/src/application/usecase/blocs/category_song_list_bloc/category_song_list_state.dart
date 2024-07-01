@@ -6,6 +6,5 @@ class CategorySongListState with _$CategorySongListState {
   const factory CategorySongListState.loading() = _CategorySongListStateLoading;
   const factory CategorySongListState.loaded(
       CategoryPlaylistModel collections) = _CategorySongListStateLoaded;
-  const factory CategorySongListState.error(ACopifyFailure failure) =
-      _CategorySongListStateError;
+  const factory CategorySongListState.error() = _CategorySongListStateError;
 }

@@ -1,5 +1,4 @@
 import 'package:domain_driven/src/application/usecase/blocs/category_bloc/category_bloc.dart';
-import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_failure.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/category_model/category_model.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/home_screen_section_collection_model/home_screen_section_model.dart';
 import 'package:domain_driven/src/presentation/pages/home_screen/widgets/section_list_view.dart';
@@ -55,11 +54,11 @@ class CategorySection extends StatelessWidget {
                       context.toView(route: '/categorySongList', arguments: id),
                   sections: HomeScreenSectionModel(categories: categories),
                 );
-              }, error: (ACopifyFailure failure) {
+              }, error: () {
                 return Center(
                   child: Container(
                     color: Colors.red,
-                    child: Text(failure.description),
+                    child: const Text("Something went wrong"),
                   ),
                 );
               });

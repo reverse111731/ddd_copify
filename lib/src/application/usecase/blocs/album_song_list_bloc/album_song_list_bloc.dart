@@ -1,7 +1,6 @@
 import 'package:domain_driven/src/domain/model/abstracts/a_api_copify_repository.dart';
-import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_failure.dart';
+import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_status.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/selected_album_track_model/selected_album_track_model.dart';
-import 'package:domain_driven/src/domain/services/failures/empty_items_failure.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -13,7 +12,7 @@ class AlbumSongListBloc extends Bloc<AlbumSongListEvent, AlbumSongListState> {
   final AApiCopifyRepository api;
   AlbumSongListBloc({
     required this.api,
-  }) : super(_Initial()) {
+  }) : super(const _Initial()) {
     on<AlbumSongListEvent>(_getAlbumTrack);
   }
 
@@ -26,7 +25,7 @@ class AlbumSongListBloc extends Bloc<AlbumSongListEvent, AlbumSongListState> {
     final songList = await api.getAlbumTracks(event.id);
 
     if (songList.items.isEmpty) {
-      emit(AlbumSongListState.error(EmptyItemsFailure()));
+      emit(const AlbumSongListState.error());
       return;
     }
     emit(AlbumSongListState.loaded(songList));

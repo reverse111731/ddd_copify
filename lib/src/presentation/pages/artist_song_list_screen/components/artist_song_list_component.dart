@@ -33,6 +33,48 @@ class ArtistSongListComponent extends StatelessWidget {
         SliverList(
           delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
+              return Column(
+                children: [
+                  Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.add_circle_outline),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.download),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.share),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.more_vert),
+                      ),
+                      const SizedBox(
+                        width: 75,
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.shuffle),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.play_circle),
+                      ),
+                    ],
+                  ),
+                ],
+              );
+            },
+            childCount: 1,
+          ),
+        ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (BuildContext context, int index) {
               return GlobalSongListTrack(trackContent: songsList.tracks[index]);
             },
             childCount: songsList.tracks.length,

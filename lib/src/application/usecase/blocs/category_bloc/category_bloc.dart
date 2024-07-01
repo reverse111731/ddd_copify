@@ -1,6 +1,5 @@
-import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_failure.dart';
+import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_status.dart';
 import 'package:domain_driven/src/domain/model/abstracts/a_api_copify_repository.dart';
-import 'package:domain_driven/src/domain/services/failures/empty_items_failure.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/category_model/category_model.dart';
@@ -26,9 +25,7 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
 
     if (categoryList.categories.items.isEmpty) {
       emit(
-        CategoryState.error(
-          EmptyItemsFailure(),
-        ),
+        const CategoryState.error(),
       );
     }
     emit(CategoryState.loaded(categoryList));

@@ -1,5 +1,4 @@
 import 'package:domain_driven/src/application/usecase/blocs/album_song_list_bloc/album_song_list_bloc.dart';
-import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_failure.dart';
 import 'package:domain_driven/src/presentation/pages/album_song_list_screen/components/album_song_list_component.dart';
 import 'package:domain_driven/utils/injectors/injector.dart';
 import 'package:flutter/material.dart';
@@ -41,11 +40,11 @@ class _AlbumSongListScreenState extends State<AlbumSongListScreen> {
                   songsList: songList,
                 );
               },
-              error: (ACopifyFailure failure) {
+              error: () {
                 return Center(
                   child: Container(
                     color: Colors.red,
-                    child: Text(failure.description),
+                    child: const Text("Something went wrong"),
                   ),
                 );
               },

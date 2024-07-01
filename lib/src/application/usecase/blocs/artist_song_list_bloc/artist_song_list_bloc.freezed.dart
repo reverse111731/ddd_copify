@@ -226,7 +226,7 @@ mixin _$ArtistSongListState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(ArtistTopTrackModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -234,7 +234,7 @@ mixin _$ArtistSongListState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ArtistTopTrackModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -242,7 +242,7 @@ mixin _$ArtistSongListState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(ArtistTopTrackModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -332,7 +332,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(ArtistTopTrackModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
     return initial();
   }
@@ -343,7 +343,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ArtistTopTrackModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
     return initial?.call();
   }
@@ -354,7 +354,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(ArtistTopTrackModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -450,7 +450,7 @@ class _$ArtistSongListStateLoadingImpl implements _ArtistSongListStateLoading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(ArtistTopTrackModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
     return loading();
   }
@@ -461,7 +461,7 @@ class _$ArtistSongListStateLoadingImpl implements _ArtistSongListStateLoading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ArtistTopTrackModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
     return loading?.call();
   }
@@ -472,7 +472,7 @@ class _$ArtistSongListStateLoadingImpl implements _ArtistSongListStateLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(ArtistTopTrackModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -606,7 +606,7 @@ class _$ArtistSongListStateLoadedImpl implements _ArtistSongListStateLoaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(ArtistTopTrackModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
     return loaded(collections);
   }
@@ -617,7 +617,7 @@ class _$ArtistSongListStateLoadedImpl implements _ArtistSongListStateLoaded {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ArtistTopTrackModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
     return loaded?.call(collections);
   }
@@ -628,7 +628,7 @@ class _$ArtistSongListStateLoadedImpl implements _ArtistSongListStateLoaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(ArtistTopTrackModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -691,8 +691,6 @@ abstract class _$$ArtistSongListStateErrorImplCopyWith<$Res> {
           _$ArtistSongListStateErrorImpl value,
           $Res Function(_$ArtistSongListStateErrorImpl) then) =
       __$$ArtistSongListStateErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ACopifyFailure failure});
 }
 
 /// @nodoc
@@ -704,51 +702,27 @@ class __$$ArtistSongListStateErrorImplCopyWithImpl<$Res>
       _$ArtistSongListStateErrorImpl _value,
       $Res Function(_$ArtistSongListStateErrorImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? failure = null,
-  }) {
-    return _then(_$ArtistSongListStateErrorImpl(
-      null == failure
-          ? _value.failure
-          : failure // ignore: cast_nullable_to_non_nullable
-              as ACopifyFailure,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$ArtistSongListStateErrorImpl implements _ArtistSongListStateError {
-  const _$ArtistSongListStateErrorImpl(this.failure);
-
-  @override
-  final ACopifyFailure failure;
+  const _$ArtistSongListStateErrorImpl();
 
   @override
   String toString() {
-    return 'ArtistSongListState.error(failure: $failure)';
+    return 'ArtistSongListState.error()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ArtistSongListStateErrorImpl &&
-            (identical(other.failure, failure) || other.failure == failure));
+            other is _$ArtistSongListStateErrorImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, failure);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ArtistSongListStateErrorImplCopyWith<_$ArtistSongListStateErrorImpl>
-      get copyWith => __$$ArtistSongListStateErrorImplCopyWithImpl<
-          _$ArtistSongListStateErrorImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -756,9 +730,9 @@ class _$ArtistSongListStateErrorImpl implements _ArtistSongListStateError {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(ArtistTopTrackModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
-    return error(failure);
+    return error();
   }
 
   @override
@@ -767,9 +741,9 @@ class _$ArtistSongListStateErrorImpl implements _ArtistSongListStateError {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ArtistTopTrackModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
-    return error?.call(failure);
+    return error?.call();
   }
 
   @override
@@ -778,11 +752,11 @@ class _$ArtistSongListStateErrorImpl implements _ArtistSongListStateError {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(ArtistTopTrackModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(failure);
+      return error();
     }
     return orElse();
   }
@@ -826,11 +800,5 @@ class _$ArtistSongListStateErrorImpl implements _ArtistSongListStateError {
 }
 
 abstract class _ArtistSongListStateError implements ArtistSongListState {
-  const factory _ArtistSongListStateError(final ACopifyFailure failure) =
-      _$ArtistSongListStateErrorImpl;
-
-  ACopifyFailure get failure;
-  @JsonKey(ignore: true)
-  _$$ArtistSongListStateErrorImplCopyWith<_$ArtistSongListStateErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  const factory _ArtistSongListStateError() = _$ArtistSongListStateErrorImpl;
 }

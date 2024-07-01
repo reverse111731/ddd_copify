@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'token_bloc.dart';
+part of 'token_initializer_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,52 +15,53 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$TokenEvent {
+mixin _$TokenInitializerEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() getTokenEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function()? getTokenEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? getTokenEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_Started value) getTokenEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(_Started value)? getTokenEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_Started value)? getTokenEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TokenEventCopyWith<$Res> {
-  factory $TokenEventCopyWith(
-          TokenEvent value, $Res Function(TokenEvent) then) =
-      _$TokenEventCopyWithImpl<$Res, TokenEvent>;
+abstract class $TokenInitializerEventCopyWith<$Res> {
+  factory $TokenInitializerEventCopyWith(TokenInitializerEvent value,
+          $Res Function(TokenInitializerEvent) then) =
+      _$TokenInitializerEventCopyWithImpl<$Res, TokenInitializerEvent>;
 }
 
 /// @nodoc
-class _$TokenEventCopyWithImpl<$Res, $Val extends TokenEvent>
-    implements $TokenEventCopyWith<$Res> {
-  _$TokenEventCopyWithImpl(this._value, this._then);
+class _$TokenInitializerEventCopyWithImpl<$Res,
+        $Val extends TokenInitializerEvent>
+    implements $TokenInitializerEventCopyWith<$Res> {
+  _$TokenInitializerEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -77,7 +78,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$TokenEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$TokenInitializerEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -86,12 +87,19 @@ class __$$StartedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StartedImpl implements _Started {
+class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
   const _$StartedImpl();
 
   @override
-  String toString() {
-    return 'TokenEvent.started()';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'TokenInitializerEvent.getTokenEvent()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(
+        DiagnosticsProperty('type', 'TokenInitializerEvent.getTokenEvent'));
   }
 
   @override
@@ -106,27 +114,27 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() getTokenEvent,
   }) {
-    return started();
+    return getTokenEvent();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function()? getTokenEvent,
   }) {
-    return started?.call();
+    return getTokenEvent?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? getTokenEvent,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started();
+    if (getTokenEvent != null) {
+      return getTokenEvent();
     }
     return orElse();
   }
@@ -134,60 +142,60 @@ class _$StartedImpl implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_Started value) getTokenEvent,
   }) {
-    return started(this);
+    return getTokenEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(_Started value)? getTokenEvent,
   }) {
-    return started?.call(this);
+    return getTokenEvent?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_Started value)? getTokenEvent,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (getTokenEvent != null) {
+      return getTokenEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class _Started implements TokenEvent {
+abstract class _Started implements TokenInitializerEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-mixin _$TokenState {
+mixin _$TokenInitializerState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String token) loaded,
-    required TResult Function(ACopifyFailure failure) failure,
+    required TResult Function() loaded,
+    required TResult Function() failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String token)? loaded,
-    TResult? Function(ACopifyFailure failure)? failure,
+    TResult? Function()? loaded,
+    TResult? Function()? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String token)? loaded,
-    TResult Function(ACopifyFailure failure)? failure,
+    TResult Function()? loaded,
+    TResult Function()? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -219,16 +227,17 @@ mixin _$TokenState {
 }
 
 /// @nodoc
-abstract class $TokenStateCopyWith<$Res> {
-  factory $TokenStateCopyWith(
-          TokenState value, $Res Function(TokenState) then) =
-      _$TokenStateCopyWithImpl<$Res, TokenState>;
+abstract class $TokenInitializerStateCopyWith<$Res> {
+  factory $TokenInitializerStateCopyWith(TokenInitializerState value,
+          $Res Function(TokenInitializerState) then) =
+      _$TokenInitializerStateCopyWithImpl<$Res, TokenInitializerState>;
 }
 
 /// @nodoc
-class _$TokenStateCopyWithImpl<$Res, $Val extends TokenState>
-    implements $TokenStateCopyWith<$Res> {
-  _$TokenStateCopyWithImpl(this._value, this._then);
+class _$TokenInitializerStateCopyWithImpl<$Res,
+        $Val extends TokenInitializerState>
+    implements $TokenInitializerStateCopyWith<$Res> {
+  _$TokenInitializerStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -245,7 +254,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$TokenStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$TokenInitializerStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -254,12 +263,19 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
+class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   const _$InitialImpl();
 
   @override
-  String toString() {
-    return 'TokenState.initial()';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'TokenInitializerState.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'TokenInitializerState.initial'));
   }
 
   @override
@@ -276,8 +292,8 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String token) loaded,
-    required TResult Function(ACopifyFailure failure) failure,
+    required TResult Function() loaded,
+    required TResult Function() failure,
   }) {
     return initial();
   }
@@ -287,8 +303,8 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String token)? loaded,
-    TResult? Function(ACopifyFailure failure)? failure,
+    TResult? Function()? loaded,
+    TResult? Function()? failure,
   }) {
     return initial?.call();
   }
@@ -298,8 +314,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String token)? loaded,
-    TResult Function(ACopifyFailure failure)? failure,
+    TResult Function()? loaded,
+    TResult Function()? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -346,7 +362,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements TokenState {
+abstract class _Initial implements TokenInitializerState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -359,7 +375,7 @@ abstract class _$$TokenLoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$TokenLoadingImplCopyWithImpl<$Res>
-    extends _$TokenStateCopyWithImpl<$Res, _$TokenLoadingImpl>
+    extends _$TokenInitializerStateCopyWithImpl<$Res, _$TokenLoadingImpl>
     implements _$$TokenLoadingImplCopyWith<$Res> {
   __$$TokenLoadingImplCopyWithImpl(
       _$TokenLoadingImpl _value, $Res Function(_$TokenLoadingImpl) _then)
@@ -368,12 +384,19 @@ class __$$TokenLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TokenLoadingImpl implements _TokenLoading {
+class _$TokenLoadingImpl with DiagnosticableTreeMixin implements _TokenLoading {
   const _$TokenLoadingImpl();
 
   @override
-  String toString() {
-    return 'TokenState.loading()';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'TokenInitializerState.loading()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'TokenInitializerState.loading'));
   }
 
   @override
@@ -390,8 +413,8 @@ class _$TokenLoadingImpl implements _TokenLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String token) loaded,
-    required TResult Function(ACopifyFailure failure) failure,
+    required TResult Function() loaded,
+    required TResult Function() failure,
   }) {
     return loading();
   }
@@ -401,8 +424,8 @@ class _$TokenLoadingImpl implements _TokenLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String token)? loaded,
-    TResult? Function(ACopifyFailure failure)? failure,
+    TResult? Function()? loaded,
+    TResult? Function()? failure,
   }) {
     return loading?.call();
   }
@@ -412,8 +435,8 @@ class _$TokenLoadingImpl implements _TokenLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String token)? loaded,
-    TResult Function(ACopifyFailure failure)? failure,
+    TResult Function()? loaded,
+    TResult Function()? failure,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -460,7 +483,7 @@ class _$TokenLoadingImpl implements _TokenLoading {
   }
 }
 
-abstract class _TokenLoading implements TokenState {
+abstract class _TokenLoading implements TokenInitializerState {
   const factory _TokenLoading() = _$TokenLoadingImpl;
 }
 
@@ -469,71 +492,51 @@ abstract class _$$TokenLoadedImplCopyWith<$Res> {
   factory _$$TokenLoadedImplCopyWith(
           _$TokenLoadedImpl value, $Res Function(_$TokenLoadedImpl) then) =
       __$$TokenLoadedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String token});
 }
 
 /// @nodoc
 class __$$TokenLoadedImplCopyWithImpl<$Res>
-    extends _$TokenStateCopyWithImpl<$Res, _$TokenLoadedImpl>
+    extends _$TokenInitializerStateCopyWithImpl<$Res, _$TokenLoadedImpl>
     implements _$$TokenLoadedImplCopyWith<$Res> {
   __$$TokenLoadedImplCopyWithImpl(
       _$TokenLoadedImpl _value, $Res Function(_$TokenLoadedImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? token = null,
-  }) {
-    return _then(_$TokenLoadedImpl(
-      null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$TokenLoadedImpl implements _TokenLoaded {
-  const _$TokenLoadedImpl(this.token);
+class _$TokenLoadedImpl with DiagnosticableTreeMixin implements _TokenLoaded {
+  const _$TokenLoadedImpl();
 
   @override
-  final String token;
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'TokenInitializerState.loaded()';
+  }
 
   @override
-  String toString() {
-    return 'TokenState.loaded(token: $token)';
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'TokenInitializerState.loaded'));
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$TokenLoadedImpl &&
-            (identical(other.token, token) || other.token == token));
+        (other.runtimeType == runtimeType && other is _$TokenLoadedImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, token);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$TokenLoadedImplCopyWith<_$TokenLoadedImpl> get copyWith =>
-      __$$TokenLoadedImplCopyWithImpl<_$TokenLoadedImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String token) loaded,
-    required TResult Function(ACopifyFailure failure) failure,
+    required TResult Function() loaded,
+    required TResult Function() failure,
   }) {
-    return loaded(token);
+    return loaded();
   }
 
   @override
@@ -541,10 +544,10 @@ class _$TokenLoadedImpl implements _TokenLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String token)? loaded,
-    TResult? Function(ACopifyFailure failure)? failure,
+    TResult? Function()? loaded,
+    TResult? Function()? failure,
   }) {
-    return loaded?.call(token);
+    return loaded?.call();
   }
 
   @override
@@ -552,12 +555,12 @@ class _$TokenLoadedImpl implements _TokenLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String token)? loaded,
-    TResult Function(ACopifyFailure failure)? failure,
+    TResult Function()? loaded,
+    TResult Function()? failure,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(token);
+      return loaded();
     }
     return orElse();
   }
@@ -600,13 +603,8 @@ class _$TokenLoadedImpl implements _TokenLoaded {
   }
 }
 
-abstract class _TokenLoaded implements TokenState {
-  const factory _TokenLoaded(final String token) = _$TokenLoadedImpl;
-
-  String get token;
-  @JsonKey(ignore: true)
-  _$$TokenLoadedImplCopyWith<_$TokenLoadedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _TokenLoaded implements TokenInitializerState {
+  const factory _TokenLoaded() = _$TokenLoadedImpl;
 }
 
 /// @nodoc
@@ -614,71 +612,52 @@ abstract class _$$TokenErrorImplCopyWith<$Res> {
   factory _$$TokenErrorImplCopyWith(
           _$TokenErrorImpl value, $Res Function(_$TokenErrorImpl) then) =
       __$$TokenErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ACopifyFailure failure});
 }
 
 /// @nodoc
 class __$$TokenErrorImplCopyWithImpl<$Res>
-    extends _$TokenStateCopyWithImpl<$Res, _$TokenErrorImpl>
+    extends _$TokenInitializerStateCopyWithImpl<$Res, _$TokenErrorImpl>
     implements _$$TokenErrorImplCopyWith<$Res> {
   __$$TokenErrorImplCopyWithImpl(
       _$TokenErrorImpl _value, $Res Function(_$TokenErrorImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? failure = null,
-  }) {
-    return _then(_$TokenErrorImpl(
-      null == failure
-          ? _value.failure
-          : failure // ignore: cast_nullable_to_non_nullable
-              as ACopifyFailure,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$TokenErrorImpl implements _TokenError {
-  const _$TokenErrorImpl(this.failure);
+class _$TokenErrorImpl with DiagnosticableTreeMixin implements _TokenError {
+  const _$TokenErrorImpl();
 
   @override
-  final ACopifyFailure failure;
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'TokenInitializerState.failure()';
+  }
 
   @override
-  String toString() {
-    return 'TokenState.failure(failure: $failure)';
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'TokenInitializerState.failure'));
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$TokenErrorImpl &&
-            (identical(other.failure, failure) || other.failure == failure));
+        (other.runtimeType == runtimeType && other is _$TokenErrorImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, failure);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$TokenErrorImplCopyWith<_$TokenErrorImpl> get copyWith =>
-      __$$TokenErrorImplCopyWithImpl<_$TokenErrorImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String token) loaded,
-    required TResult Function(ACopifyFailure failure) failure,
+    required TResult Function() loaded,
+    required TResult Function() failure,
   }) {
-    return failure(this.failure);
+    return failure();
   }
 
   @override
@@ -686,10 +665,10 @@ class _$TokenErrorImpl implements _TokenError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String token)? loaded,
-    TResult? Function(ACopifyFailure failure)? failure,
+    TResult? Function()? loaded,
+    TResult? Function()? failure,
   }) {
-    return failure?.call(this.failure);
+    return failure?.call();
   }
 
   @override
@@ -697,12 +676,12 @@ class _$TokenErrorImpl implements _TokenError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String token)? loaded,
-    TResult Function(ACopifyFailure failure)? failure,
+    TResult Function()? loaded,
+    TResult Function()? failure,
     required TResult orElse(),
   }) {
     if (failure != null) {
-      return failure(this.failure);
+      return failure();
     }
     return orElse();
   }
@@ -745,11 +724,6 @@ class _$TokenErrorImpl implements _TokenError {
   }
 }
 
-abstract class _TokenError implements TokenState {
-  const factory _TokenError(final ACopifyFailure failure) = _$TokenErrorImpl;
-
-  ACopifyFailure get failure;
-  @JsonKey(ignore: true)
-  _$$TokenErrorImplCopyWith<_$TokenErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _TokenError implements TokenInitializerState {
+  const factory _TokenError() = _$TokenErrorImpl;
 }

@@ -1,7 +1,6 @@
 import 'package:domain_driven/src/domain/model/abstracts/a_api_copify_repository.dart';
-import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_failure.dart';
+import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_status.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/album_model/album_list_model.dart';
-import 'package:domain_driven/src/domain/services/failures/empty_items_failure.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -21,13 +20,11 @@ class AlbumBloc extends Bloc<AlbumEvent, AlbumState> {
 
     final albumList = await api.getAlbum();
 
-    // if (albumList.albums.isEmpty) {
-    //   emit(
-    //     AlbumState.error(
-    //       EmptyItemsFailure(),
-    //     ),
-    //   );
-    // }
+    if (albumList.albums.isEmpty) {
+      emit(
+        const AlbumState.error(),
+      );
+    }
 
     emit(AlbumState.loaded(albumList));
   }

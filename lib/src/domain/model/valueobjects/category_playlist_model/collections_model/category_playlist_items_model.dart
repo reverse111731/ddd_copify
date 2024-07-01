@@ -8,7 +8,7 @@ part 'category_playlist_items_model.freezed.dart';
 class CategoryPlaylistItemsModel with _$CategoryPlaylistItemsModel {
   factory CategoryPlaylistItemsModel({
     required String id, // track id
-    required List<ImageModel> images, //
+    required List<ImageModel> images,
     required String name, //track name
   }) = _CategoryPlaylistItemsModel;
 

@@ -6,6 +6,5 @@ class CategoryState with _$CategoryState {
   const factory CategoryState.loading() = _CategoryStateLoading;
   const factory CategoryState.loaded(CategoryModel collections) =
       _CategoryStateLoaded;
-  const factory CategoryState.error(ACopifyFailure failures) =
-      _CategoryStateError;
+  const factory CategoryState.error() = _CategoryStateError;
 }

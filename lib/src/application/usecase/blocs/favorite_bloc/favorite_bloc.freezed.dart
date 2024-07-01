@@ -171,7 +171,7 @@ mixin _$FavoriteState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -179,7 +179,7 @@ mixin _$FavoriteState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -187,7 +187,7 @@ mixin _$FavoriteState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -277,7 +277,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
     return initial();
   }
@@ -288,7 +288,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
     return initial?.call();
   }
@@ -299,7 +299,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -392,7 +392,7 @@ class _$FavoriteStateLoadingImpl implements _FavoriteStateLoading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
     return loading();
   }
@@ -403,7 +403,7 @@ class _$FavoriteStateLoadingImpl implements _FavoriteStateLoading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
     return loading?.call();
   }
@@ -414,7 +414,7 @@ class _$FavoriteStateLoadingImpl implements _FavoriteStateLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -507,7 +507,7 @@ class _$FavoriteStateLoadedImpl implements _FavoriteStateLoaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
     return loaded();
   }
@@ -518,7 +518,7 @@ class _$FavoriteStateLoadedImpl implements _FavoriteStateLoaded {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
     return loaded?.call();
   }
@@ -529,7 +529,7 @@ class _$FavoriteStateLoadedImpl implements _FavoriteStateLoaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -585,8 +585,6 @@ abstract class _$$FavoriteStateErrorImplCopyWith<$Res> {
   factory _$$FavoriteStateErrorImplCopyWith(_$FavoriteStateErrorImpl value,
           $Res Function(_$FavoriteStateErrorImpl) then) =
       __$$FavoriteStateErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ACopifyFailure failure});
 }
 
 /// @nodoc
@@ -596,51 +594,26 @@ class __$$FavoriteStateErrorImplCopyWithImpl<$Res>
   __$$FavoriteStateErrorImplCopyWithImpl(_$FavoriteStateErrorImpl _value,
       $Res Function(_$FavoriteStateErrorImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? failure = null,
-  }) {
-    return _then(_$FavoriteStateErrorImpl(
-      null == failure
-          ? _value.failure
-          : failure // ignore: cast_nullable_to_non_nullable
-              as ACopifyFailure,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$FavoriteStateErrorImpl implements _FavoriteStateError {
-  const _$FavoriteStateErrorImpl(this.failure);
-
-  @override
-  final ACopifyFailure failure;
+  const _$FavoriteStateErrorImpl();
 
   @override
   String toString() {
-    return 'FavoriteState.error(failure: $failure)';
+    return 'FavoriteState.error()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FavoriteStateErrorImpl &&
-            (identical(other.failure, failure) || other.failure == failure));
+        (other.runtimeType == runtimeType && other is _$FavoriteStateErrorImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, failure);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FavoriteStateErrorImplCopyWith<_$FavoriteStateErrorImpl> get copyWith =>
-      __$$FavoriteStateErrorImplCopyWithImpl<_$FavoriteStateErrorImpl>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -648,9 +621,9 @@ class _$FavoriteStateErrorImpl implements _FavoriteStateError {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
-    return error(failure);
+    return error();
   }
 
   @override
@@ -659,9 +632,9 @@ class _$FavoriteStateErrorImpl implements _FavoriteStateError {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
-    return error?.call(failure);
+    return error?.call();
   }
 
   @override
@@ -670,11 +643,11 @@ class _$FavoriteStateErrorImpl implements _FavoriteStateError {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(failure);
+      return error();
     }
     return orElse();
   }
@@ -718,11 +691,5 @@ class _$FavoriteStateErrorImpl implements _FavoriteStateError {
 }
 
 abstract class _FavoriteStateError implements FavoriteState {
-  const factory _FavoriteStateError(final ACopifyFailure failure) =
-      _$FavoriteStateErrorImpl;
-
-  ACopifyFailure get failure;
-  @JsonKey(ignore: true)
-  _$$FavoriteStateErrorImplCopyWith<_$FavoriteStateErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory _FavoriteStateError() = _$FavoriteStateErrorImpl;
 }

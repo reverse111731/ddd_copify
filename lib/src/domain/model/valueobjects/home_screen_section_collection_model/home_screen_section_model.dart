@@ -7,10 +7,12 @@ class HomeScreenSectionModel {
   final CategoryModel? categories;
   final ArtistModel? artist;
   final AlbumListModel? album;
+  //final "WhatModel?" favorites;
 
   HomeScreenSectionModel({
     this.categories,
     this.artist,
     this.album,
+    //this.favorites,
   });
 }

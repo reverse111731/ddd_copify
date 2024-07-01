@@ -226,7 +226,7 @@ mixin _$AlbumSongListState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(SelectedAlbumTrackModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -234,7 +234,7 @@ mixin _$AlbumSongListState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -242,7 +242,7 @@ mixin _$AlbumSongListState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -332,7 +332,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(SelectedAlbumTrackModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
     return initial();
   }
@@ -343,7 +343,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
     return initial?.call();
   }
@@ -354,7 +354,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -451,7 +451,7 @@ class _$AlbumSongListScreenStateLoadingImpl
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(SelectedAlbumTrackModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
     return loading();
   }
@@ -462,7 +462,7 @@ class _$AlbumSongListScreenStateLoadingImpl
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
     return loading?.call();
   }
@@ -473,7 +473,7 @@ class _$AlbumSongListScreenStateLoadingImpl
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -609,7 +609,7 @@ class _$AlbumSongListScreenStateLoadedImpl
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(SelectedAlbumTrackModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
     return loaded(collections);
   }
@@ -620,7 +620,7 @@ class _$AlbumSongListScreenStateLoadedImpl
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
     return loaded?.call(collections);
   }
@@ -631,7 +631,7 @@ class _$AlbumSongListScreenStateLoadedImpl
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -696,8 +696,6 @@ abstract class _$$AlbumSongListScreenStateErrorImplCopyWith<$Res> {
           _$AlbumSongListScreenStateErrorImpl value,
           $Res Function(_$AlbumSongListScreenStateErrorImpl) then) =
       __$$AlbumSongListScreenStateErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ACopifyFailure failure});
 }
 
 /// @nodoc
@@ -709,53 +707,28 @@ class __$$AlbumSongListScreenStateErrorImplCopyWithImpl<$Res>
       _$AlbumSongListScreenStateErrorImpl _value,
       $Res Function(_$AlbumSongListScreenStateErrorImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? failure = null,
-  }) {
-    return _then(_$AlbumSongListScreenStateErrorImpl(
-      null == failure
-          ? _value.failure
-          : failure // ignore: cast_nullable_to_non_nullable
-              as ACopifyFailure,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$AlbumSongListScreenStateErrorImpl
     implements _AlbumSongListScreenStateError {
-  const _$AlbumSongListScreenStateErrorImpl(this.failure);
-
-  @override
-  final ACopifyFailure failure;
+  const _$AlbumSongListScreenStateErrorImpl();
 
   @override
   String toString() {
-    return 'AlbumSongListState.error(failure: $failure)';
+    return 'AlbumSongListState.error()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AlbumSongListScreenStateErrorImpl &&
-            (identical(other.failure, failure) || other.failure == failure));
+            other is _$AlbumSongListScreenStateErrorImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, failure);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AlbumSongListScreenStateErrorImplCopyWith<
-          _$AlbumSongListScreenStateErrorImpl>
-      get copyWith => __$$AlbumSongListScreenStateErrorImplCopyWithImpl<
-          _$AlbumSongListScreenStateErrorImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -763,9 +736,9 @@ class _$AlbumSongListScreenStateErrorImpl
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(SelectedAlbumTrackModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
-    return error(failure);
+    return error();
   }
 
   @override
@@ -774,9 +747,9 @@ class _$AlbumSongListScreenStateErrorImpl
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
-    return error?.call(failure);
+    return error?.call();
   }
 
   @override
@@ -785,11 +758,11 @@ class _$AlbumSongListScreenStateErrorImpl
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(failure);
+      return error();
     }
     return orElse();
   }
@@ -833,12 +806,6 @@ class _$AlbumSongListScreenStateErrorImpl
 }
 
 abstract class _AlbumSongListScreenStateError implements AlbumSongListState {
-  const factory _AlbumSongListScreenStateError(final ACopifyFailure failure) =
+  const factory _AlbumSongListScreenStateError() =
       _$AlbumSongListScreenStateErrorImpl;
-
-  ACopifyFailure get failure;
-  @JsonKey(ignore: true)
-  _$$AlbumSongListScreenStateErrorImplCopyWith<
-          _$AlbumSongListScreenStateErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }

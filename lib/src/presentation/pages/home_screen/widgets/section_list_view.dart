@@ -70,7 +70,21 @@ class _SectionListViewState<Type> extends State<SectionListView<Type>> {
               "Sample Category ImageURL",
         );
       });
-    } else {
+    }
+    // else if (widget.sections.categories != null && Type == CategoryModel) {
+    //   homeSection = List.generate(8, (index) {
+    //     return (
+    //       widget.sections.categories?.categories.items[index].name ??
+    //           "Sample Category name",
+    //       id: widget.sections.categories?.categories.items[index].id ??
+    //           "Sample Category id",
+    //       image: widget.sections.categories?.categories.items[index].icons.first
+    //               .url ??
+    //           "Sample Category ImageURL",
+    //     );
+    //   });
+    // }
+    else {
       Container(
         color: Colors.red,
         height: 100,

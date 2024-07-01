@@ -1,7 +1,7 @@
-import 'package:domain_driven/src/domain/model/valueobjects/common_models/token_model/token_model.dart';
+import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_status.dart';
 
 abstract class AApiAuthRepository {
   AApiAuthRepository();
 
-  Future<TokenModel> getToken();
+  Future<ACopifyStatus> getToken();
 }

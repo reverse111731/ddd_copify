@@ -227,7 +227,7 @@ mixin _$CategorySongListState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(CategoryPlaylistModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -235,7 +235,7 @@ mixin _$CategorySongListState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(CategoryPlaylistModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -243,7 +243,7 @@ mixin _$CategorySongListState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(CategoryPlaylistModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -334,7 +334,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(CategoryPlaylistModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
     return initial();
   }
@@ -345,7 +345,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(CategoryPlaylistModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
     return initial?.call();
   }
@@ -356,7 +356,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(CategoryPlaylistModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -453,7 +453,7 @@ class _$CategorySongListStateLoadingImpl
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(CategoryPlaylistModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
     return loading();
   }
@@ -464,7 +464,7 @@ class _$CategorySongListStateLoadingImpl
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(CategoryPlaylistModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
     return loading?.call();
   }
@@ -475,7 +475,7 @@ class _$CategorySongListStateLoadingImpl
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(CategoryPlaylistModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -610,7 +610,7 @@ class _$CategorySongListStateLoadedImpl
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(CategoryPlaylistModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
     return loaded(collections);
   }
@@ -621,7 +621,7 @@ class _$CategorySongListStateLoadedImpl
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(CategoryPlaylistModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
     return loaded?.call(collections);
   }
@@ -632,7 +632,7 @@ class _$CategorySongListStateLoadedImpl
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(CategoryPlaylistModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -696,8 +696,6 @@ abstract class _$$CategorySongListStateErrorImplCopyWith<$Res> {
           _$CategorySongListStateErrorImpl value,
           $Res Function(_$CategorySongListStateErrorImpl) then) =
       __$$CategorySongListStateErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ACopifyFailure failure});
 }
 
 /// @nodoc
@@ -709,51 +707,27 @@ class __$$CategorySongListStateErrorImplCopyWithImpl<$Res>
       _$CategorySongListStateErrorImpl _value,
       $Res Function(_$CategorySongListStateErrorImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? failure = null,
-  }) {
-    return _then(_$CategorySongListStateErrorImpl(
-      null == failure
-          ? _value.failure
-          : failure // ignore: cast_nullable_to_non_nullable
-              as ACopifyFailure,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$CategorySongListStateErrorImpl implements _CategorySongListStateError {
-  const _$CategorySongListStateErrorImpl(this.failure);
-
-  @override
-  final ACopifyFailure failure;
+  const _$CategorySongListStateErrorImpl();
 
   @override
   String toString() {
-    return 'CategorySongListState.error(failure: $failure)';
+    return 'CategorySongListState.error()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CategorySongListStateErrorImpl &&
-            (identical(other.failure, failure) || other.failure == failure));
+            other is _$CategorySongListStateErrorImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, failure);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CategorySongListStateErrorImplCopyWith<_$CategorySongListStateErrorImpl>
-      get copyWith => __$$CategorySongListStateErrorImplCopyWithImpl<
-          _$CategorySongListStateErrorImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -761,9 +735,9 @@ class _$CategorySongListStateErrorImpl implements _CategorySongListStateError {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(CategoryPlaylistModel collections) loaded,
-    required TResult Function(ACopifyFailure failure) error,
+    required TResult Function() error,
   }) {
-    return error(failure);
+    return error();
   }
 
   @override
@@ -772,9 +746,9 @@ class _$CategorySongListStateErrorImpl implements _CategorySongListStateError {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(CategoryPlaylistModel collections)? loaded,
-    TResult? Function(ACopifyFailure failure)? error,
+    TResult? Function()? error,
   }) {
-    return error?.call(failure);
+    return error?.call();
   }
 
   @override
@@ -783,11 +757,11 @@ class _$CategorySongListStateErrorImpl implements _CategorySongListStateError {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(CategoryPlaylistModel collections)? loaded,
-    TResult Function(ACopifyFailure failure)? error,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(failure);
+      return error();
     }
     return orElse();
   }
@@ -831,11 +805,6 @@ class _$CategorySongListStateErrorImpl implements _CategorySongListStateError {
 }
 
 abstract class _CategorySongListStateError implements CategorySongListState {
-  const factory _CategorySongListStateError(final ACopifyFailure failure) =
+  const factory _CategorySongListStateError() =
       _$CategorySongListStateErrorImpl;
-
-  ACopifyFailure get failure;
-  @JsonKey(ignore: true)
-  _$$CategorySongListStateErrorImplCopyWith<_$CategorySongListStateErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }

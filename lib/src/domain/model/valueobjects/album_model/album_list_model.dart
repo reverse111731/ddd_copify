@@ -8,7 +8,6 @@ part 'album_list_model.freezed.dart';
 class AlbumListModel with _$AlbumListModel {
   factory AlbumListModel({
     required List<AlbumModel> albums,
-    // required AlbumModel albums,
   }) = _AlbumListModel;
 
   factory AlbumListModel.fromJson(Map<String, dynamic> json) =>
