@@ -174,51 +174,51 @@ abstract class _Started implements CategoryEvent {
 mixin _$CategoryState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getCategory,
+    required TResult Function() loadingCategory,
     required TResult Function(CategoryModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getCategory,
+    TResult? Function()? loadingCategory,
     TResult? Function(CategoryModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getCategory,
+    TResult Function()? loadingCategory,
     TResult Function(CategoryModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_CategoryStateLoading value) loading,
+    required TResult Function(_Initial value) getCategory,
+    required TResult Function(_CategoryStateLoading value) loadingCategory,
     required TResult Function(_CategoryStateLoaded value) loaded,
-    required TResult Function(_CategoryStateError value) error,
+    required TResult Function(_CategoryStateError value) errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_CategoryStateLoading value)? loading,
+    TResult? Function(_Initial value)? getCategory,
+    TResult? Function(_CategoryStateLoading value)? loadingCategory,
     TResult? Function(_CategoryStateLoaded value)? loaded,
-    TResult? Function(_CategoryStateError value)? error,
+    TResult? Function(_CategoryStateError value)? errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_CategoryStateLoading value)? loading,
+    TResult Function(_Initial value)? getCategory,
+    TResult Function(_CategoryStateLoading value)? loadingCategory,
     TResult Function(_CategoryStateLoaded value)? loaded,
-    TResult Function(_CategoryStateError value)? error,
+    TResult Function(_CategoryStateError value)? errorFetching,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -265,13 +265,13 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CategoryState.initial()';
+    return 'CategoryState.getCategory()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'CategoryState.initial'));
+    properties.add(DiagnosticsProperty('type', 'CategoryState.getCategory'));
   }
 
   @override
@@ -286,36 +286,36 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getCategory,
+    required TResult Function() loadingCategory,
     required TResult Function(CategoryModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
-    return initial();
+    return getCategory();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getCategory,
+    TResult? Function()? loadingCategory,
     TResult? Function(CategoryModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
-    return initial?.call();
+    return getCategory?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getCategory,
+    TResult Function()? loadingCategory,
     TResult Function(CategoryModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial();
+    if (getCategory != null) {
+      return getCategory();
     }
     return orElse();
   }
@@ -323,36 +323,36 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_CategoryStateLoading value) loading,
+    required TResult Function(_Initial value) getCategory,
+    required TResult Function(_CategoryStateLoading value) loadingCategory,
     required TResult Function(_CategoryStateLoaded value) loaded,
-    required TResult Function(_CategoryStateError value) error,
+    required TResult Function(_CategoryStateError value) errorFetching,
   }) {
-    return initial(this);
+    return getCategory(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_CategoryStateLoading value)? loading,
+    TResult? Function(_Initial value)? getCategory,
+    TResult? Function(_CategoryStateLoading value)? loadingCategory,
     TResult? Function(_CategoryStateLoaded value)? loaded,
-    TResult? Function(_CategoryStateError value)? error,
+    TResult? Function(_CategoryStateError value)? errorFetching,
   }) {
-    return initial?.call(this);
+    return getCategory?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_CategoryStateLoading value)? loading,
+    TResult Function(_Initial value)? getCategory,
+    TResult Function(_CategoryStateLoading value)? loadingCategory,
     TResult Function(_CategoryStateLoaded value)? loaded,
-    TResult Function(_CategoryStateError value)? error,
+    TResult Function(_CategoryStateError value)? errorFetching,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(this);
+    if (getCategory != null) {
+      return getCategory(this);
     }
     return orElse();
   }
@@ -387,13 +387,14 @@ class _$CategoryStateLoadingImpl
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CategoryState.loading()';
+    return 'CategoryState.loadingCategory()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'CategoryState.loading'));
+    properties
+        .add(DiagnosticsProperty('type', 'CategoryState.loadingCategory'));
   }
 
   @override
@@ -409,36 +410,36 @@ class _$CategoryStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getCategory,
+    required TResult Function() loadingCategory,
     required TResult Function(CategoryModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
-    return loading();
+    return loadingCategory();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getCategory,
+    TResult? Function()? loadingCategory,
     TResult? Function(CategoryModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
-    return loading?.call();
+    return loadingCategory?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getCategory,
+    TResult Function()? loadingCategory,
     TResult Function(CategoryModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading();
+    if (loadingCategory != null) {
+      return loadingCategory();
     }
     return orElse();
   }
@@ -446,36 +447,36 @@ class _$CategoryStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_CategoryStateLoading value) loading,
+    required TResult Function(_Initial value) getCategory,
+    required TResult Function(_CategoryStateLoading value) loadingCategory,
     required TResult Function(_CategoryStateLoaded value) loaded,
-    required TResult Function(_CategoryStateError value) error,
+    required TResult Function(_CategoryStateError value) errorFetching,
   }) {
-    return loading(this);
+    return loadingCategory(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_CategoryStateLoading value)? loading,
+    TResult? Function(_Initial value)? getCategory,
+    TResult? Function(_CategoryStateLoading value)? loadingCategory,
     TResult? Function(_CategoryStateLoaded value)? loaded,
-    TResult? Function(_CategoryStateError value)? error,
+    TResult? Function(_CategoryStateError value)? errorFetching,
   }) {
-    return loading?.call(this);
+    return loadingCategory?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_CategoryStateLoading value)? loading,
+    TResult Function(_Initial value)? getCategory,
+    TResult Function(_CategoryStateLoading value)? loadingCategory,
     TResult Function(_CategoryStateLoaded value)? loaded,
-    TResult Function(_CategoryStateError value)? error,
+    TResult Function(_CategoryStateError value)? errorFetching,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading(this);
+    if (loadingCategory != null) {
+      return loadingCategory(this);
     }
     return orElse();
   }
@@ -571,10 +572,10 @@ class _$CategoryStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getCategory,
+    required TResult Function() loadingCategory,
     required TResult Function(CategoryModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
     return loaded(collections);
   }
@@ -582,10 +583,10 @@ class _$CategoryStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getCategory,
+    TResult? Function()? loadingCategory,
     TResult? Function(CategoryModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
     return loaded?.call(collections);
   }
@@ -593,10 +594,10 @@ class _$CategoryStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getCategory,
+    TResult Function()? loadingCategory,
     TResult Function(CategoryModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -608,10 +609,10 @@ class _$CategoryStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_CategoryStateLoading value) loading,
+    required TResult Function(_Initial value) getCategory,
+    required TResult Function(_CategoryStateLoading value) loadingCategory,
     required TResult Function(_CategoryStateLoaded value) loaded,
-    required TResult Function(_CategoryStateError value) error,
+    required TResult Function(_CategoryStateError value) errorFetching,
   }) {
     return loaded(this);
   }
@@ -619,10 +620,10 @@ class _$CategoryStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_CategoryStateLoading value)? loading,
+    TResult? Function(_Initial value)? getCategory,
+    TResult? Function(_CategoryStateLoading value)? loadingCategory,
     TResult? Function(_CategoryStateLoaded value)? loaded,
-    TResult? Function(_CategoryStateError value)? error,
+    TResult? Function(_CategoryStateError value)? errorFetching,
   }) {
     return loaded?.call(this);
   }
@@ -630,10 +631,10 @@ class _$CategoryStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_CategoryStateLoading value)? loading,
+    TResult Function(_Initial value)? getCategory,
+    TResult Function(_CategoryStateLoading value)? loadingCategory,
     TResult Function(_CategoryStateLoaded value)? loaded,
-    TResult Function(_CategoryStateError value)? error,
+    TResult Function(_CategoryStateError value)? errorFetching,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -678,13 +679,13 @@ class _$CategoryStateErrorImpl
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CategoryState.error()';
+    return 'CategoryState.errorFetching()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'CategoryState.error'));
+    properties.add(DiagnosticsProperty('type', 'CategoryState.errorFetching'));
   }
 
   @override
@@ -699,36 +700,36 @@ class _$CategoryStateErrorImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getCategory,
+    required TResult Function() loadingCategory,
     required TResult Function(CategoryModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
-    return error();
+    return errorFetching();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getCategory,
+    TResult? Function()? loadingCategory,
     TResult? Function(CategoryModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
-    return error?.call();
+    return errorFetching?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getCategory,
+    TResult Function()? loadingCategory,
     TResult Function(CategoryModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error();
+    if (errorFetching != null) {
+      return errorFetching();
     }
     return orElse();
   }
@@ -736,36 +737,36 @@ class _$CategoryStateErrorImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_CategoryStateLoading value) loading,
+    required TResult Function(_Initial value) getCategory,
+    required TResult Function(_CategoryStateLoading value) loadingCategory,
     required TResult Function(_CategoryStateLoaded value) loaded,
-    required TResult Function(_CategoryStateError value) error,
+    required TResult Function(_CategoryStateError value) errorFetching,
   }) {
-    return error(this);
+    return errorFetching(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_CategoryStateLoading value)? loading,
+    TResult? Function(_Initial value)? getCategory,
+    TResult? Function(_CategoryStateLoading value)? loadingCategory,
     TResult? Function(_CategoryStateLoaded value)? loaded,
-    TResult? Function(_CategoryStateError value)? error,
+    TResult? Function(_CategoryStateError value)? errorFetching,
   }) {
-    return error?.call(this);
+    return errorFetching?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_CategoryStateLoading value)? loading,
+    TResult Function(_Initial value)? getCategory,
+    TResult Function(_CategoryStateLoading value)? loadingCategory,
     TResult Function(_CategoryStateLoaded value)? loaded,
-    TResult Function(_CategoryStateError value)? error,
+    TResult Function(_CategoryStateError value)? errorFetching,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(this);
+    if (errorFetching != null) {
+      return errorFetching(this);
     }
     return orElse();
   }

@@ -1,5 +1,4 @@
 import 'package:domain_driven/src/domain/model/abstracts/a_api_copify_repository.dart';
-import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_status.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/selected_album_track_model/selected_album_track_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -20,12 +19,12 @@ class AlbumSongListBloc extends Bloc<AlbumSongListEvent, AlbumSongListState> {
     AlbumSongListEvent event,
     Emitter<AlbumSongListState> emit,
   ) async {
-    emit(const AlbumSongListState.loading());
+    emit(const AlbumSongListState.loadingAlbumSongList());
 
     final songList = await api.getAlbumTracks(event.id);
 
     if (songList.items.isEmpty) {
-      emit(const AlbumSongListState.error());
+      emit(const AlbumSongListState.errorFetching());
       return;
     }
     emit(AlbumSongListState.loaded(songList));

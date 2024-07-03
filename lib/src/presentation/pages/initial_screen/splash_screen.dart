@@ -11,19 +11,21 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => dependencyLocator<TokenInitializerBloc>()
-        ..add(const TokenInitializerEvent.getTokenEvent()),
-      child: BlocListener<TokenInitializerBloc, TokenInitializerState>(
-        listener: (context, state) {
-          state.whenOrNull(
-            failure: () => context.toView(route: '/error'),
-            loaded: () => context.toView(route: '/home'),
-          );
-        },
-        child: Scaffold(
-          backgroundColor: Colors.black,
-          body: Center(child: Assets.images.logo.image()),
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: BlocProvider(
+        create: (context) => dependencyLocator<TokenInitializerBloc>()
+          ..add(const TokenInitializerEvent.getTokenEvent()),
+        child: BlocListener<TokenInitializerBloc, TokenInitializerState>(
+          listener: (context, state) {
+            state.whenOrNull(
+              failure: () => context.toErrorScreen(),
+              loaded: () => context.toMainScreen(),
+            );
+          },
+          child: Center(
+            child: Assets.images.logo.image(),
+          ),
         ),
       ),
     );

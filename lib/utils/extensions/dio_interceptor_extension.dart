@@ -11,6 +11,7 @@ extension DioInterceptorExtension on Dio {
   void addCoreInterceptor() {
     interceptors.addAll([
       dependencyLocator<DioCopifyInterceptor>(),
+      //! uncomment for more logs
       // LogInterceptor(
       //   request: true, // log request
       //   requestHeader: true, // log request header

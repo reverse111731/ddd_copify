@@ -7,8 +7,14 @@ sealed class ACopifyStatus {
   ACopifyStatus(this.statusCode, this.description);
 }
 
-final class CopifySuccess extends ACopifyStatus {
-  CopifySuccess(super.statusCode, super.description);
+final class CopifySuccess<T> extends ACopifyStatus {
+  final T? data;
+
+  CopifySuccess(
+    super.statusCode,
+    super.description, {
+    this.data,
+  });
 }
 
 final class CopifyException extends ACopifyStatus {

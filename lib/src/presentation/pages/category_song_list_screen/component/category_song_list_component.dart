@@ -1,6 +1,8 @@
 import 'package:domain_driven/src/domain/model/valueobjects/category_playlist_model/category_playlist_model.dart';
-import 'package:domain_driven/src/presentation/widgets/global_song_list_track.dart';
-import 'package:domain_driven/utils/gen/assets.gen.dart';
+import 'package:domain_driven/src/presentation/widgets/global_custom_list.dart';
+import 'package:domain_driven/src/presentation/widgets/global_list_tile.dart';
+import 'package:domain_driven/src/presentation/widgets/global_sliver_appbar.dart';
+import 'package:domain_driven/src/presentation/widgets/global_song_list_row_icon.dart';
 import 'package:flutter/material.dart';
 
 class CategorySongListComponent extends StatelessWidget {
@@ -13,76 +15,45 @@ class CategorySongListComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverAppBar(
-          expandedHeight: 200.0,
-          flexibleSpace: FlexibleSpaceBar(
-            title: Text(
-              songsList.message,
-              style: Theme.of(context).textTheme.headlineLarge,
-              overflow: TextOverflow.ellipsis,
-            ),
-            background: songsList.playlists.items.first.images.isNotEmpty
-                ? Image.network(
-                    songsList.playlists.items.first.images.first.url,
-                    fit: BoxFit.cover,
-                  )
-                : Assets.images.logo.image(),
-          ),
-        ),
-        SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (BuildContext context, int index) {
-              return Column(
-                children: [
-                  Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.add_circle_outline),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.download),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.share),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.more_vert),
-                      ),
-                      const SizedBox(
-                        width: 75,
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.shuffle),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.play_circle),
-                      ),
-                    ],
-                  ),
-                ],
-              );
-            },
-            childCount: 1,
-          ),
-        ),
-        SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (BuildContext context, int index) {
-              return GlobalSongListTrack(
-                  trackContent: songsList.playlists.items[index]);
-            },
-            childCount: songsList.playlists.items.length,
-          ),
-        ),
-      ],
+    return GlobalCustomList(
+      appBarTitle: songsList.message,
+      appBackgroundImage: songsList.playlists.items.first.images.first.url,
+      itemCount: songsList.playlists.items.length,
+      builder: (context, int index) {
+        return GlobalListTile(
+          name: songsList.playlists.items[index].name,
+          id: songsList.playlists.items[index].id,
+          onPressed: () => {},
+        );
+      },
     );
+    // return CustomScrollView(
+    //   slivers: [
+    //     GlobalSliverAppbar(
+    //       title: songsList.message,
+    //       imageUrl: songsList.playlists.items.first.images.first.url,
+    //     ),
+    //     SliverList(
+    //       delegate: SliverChildBuilderDelegate(
+    //         (BuildContext context, int index) {
+    //           return const GlobalSongListRowIcon();
+    //         },
+    //         childCount: 1,
+    //       ),
+    //     ),
+    //     SliverList(
+    //       delegate: SliverChildBuilderDelegate(
+    //         (BuildContext context, int index) {
+    //           return GlobalListTile(
+    //             id: songsList.playlists.items[index].id,
+    //             name: songsList.playlists.items[index].name,
+    //             onPressed: () => {},
+    //           );
+    //         },
+    //         childCount: songsList.playlists.items.length,
+    //       ),
+    //     ),
+    //   ],
+    // );
   }
 }

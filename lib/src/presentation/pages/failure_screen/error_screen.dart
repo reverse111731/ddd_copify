@@ -1,5 +1,6 @@
 import 'package:domain_driven/src/presentation/widgets/global_app_bar.dart';
 import 'package:domain_driven/src/presentation/widgets/global_container.dart';
+import 'package:domain_driven/utils/constants.dart';
 import 'package:domain_driven/utils/extensions/build_context_extension.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,7 @@ class ErrorScreen extends StatelessWidget {
     return Scaffold(
       appBar: const GlobalAppBar(
         hasBackButton: false,
-        title: "Something went wrong",
+        title: Constants.errorScreenTitle,
       ),
       body: Center(
         child: Column(
@@ -19,7 +20,7 @@ class ErrorScreen extends StatelessWidget {
           children: [
             GlobalContainer(
               child: Text(
-                "Looks Like you have encounted an error",
+                Constants.somethingWentWrongText,
                 style: Theme.of(context).textTheme.headlineLarge,
                 textAlign: TextAlign.center,
               ),
@@ -29,7 +30,7 @@ class ErrorScreen extends StatelessWidget {
                 onPressed: () {
                   context.toMainScreen();
                 },
-                child: const Text('Back to home screen'),
+                child: const Text(Constants.backToHomeText),
               ),
             ),
           ],

@@ -1,14 +1,13 @@
 part of 'injector.dart';
 
 Future<void> hiveInjectables(GetIt serviceLocator) async {
-  Hive
-    // this is the Hive.initFLutter
-    ..init(Directory.current.path)
-    //this is to register the adapter
-    ..registerAdapter(
-      serviceLocator<FavoritesAdaptersAdapter>(),
-    );
+  // serviceLocator.registerLazySingleton<ADatabase>(() => TestDatabase());
 
-//open and create a box
-  boxFavorite = await Hive.openBox<FavoritesAdapters>('favoriteBox');
+  serviceLocator.registerLazySingleton(() => FavoritesModelCollectionAdapter());
+  serviceLocator.registerLazySingleton(() => FavoritesModelAdapter());
+  //this is to register the DB
+  //Note: box = db, key = table
+  serviceLocator.registerLazySingleton<ADatabase>(() => Database());
+
+  serviceLocator.registerLazySingleton<HiveInterface>(() => Hive);
 }

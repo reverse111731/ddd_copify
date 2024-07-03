@@ -55,8 +55,17 @@ Future<void> injectApplications(GetIt serviceLocator) async {
     ),
   );
 
+  // await serviceLocator.isReady<ADatabase>();
+
   //Favorite bloc
   serviceLocator.registerFactory(
-    () => FavoriteBloc(),
+    () => FavoriteBloc(localDb: serviceLocator<ADatabase>()),
+  );
+
+  //Favorite checker bloc
+  serviceLocator.registerFactory(
+    () => FavoriteCheckerBloc(
+      db: serviceLocator<ADatabase>(),
+    ),
   );
 }

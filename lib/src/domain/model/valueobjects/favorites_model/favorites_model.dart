@@ -1,10 +1,10 @@
 import 'package:hive/hive.dart';
 
-part 'favorites_adapters.g.dart';
+part 'favorites_model.g.dart';
 
-@HiveType(typeId: 0)
-class FavoritesAdapters {
-  FavoritesAdapters({
+@HiveType(typeId: 1)
+class FavoritesModel {
+  FavoritesModel({
     required this.name,
     required this.id,
     required this.image,

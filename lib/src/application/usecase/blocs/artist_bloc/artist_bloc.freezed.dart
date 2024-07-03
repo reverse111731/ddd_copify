@@ -168,51 +168,51 @@ abstract class _Started implements ArtistEvent {
 mixin _$ArtistState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getArtist,
+    required TResult Function() loadingArtist,
     required TResult Function(ArtistModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getArtist,
+    TResult? Function()? loadingArtist,
     TResult? Function(ArtistModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getArtist,
+    TResult Function()? loadingArtist,
     TResult Function(ArtistModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ArtistStateLoading value) loading,
+    required TResult Function(_Initial value) getArtist,
+    required TResult Function(_ArtistStateLoading value) loadingArtist,
     required TResult Function(_ArtistStateLoaded value) loaded,
-    required TResult Function(_ArtistStateError value) error,
+    required TResult Function(_ArtistStateError value) errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ArtistStateLoading value)? loading,
+    TResult? Function(_Initial value)? getArtist,
+    TResult? Function(_ArtistStateLoading value)? loadingArtist,
     TResult? Function(_ArtistStateLoaded value)? loaded,
-    TResult? Function(_ArtistStateError value)? error,
+    TResult? Function(_ArtistStateError value)? errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ArtistStateLoading value)? loading,
+    TResult Function(_Initial value)? getArtist,
+    TResult Function(_ArtistStateLoading value)? loadingArtist,
     TResult Function(_ArtistStateLoaded value)? loaded,
-    TResult Function(_ArtistStateError value)? error,
+    TResult Function(_ArtistStateError value)? errorFetching,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -259,7 +259,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'ArtistState.initial()';
+    return 'ArtistState.getArtist()';
   }
 
   @override
@@ -274,36 +274,36 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getArtist,
+    required TResult Function() loadingArtist,
     required TResult Function(ArtistModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
-    return initial();
+    return getArtist();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getArtist,
+    TResult? Function()? loadingArtist,
     TResult? Function(ArtistModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
-    return initial?.call();
+    return getArtist?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getArtist,
+    TResult Function()? loadingArtist,
     TResult Function(ArtistModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial();
+    if (getArtist != null) {
+      return getArtist();
     }
     return orElse();
   }
@@ -311,36 +311,36 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ArtistStateLoading value) loading,
+    required TResult Function(_Initial value) getArtist,
+    required TResult Function(_ArtistStateLoading value) loadingArtist,
     required TResult Function(_ArtistStateLoaded value) loaded,
-    required TResult Function(_ArtistStateError value) error,
+    required TResult Function(_ArtistStateError value) errorFetching,
   }) {
-    return initial(this);
+    return getArtist(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ArtistStateLoading value)? loading,
+    TResult? Function(_Initial value)? getArtist,
+    TResult? Function(_ArtistStateLoading value)? loadingArtist,
     TResult? Function(_ArtistStateLoaded value)? loaded,
-    TResult? Function(_ArtistStateError value)? error,
+    TResult? Function(_ArtistStateError value)? errorFetching,
   }) {
-    return initial?.call(this);
+    return getArtist?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ArtistStateLoading value)? loading,
+    TResult Function(_Initial value)? getArtist,
+    TResult Function(_ArtistStateLoading value)? loadingArtist,
     TResult Function(_ArtistStateLoaded value)? loaded,
-    TResult Function(_ArtistStateError value)? error,
+    TResult Function(_ArtistStateError value)? errorFetching,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(this);
+    if (getArtist != null) {
+      return getArtist(this);
     }
     return orElse();
   }
@@ -373,7 +373,7 @@ class _$ArtistStateLoadingImpl implements _ArtistStateLoading {
 
   @override
   String toString() {
-    return 'ArtistState.loading()';
+    return 'ArtistState.loadingArtist()';
   }
 
   @override
@@ -388,36 +388,36 @@ class _$ArtistStateLoadingImpl implements _ArtistStateLoading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getArtist,
+    required TResult Function() loadingArtist,
     required TResult Function(ArtistModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
-    return loading();
+    return loadingArtist();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getArtist,
+    TResult? Function()? loadingArtist,
     TResult? Function(ArtistModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
-    return loading?.call();
+    return loadingArtist?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getArtist,
+    TResult Function()? loadingArtist,
     TResult Function(ArtistModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading();
+    if (loadingArtist != null) {
+      return loadingArtist();
     }
     return orElse();
   }
@@ -425,36 +425,36 @@ class _$ArtistStateLoadingImpl implements _ArtistStateLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ArtistStateLoading value) loading,
+    required TResult Function(_Initial value) getArtist,
+    required TResult Function(_ArtistStateLoading value) loadingArtist,
     required TResult Function(_ArtistStateLoaded value) loaded,
-    required TResult Function(_ArtistStateError value) error,
+    required TResult Function(_ArtistStateError value) errorFetching,
   }) {
-    return loading(this);
+    return loadingArtist(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ArtistStateLoading value)? loading,
+    TResult? Function(_Initial value)? getArtist,
+    TResult? Function(_ArtistStateLoading value)? loadingArtist,
     TResult? Function(_ArtistStateLoaded value)? loaded,
-    TResult? Function(_ArtistStateError value)? error,
+    TResult? Function(_ArtistStateError value)? errorFetching,
   }) {
-    return loading?.call(this);
+    return loadingArtist?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ArtistStateLoading value)? loading,
+    TResult Function(_Initial value)? getArtist,
+    TResult Function(_ArtistStateLoading value)? loadingArtist,
     TResult Function(_ArtistStateLoaded value)? loaded,
-    TResult Function(_ArtistStateError value)? error,
+    TResult Function(_ArtistStateError value)? errorFetching,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading(this);
+    if (loadingArtist != null) {
+      return loadingArtist(this);
     }
     return orElse();
   }
@@ -540,10 +540,10 @@ class _$ArtistStateLoadedImpl implements _ArtistStateLoaded {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getArtist,
+    required TResult Function() loadingArtist,
     required TResult Function(ArtistModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
     return loaded(collections);
   }
@@ -551,10 +551,10 @@ class _$ArtistStateLoadedImpl implements _ArtistStateLoaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getArtist,
+    TResult? Function()? loadingArtist,
     TResult? Function(ArtistModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
     return loaded?.call(collections);
   }
@@ -562,10 +562,10 @@ class _$ArtistStateLoadedImpl implements _ArtistStateLoaded {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getArtist,
+    TResult Function()? loadingArtist,
     TResult Function(ArtistModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -577,10 +577,10 @@ class _$ArtistStateLoadedImpl implements _ArtistStateLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ArtistStateLoading value) loading,
+    required TResult Function(_Initial value) getArtist,
+    required TResult Function(_ArtistStateLoading value) loadingArtist,
     required TResult Function(_ArtistStateLoaded value) loaded,
-    required TResult Function(_ArtistStateError value) error,
+    required TResult Function(_ArtistStateError value) errorFetching,
   }) {
     return loaded(this);
   }
@@ -588,10 +588,10 @@ class _$ArtistStateLoadedImpl implements _ArtistStateLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ArtistStateLoading value)? loading,
+    TResult? Function(_Initial value)? getArtist,
+    TResult? Function(_ArtistStateLoading value)? loadingArtist,
     TResult? Function(_ArtistStateLoaded value)? loaded,
-    TResult? Function(_ArtistStateError value)? error,
+    TResult? Function(_ArtistStateError value)? errorFetching,
   }) {
     return loaded?.call(this);
   }
@@ -599,10 +599,10 @@ class _$ArtistStateLoadedImpl implements _ArtistStateLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ArtistStateLoading value)? loading,
+    TResult Function(_Initial value)? getArtist,
+    TResult Function(_ArtistStateLoading value)? loadingArtist,
     TResult Function(_ArtistStateLoaded value)? loaded,
-    TResult Function(_ArtistStateError value)? error,
+    TResult Function(_ArtistStateError value)? errorFetching,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -645,7 +645,7 @@ class _$ArtistStateErrorImpl implements _ArtistStateError {
 
   @override
   String toString() {
-    return 'ArtistState.error()';
+    return 'ArtistState.errorFetching()';
   }
 
   @override
@@ -660,36 +660,36 @@ class _$ArtistStateErrorImpl implements _ArtistStateError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getArtist,
+    required TResult Function() loadingArtist,
     required TResult Function(ArtistModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
-    return error();
+    return errorFetching();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getArtist,
+    TResult? Function()? loadingArtist,
     TResult? Function(ArtistModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
-    return error?.call();
+    return errorFetching?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getArtist,
+    TResult Function()? loadingArtist,
     TResult Function(ArtistModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error();
+    if (errorFetching != null) {
+      return errorFetching();
     }
     return orElse();
   }
@@ -697,36 +697,36 @@ class _$ArtistStateErrorImpl implements _ArtistStateError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_ArtistStateLoading value) loading,
+    required TResult Function(_Initial value) getArtist,
+    required TResult Function(_ArtistStateLoading value) loadingArtist,
     required TResult Function(_ArtistStateLoaded value) loaded,
-    required TResult Function(_ArtistStateError value) error,
+    required TResult Function(_ArtistStateError value) errorFetching,
   }) {
-    return error(this);
+    return errorFetching(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_ArtistStateLoading value)? loading,
+    TResult? Function(_Initial value)? getArtist,
+    TResult? Function(_ArtistStateLoading value)? loadingArtist,
     TResult? Function(_ArtistStateLoaded value)? loaded,
-    TResult? Function(_ArtistStateError value)? error,
+    TResult? Function(_ArtistStateError value)? errorFetching,
   }) {
-    return error?.call(this);
+    return errorFetching?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ArtistStateLoading value)? loading,
+    TResult Function(_Initial value)? getArtist,
+    TResult Function(_ArtistStateLoading value)? loadingArtist,
     TResult Function(_ArtistStateLoaded value)? loaded,
-    TResult Function(_ArtistStateError value)? error,
+    TResult Function(_ArtistStateError value)? errorFetching,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(this);
+    if (errorFetching != null) {
+      return errorFetching(this);
     }
     return orElse();
   }

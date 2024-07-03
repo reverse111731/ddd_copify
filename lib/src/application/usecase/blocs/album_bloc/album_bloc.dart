@@ -1,5 +1,4 @@
 import 'package:domain_driven/src/domain/model/abstracts/a_api_copify_repository.dart';
-import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_status.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/album_model/album_list_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,13 +15,13 @@ class AlbumBloc extends Bloc<AlbumEvent, AlbumState> {
     on<AlbumEvent>(_getAlbum);
   }
   Future<void> _getAlbum(event, emit) async {
-    emit(const AlbumState.loading());
+    emit(const AlbumState.loadingAlbum());
 
     final albumList = await api.getAlbum();
 
     if (albumList.albums.isEmpty) {
       emit(
-        const AlbumState.error(),
+        const AlbumState.errorFetching(),
       );
     }
 

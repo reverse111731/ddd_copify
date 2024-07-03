@@ -224,51 +224,54 @@ abstract class _Started implements CategorySongListEvent {
 mixin _$CategorySongListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getCategorySongList,
+    required TResult Function() loadingCategorySongList,
     required TResult Function(CategoryPlaylistModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getCategorySongList,
+    TResult? Function()? loadingCategorySongList,
     TResult? Function(CategoryPlaylistModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getCategorySongList,
+    TResult Function()? loadingCategorySongList,
     TResult Function(CategoryPlaylistModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_CategorySongListStateLoading value) loading,
+    required TResult Function(_Initial value) getCategorySongList,
+    required TResult Function(_CategorySongListStateLoading value)
+        loadingCategorySongList,
     required TResult Function(_CategorySongListStateLoaded value) loaded,
-    required TResult Function(_CategorySongListStateError value) error,
+    required TResult Function(_CategorySongListStateError value) errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_CategorySongListStateLoading value)? loading,
+    TResult? Function(_Initial value)? getCategorySongList,
+    TResult? Function(_CategorySongListStateLoading value)?
+        loadingCategorySongList,
     TResult? Function(_CategorySongListStateLoaded value)? loaded,
-    TResult? Function(_CategorySongListStateError value)? error,
+    TResult? Function(_CategorySongListStateError value)? errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_CategorySongListStateLoading value)? loading,
+    TResult Function(_Initial value)? getCategorySongList,
+    TResult Function(_CategorySongListStateLoading value)?
+        loadingCategorySongList,
     TResult Function(_CategorySongListStateLoaded value)? loaded,
-    TResult Function(_CategorySongListStateError value)? error,
+    TResult Function(_CategorySongListStateError value)? errorFetching,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -316,7 +319,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'CategorySongListState.initial()';
+    return 'CategorySongListState.getCategorySongList()';
   }
 
   @override
@@ -331,36 +334,36 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getCategorySongList,
+    required TResult Function() loadingCategorySongList,
     required TResult Function(CategoryPlaylistModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
-    return initial();
+    return getCategorySongList();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getCategorySongList,
+    TResult? Function()? loadingCategorySongList,
     TResult? Function(CategoryPlaylistModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
-    return initial?.call();
+    return getCategorySongList?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getCategorySongList,
+    TResult Function()? loadingCategorySongList,
     TResult Function(CategoryPlaylistModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial();
+    if (getCategorySongList != null) {
+      return getCategorySongList();
     }
     return orElse();
   }
@@ -368,36 +371,39 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_CategorySongListStateLoading value) loading,
+    required TResult Function(_Initial value) getCategorySongList,
+    required TResult Function(_CategorySongListStateLoading value)
+        loadingCategorySongList,
     required TResult Function(_CategorySongListStateLoaded value) loaded,
-    required TResult Function(_CategorySongListStateError value) error,
+    required TResult Function(_CategorySongListStateError value) errorFetching,
   }) {
-    return initial(this);
+    return getCategorySongList(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_CategorySongListStateLoading value)? loading,
+    TResult? Function(_Initial value)? getCategorySongList,
+    TResult? Function(_CategorySongListStateLoading value)?
+        loadingCategorySongList,
     TResult? Function(_CategorySongListStateLoaded value)? loaded,
-    TResult? Function(_CategorySongListStateError value)? error,
+    TResult? Function(_CategorySongListStateError value)? errorFetching,
   }) {
-    return initial?.call(this);
+    return getCategorySongList?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_CategorySongListStateLoading value)? loading,
+    TResult Function(_Initial value)? getCategorySongList,
+    TResult Function(_CategorySongListStateLoading value)?
+        loadingCategorySongList,
     TResult Function(_CategorySongListStateLoaded value)? loaded,
-    TResult Function(_CategorySongListStateError value)? error,
+    TResult Function(_CategorySongListStateError value)? errorFetching,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(this);
+    if (getCategorySongList != null) {
+      return getCategorySongList(this);
     }
     return orElse();
   }
@@ -434,7 +440,7 @@ class _$CategorySongListStateLoadingImpl
 
   @override
   String toString() {
-    return 'CategorySongListState.loading()';
+    return 'CategorySongListState.loadingCategorySongList()';
   }
 
   @override
@@ -450,36 +456,36 @@ class _$CategorySongListStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getCategorySongList,
+    required TResult Function() loadingCategorySongList,
     required TResult Function(CategoryPlaylistModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
-    return loading();
+    return loadingCategorySongList();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getCategorySongList,
+    TResult? Function()? loadingCategorySongList,
     TResult? Function(CategoryPlaylistModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
-    return loading?.call();
+    return loadingCategorySongList?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getCategorySongList,
+    TResult Function()? loadingCategorySongList,
     TResult Function(CategoryPlaylistModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading();
+    if (loadingCategorySongList != null) {
+      return loadingCategorySongList();
     }
     return orElse();
   }
@@ -487,36 +493,39 @@ class _$CategorySongListStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_CategorySongListStateLoading value) loading,
+    required TResult Function(_Initial value) getCategorySongList,
+    required TResult Function(_CategorySongListStateLoading value)
+        loadingCategorySongList,
     required TResult Function(_CategorySongListStateLoaded value) loaded,
-    required TResult Function(_CategorySongListStateError value) error,
+    required TResult Function(_CategorySongListStateError value) errorFetching,
   }) {
-    return loading(this);
+    return loadingCategorySongList(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_CategorySongListStateLoading value)? loading,
+    TResult? Function(_Initial value)? getCategorySongList,
+    TResult? Function(_CategorySongListStateLoading value)?
+        loadingCategorySongList,
     TResult? Function(_CategorySongListStateLoaded value)? loaded,
-    TResult? Function(_CategorySongListStateError value)? error,
+    TResult? Function(_CategorySongListStateError value)? errorFetching,
   }) {
-    return loading?.call(this);
+    return loadingCategorySongList?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_CategorySongListStateLoading value)? loading,
+    TResult Function(_Initial value)? getCategorySongList,
+    TResult Function(_CategorySongListStateLoading value)?
+        loadingCategorySongList,
     TResult Function(_CategorySongListStateLoaded value)? loaded,
-    TResult Function(_CategorySongListStateError value)? error,
+    TResult Function(_CategorySongListStateError value)? errorFetching,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading(this);
+    if (loadingCategorySongList != null) {
+      return loadingCategorySongList(this);
     }
     return orElse();
   }
@@ -607,10 +616,10 @@ class _$CategorySongListStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getCategorySongList,
+    required TResult Function() loadingCategorySongList,
     required TResult Function(CategoryPlaylistModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
     return loaded(collections);
   }
@@ -618,10 +627,10 @@ class _$CategorySongListStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getCategorySongList,
+    TResult? Function()? loadingCategorySongList,
     TResult? Function(CategoryPlaylistModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
     return loaded?.call(collections);
   }
@@ -629,10 +638,10 @@ class _$CategorySongListStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getCategorySongList,
+    TResult Function()? loadingCategorySongList,
     TResult Function(CategoryPlaylistModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -644,10 +653,11 @@ class _$CategorySongListStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_CategorySongListStateLoading value) loading,
+    required TResult Function(_Initial value) getCategorySongList,
+    required TResult Function(_CategorySongListStateLoading value)
+        loadingCategorySongList,
     required TResult Function(_CategorySongListStateLoaded value) loaded,
-    required TResult Function(_CategorySongListStateError value) error,
+    required TResult Function(_CategorySongListStateError value) errorFetching,
   }) {
     return loaded(this);
   }
@@ -655,10 +665,11 @@ class _$CategorySongListStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_CategorySongListStateLoading value)? loading,
+    TResult? Function(_Initial value)? getCategorySongList,
+    TResult? Function(_CategorySongListStateLoading value)?
+        loadingCategorySongList,
     TResult? Function(_CategorySongListStateLoaded value)? loaded,
-    TResult? Function(_CategorySongListStateError value)? error,
+    TResult? Function(_CategorySongListStateError value)? errorFetching,
   }) {
     return loaded?.call(this);
   }
@@ -666,10 +677,11 @@ class _$CategorySongListStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_CategorySongListStateLoading value)? loading,
+    TResult Function(_Initial value)? getCategorySongList,
+    TResult Function(_CategorySongListStateLoading value)?
+        loadingCategorySongList,
     TResult Function(_CategorySongListStateLoaded value)? loaded,
-    TResult Function(_CategorySongListStateError value)? error,
+    TResult Function(_CategorySongListStateError value)? errorFetching,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -716,7 +728,7 @@ class _$CategorySongListStateErrorImpl implements _CategorySongListStateError {
 
   @override
   String toString() {
-    return 'CategorySongListState.error()';
+    return 'CategorySongListState.errorFetching()';
   }
 
   @override
@@ -732,36 +744,36 @@ class _$CategorySongListStateErrorImpl implements _CategorySongListStateError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getCategorySongList,
+    required TResult Function() loadingCategorySongList,
     required TResult Function(CategoryPlaylistModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
-    return error();
+    return errorFetching();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getCategorySongList,
+    TResult? Function()? loadingCategorySongList,
     TResult? Function(CategoryPlaylistModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
-    return error?.call();
+    return errorFetching?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getCategorySongList,
+    TResult Function()? loadingCategorySongList,
     TResult Function(CategoryPlaylistModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error();
+    if (errorFetching != null) {
+      return errorFetching();
     }
     return orElse();
   }
@@ -769,36 +781,39 @@ class _$CategorySongListStateErrorImpl implements _CategorySongListStateError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_CategorySongListStateLoading value) loading,
+    required TResult Function(_Initial value) getCategorySongList,
+    required TResult Function(_CategorySongListStateLoading value)
+        loadingCategorySongList,
     required TResult Function(_CategorySongListStateLoaded value) loaded,
-    required TResult Function(_CategorySongListStateError value) error,
+    required TResult Function(_CategorySongListStateError value) errorFetching,
   }) {
-    return error(this);
+    return errorFetching(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_CategorySongListStateLoading value)? loading,
+    TResult? Function(_Initial value)? getCategorySongList,
+    TResult? Function(_CategorySongListStateLoading value)?
+        loadingCategorySongList,
     TResult? Function(_CategorySongListStateLoaded value)? loaded,
-    TResult? Function(_CategorySongListStateError value)? error,
+    TResult? Function(_CategorySongListStateError value)? errorFetching,
   }) {
-    return error?.call(this);
+    return errorFetching?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_CategorySongListStateLoading value)? loading,
+    TResult Function(_Initial value)? getCategorySongList,
+    TResult Function(_CategorySongListStateLoading value)?
+        loadingCategorySongList,
     TResult Function(_CategorySongListStateLoaded value)? loaded,
-    TResult Function(_CategorySongListStateError value)? error,
+    TResult Function(_CategorySongListStateError value)? errorFetching,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(this);
+    if (errorFetching != null) {
+      return errorFetching(this);
     }
     return orElse();
   }

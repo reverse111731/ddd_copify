@@ -1,5 +1,4 @@
 import 'package:domain_driven/src/domain/model/abstracts/a_api_copify_repository.dart';
-import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_status.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/artist_top_track_model/artist_top_track_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -14,7 +13,7 @@ class ArtistSongListBloc
 
   ArtistSongListBloc({
     required this.api,
-  }) : super(const ArtistSongListState.initial()) {
+  }) : super(const ArtistSongListState.getArtistSonglist()) {
     on<ArtistSongListEvent>(_getArtistTrack);
   }
 
@@ -22,12 +21,12 @@ class ArtistSongListBloc
     ArtistSongListEvent event,
     Emitter<ArtistSongListState> emit,
   ) async {
-    emit(const ArtistSongListState.loading());
+    emit(const ArtistSongListState.loadingArtistSonglist());
 
     final songList = await api.getArtistTrack(event.id);
 
     if (songList.tracks.isEmpty) {
-      emit(const ArtistSongListState.error());
+      emit(const ArtistSongListState.errorFetching());
       return;
     }
     emit(ArtistSongListState.loaded(songList));

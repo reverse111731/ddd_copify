@@ -1,22 +1,23 @@
 import 'package:domain_driven/src/domain/model/valueobjects/album_model/album_list_model.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/artist_model/artist_model.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/category_model/category_model.dart';
+import 'package:domain_driven/src/domain/model/valueobjects/favorites_model/favorites_model_collection.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/home_screen_section_collection_model/home_screen_section_model.dart';
 import 'package:flutter/material.dart';
 
 // This is a record
-typedef HomeSection = (
-  String name, {
+typedef HomeSection = ({
+  String name,
   String id,
   String image,
 });
 
 class SectionListView<Type> extends StatefulWidget {
   final HomeScreenSectionModel sections;
-  final void Function(String arg) onPressCard;
+  final void Function(String arg)? onPressCard;
 
   const SectionListView({
-    required this.onPressCard,
+    this.onPressCard,
     required this.sections,
     super.key,
   }) : assert(Type is! Type,
@@ -39,10 +40,9 @@ class _SectionListViewState<Type> extends State<SectionListView<Type>> {
         widget.sections.album!.albums.length,
         (index) {
           return (
-            widget.sections.album?.albums[index].name ?? "Sample Album name",
-            id: widget.sections.album?.albums[index].id ?? "Sample Album id",
-            image: widget.sections.album?.albums[index].images.first.url ??
-                "Sample Album ImageURL",
+            name: widget.sections.album!.albums[index].name,
+            id: widget.sections.album!.albums[index].id,
+            image: widget.sections.album!.albums[index].images.first.url,
           );
         },
       );
@@ -51,40 +51,33 @@ class _SectionListViewState<Type> extends State<SectionListView<Type>> {
         widget.sections.artist!.artists.length,
         (index) {
           return (
-            widget.sections.artist?.artists[index].name ?? "Sample Artist name",
-            id: widget.sections.artist?.artists[index].id ?? "Sample Artist id",
-            image: widget.sections.artist?.artists[index].images.first.url ??
-                "Sample Artist ImageURL",
+            name: widget.sections.artist!.artists[index].name,
+            id: widget.sections.artist!.artists[index].id,
+            image: widget.sections.artist!.artists[index].images.first.url,
           );
         },
       );
     } else if (widget.sections.categories != null && Type == CategoryModel) {
       homeSection = List.generate(8, (index) {
         return (
-          widget.sections.categories?.categories.items[index].name ??
-              "Sample Category name",
-          id: widget.sections.categories?.categories.items[index].id ??
-              "Sample Category id",
-          image: widget.sections.categories?.categories.items[index].icons.first
-                  .url ??
-              "Sample Category ImageURL",
+          name: widget.sections.categories!.categories.items[index].name,
+          id: widget.sections.categories!.categories.items[index].id,
+          image: widget
+              .sections.categories!.categories.items[index].icons.first.url,
         );
       });
-    }
-    // else if (widget.sections.categories != null && Type == CategoryModel) {
-    //   homeSection = List.generate(8, (index) {
-    //     return (
-    //       widget.sections.categories?.categories.items[index].name ??
-    //           "Sample Category name",
-    //       id: widget.sections.categories?.categories.items[index].id ??
-    //           "Sample Category id",
-    //       image: widget.sections.categories?.categories.items[index].icons.first
-    //               .url ??
-    //           "Sample Category ImageURL",
-    //     );
-    //   });
-    // }
-    else {
+    } else if (widget.sections.favorites != null &&
+        Type == FavoritesModelCollection) {
+      homeSection = List.generate(
+          lengthGetter(widget.sections.favorites!.listOfFavorites ?? []),
+          (index) {
+        return (
+          name: widget.sections.favorites!.listOfFavorites![index]!.name,
+          id: widget.sections.favorites!.listOfFavorites![index]!.id,
+          image: widget.sections.favorites!.listOfFavorites![index]!.image,
+        );
+      });
+    } else {
       Container(
         color: Colors.red,
         height: 100,
@@ -92,6 +85,8 @@ class _SectionListViewState<Type> extends State<SectionListView<Type>> {
       );
     }
   }
+
+  int lengthGetter(List list) => list.length > 8 ? 8 : list.length;
 
   @override
   Widget build(BuildContext context) {
@@ -103,21 +98,13 @@ class _SectionListViewState<Type> extends State<SectionListView<Type>> {
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
             onTap: () {
-              // if (Type == CategoryModel) {
-              //   widget.onPressCard(
-              //     homeSection[index]
-              //         .$1
-              //         .trim()
-              //         .toLowerCase()
-              //         .replaceAll(RegExp(r"\s+\b|\b\s|\s|\b\-"), ""),
-              //   );
-              //   return;
-              // }
-              widget.onPressCard(homeSection[index].id);
+              if (widget.onPressCard != null) {
+                widget.onPressCard!(homeSection[index].id);
+              }
             },
             child: _SectionListViewCard(
               id: homeSection[index].id,
-              name: homeSection[index].$1, //if no parameter name then its $#
+              name: homeSection[index].name,
               image: homeSection[index].image,
             ),
           );

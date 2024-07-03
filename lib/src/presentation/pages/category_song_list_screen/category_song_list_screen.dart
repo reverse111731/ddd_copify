@@ -1,5 +1,6 @@
 import 'package:domain_driven/src/application/usecase/blocs/category_song_list_bloc/category_song_list_bloc.dart';
 import 'package:domain_driven/src/presentation/pages/category_song_list_screen/component/category_song_list_component.dart';
+import 'package:domain_driven/src/presentation/widgets/global_circular_loading.dart';
 import 'package:domain_driven/utils/extensions/build_context_extension.dart';
 import 'package:domain_driven/utils/injectors/injector.dart';
 import 'package:flutter/material.dart';
@@ -26,13 +27,14 @@ class _CategorySongListScreenState extends State<CategorySongListScreen> {
       child: Scaffold(
         body: BlocConsumer<CategorySongListBloc, CategorySongListState>(
           listener: (context, state) {
-            state.whenOrNull(error: () => context.toView(route: '/error'));
+            state.whenOrNull(
+              errorFetching: () => context.toErrorScreen(),
+            );
           },
           builder: (context, state) {
             return state.whenOrNull(
-                  initial: () => Container(color: Colors.blue),
-                  loading: () =>
-                      const Center(child: CircularProgressIndicator()),
+                  getCategorySongList: () => const SizedBox(),
+                  loadingCategorySongList: () => const GlobalCircularLoading(),
                   loaded: (songList) =>
                       CategorySongListComponent(songsList: songList),
                 ) ??

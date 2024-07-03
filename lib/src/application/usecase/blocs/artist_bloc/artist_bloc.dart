@@ -15,13 +15,13 @@ class ArtistBloc extends Bloc<ArtistEvent, ArtistState> {
   }
 
   Future<void> _getArtist(event, emit) async {
-    emit(const ArtistState.loading());
+    emit(const ArtistState.loadingArtist());
 
     final artistList = await api.getArtist();
 
     if (artistList.artists.isEmpty) {
       emit(
-        const ArtistState.error(),
+        const ArtistState.errorFetching(),
       );
     }
 

@@ -174,51 +174,51 @@ abstract class _Started implements AlbumEvent {
 mixin _$AlbumState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getAlbum,
+    required TResult Function() loadingAlbum,
     required TResult Function(AlbumListModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getAlbum,
+    TResult? Function()? loadingAlbum,
     TResult? Function(AlbumListModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getAlbum,
+    TResult Function()? loadingAlbum,
     TResult Function(AlbumListModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_AlbumStateLoading value) loading,
+    required TResult Function(_Initial value) getAlbum,
+    required TResult Function(_AlbumStateLoading value) loadingAlbum,
     required TResult Function(_AlbumStateLoaded value) loaded,
-    required TResult Function(_AlbumStateError value) error,
+    required TResult Function(_AlbumStateError value) errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_AlbumStateLoading value)? loading,
+    TResult? Function(_Initial value)? getAlbum,
+    TResult? Function(_AlbumStateLoading value)? loadingAlbum,
     TResult? Function(_AlbumStateLoaded value)? loaded,
-    TResult? Function(_AlbumStateError value)? error,
+    TResult? Function(_AlbumStateError value)? errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_AlbumStateLoading value)? loading,
+    TResult Function(_Initial value)? getAlbum,
+    TResult Function(_AlbumStateLoading value)? loadingAlbum,
     TResult Function(_AlbumStateLoaded value)? loaded,
-    TResult Function(_AlbumStateError value)? error,
+    TResult Function(_AlbumStateError value)? errorFetching,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -265,13 +265,13 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AlbumState.initial()';
+    return 'AlbumState.getAlbum()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'AlbumState.initial'));
+    properties.add(DiagnosticsProperty('type', 'AlbumState.getAlbum'));
   }
 
   @override
@@ -286,36 +286,36 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getAlbum,
+    required TResult Function() loadingAlbum,
     required TResult Function(AlbumListModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
-    return initial();
+    return getAlbum();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getAlbum,
+    TResult? Function()? loadingAlbum,
     TResult? Function(AlbumListModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
-    return initial?.call();
+    return getAlbum?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getAlbum,
+    TResult Function()? loadingAlbum,
     TResult Function(AlbumListModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial();
+    if (getAlbum != null) {
+      return getAlbum();
     }
     return orElse();
   }
@@ -323,36 +323,36 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_AlbumStateLoading value) loading,
+    required TResult Function(_Initial value) getAlbum,
+    required TResult Function(_AlbumStateLoading value) loadingAlbum,
     required TResult Function(_AlbumStateLoaded value) loaded,
-    required TResult Function(_AlbumStateError value) error,
+    required TResult Function(_AlbumStateError value) errorFetching,
   }) {
-    return initial(this);
+    return getAlbum(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_AlbumStateLoading value)? loading,
+    TResult? Function(_Initial value)? getAlbum,
+    TResult? Function(_AlbumStateLoading value)? loadingAlbum,
     TResult? Function(_AlbumStateLoaded value)? loaded,
-    TResult? Function(_AlbumStateError value)? error,
+    TResult? Function(_AlbumStateError value)? errorFetching,
   }) {
-    return initial?.call(this);
+    return getAlbum?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_AlbumStateLoading value)? loading,
+    TResult Function(_Initial value)? getAlbum,
+    TResult Function(_AlbumStateLoading value)? loadingAlbum,
     TResult Function(_AlbumStateLoaded value)? loaded,
-    TResult Function(_AlbumStateError value)? error,
+    TResult Function(_AlbumStateError value)? errorFetching,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(this);
+    if (getAlbum != null) {
+      return getAlbum(this);
     }
     return orElse();
   }
@@ -387,13 +387,13 @@ class _$AlbumStateLoadingImpl
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AlbumState.loading()';
+    return 'AlbumState.loadingAlbum()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'AlbumState.loading'));
+    properties.add(DiagnosticsProperty('type', 'AlbumState.loadingAlbum'));
   }
 
   @override
@@ -408,36 +408,36 @@ class _$AlbumStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getAlbum,
+    required TResult Function() loadingAlbum,
     required TResult Function(AlbumListModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
-    return loading();
+    return loadingAlbum();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getAlbum,
+    TResult? Function()? loadingAlbum,
     TResult? Function(AlbumListModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
-    return loading?.call();
+    return loadingAlbum?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getAlbum,
+    TResult Function()? loadingAlbum,
     TResult Function(AlbumListModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading();
+    if (loadingAlbum != null) {
+      return loadingAlbum();
     }
     return orElse();
   }
@@ -445,36 +445,36 @@ class _$AlbumStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_AlbumStateLoading value) loading,
+    required TResult Function(_Initial value) getAlbum,
+    required TResult Function(_AlbumStateLoading value) loadingAlbum,
     required TResult Function(_AlbumStateLoaded value) loaded,
-    required TResult Function(_AlbumStateError value) error,
+    required TResult Function(_AlbumStateError value) errorFetching,
   }) {
-    return loading(this);
+    return loadingAlbum(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_AlbumStateLoading value)? loading,
+    TResult? Function(_Initial value)? getAlbum,
+    TResult? Function(_AlbumStateLoading value)? loadingAlbum,
     TResult? Function(_AlbumStateLoaded value)? loaded,
-    TResult? Function(_AlbumStateError value)? error,
+    TResult? Function(_AlbumStateError value)? errorFetching,
   }) {
-    return loading?.call(this);
+    return loadingAlbum?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_AlbumStateLoading value)? loading,
+    TResult Function(_Initial value)? getAlbum,
+    TResult Function(_AlbumStateLoading value)? loadingAlbum,
     TResult Function(_AlbumStateLoaded value)? loaded,
-    TResult Function(_AlbumStateError value)? error,
+    TResult Function(_AlbumStateError value)? errorFetching,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading(this);
+    if (loadingAlbum != null) {
+      return loadingAlbum(this);
     }
     return orElse();
   }
@@ -570,10 +570,10 @@ class _$AlbumStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getAlbum,
+    required TResult Function() loadingAlbum,
     required TResult Function(AlbumListModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
     return loaded(collections);
   }
@@ -581,10 +581,10 @@ class _$AlbumStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getAlbum,
+    TResult? Function()? loadingAlbum,
     TResult? Function(AlbumListModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
     return loaded?.call(collections);
   }
@@ -592,10 +592,10 @@ class _$AlbumStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getAlbum,
+    TResult Function()? loadingAlbum,
     TResult Function(AlbumListModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -607,10 +607,10 @@ class _$AlbumStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_AlbumStateLoading value) loading,
+    required TResult Function(_Initial value) getAlbum,
+    required TResult Function(_AlbumStateLoading value) loadingAlbum,
     required TResult Function(_AlbumStateLoaded value) loaded,
-    required TResult Function(_AlbumStateError value) error,
+    required TResult Function(_AlbumStateError value) errorFetching,
   }) {
     return loaded(this);
   }
@@ -618,10 +618,10 @@ class _$AlbumStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_AlbumStateLoading value)? loading,
+    TResult? Function(_Initial value)? getAlbum,
+    TResult? Function(_AlbumStateLoading value)? loadingAlbum,
     TResult? Function(_AlbumStateLoaded value)? loaded,
-    TResult? Function(_AlbumStateError value)? error,
+    TResult? Function(_AlbumStateError value)? errorFetching,
   }) {
     return loaded?.call(this);
   }
@@ -629,10 +629,10 @@ class _$AlbumStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_AlbumStateLoading value)? loading,
+    TResult Function(_Initial value)? getAlbum,
+    TResult Function(_AlbumStateLoading value)? loadingAlbum,
     TResult Function(_AlbumStateLoaded value)? loaded,
-    TResult Function(_AlbumStateError value)? error,
+    TResult Function(_AlbumStateError value)? errorFetching,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -677,13 +677,13 @@ class _$AlbumStateErrorImpl
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AlbumState.error()';
+    return 'AlbumState.errorFetching()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'AlbumState.error'));
+    properties.add(DiagnosticsProperty('type', 'AlbumState.errorFetching'));
   }
 
   @override
@@ -698,36 +698,36 @@ class _$AlbumStateErrorImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getAlbum,
+    required TResult Function() loadingAlbum,
     required TResult Function(AlbumListModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
-    return error();
+    return errorFetching();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getAlbum,
+    TResult? Function()? loadingAlbum,
     TResult? Function(AlbumListModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
-    return error?.call();
+    return errorFetching?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getAlbum,
+    TResult Function()? loadingAlbum,
     TResult Function(AlbumListModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error();
+    if (errorFetching != null) {
+      return errorFetching();
     }
     return orElse();
   }
@@ -735,36 +735,36 @@ class _$AlbumStateErrorImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_AlbumStateLoading value) loading,
+    required TResult Function(_Initial value) getAlbum,
+    required TResult Function(_AlbumStateLoading value) loadingAlbum,
     required TResult Function(_AlbumStateLoaded value) loaded,
-    required TResult Function(_AlbumStateError value) error,
+    required TResult Function(_AlbumStateError value) errorFetching,
   }) {
-    return error(this);
+    return errorFetching(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_AlbumStateLoading value)? loading,
+    TResult? Function(_Initial value)? getAlbum,
+    TResult? Function(_AlbumStateLoading value)? loadingAlbum,
     TResult? Function(_AlbumStateLoaded value)? loaded,
-    TResult? Function(_AlbumStateError value)? error,
+    TResult? Function(_AlbumStateError value)? errorFetching,
   }) {
-    return error?.call(this);
+    return errorFetching?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_AlbumStateLoading value)? loading,
+    TResult Function(_Initial value)? getAlbum,
+    TResult Function(_AlbumStateLoading value)? loadingAlbum,
     TResult Function(_AlbumStateLoaded value)? loaded,
-    TResult Function(_AlbumStateError value)? error,
+    TResult Function(_AlbumStateError value)? errorFetching,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(this);
+    if (errorFetching != null) {
+      return errorFetching(this);
     }
     return orElse();
   }

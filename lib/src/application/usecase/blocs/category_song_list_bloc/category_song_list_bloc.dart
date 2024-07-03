@@ -1,5 +1,4 @@
 import 'package:domain_driven/src/domain/model/abstracts/a_api_copify_repository.dart';
-import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_status.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/category_playlist_model/category_playlist_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -18,12 +17,12 @@ class CategorySongListBloc
 
   Future<void> _getCategoryTracks(
       CategorySongListEvent event, Emitter<CategorySongListState> emit) async {
-    emit(const CategorySongListState.loading());
+    emit(const CategorySongListState.loadingCategorySongList());
 
     final songList = await api.getCategoryPlaylist(event.id);
 
     if (songList.playlists.items.isEmpty) {
-      emit(const CategorySongListState.error());
+      emit(const CategorySongListState.errorFetching());
       return;
     }
 

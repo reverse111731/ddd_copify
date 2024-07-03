@@ -7,7 +7,6 @@ class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   const GlobalAppBar({
     required this.hasBackButton,
-    // hasBackButton = false,
     required this.title,
     super.key,
   });

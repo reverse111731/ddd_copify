@@ -35,6 +35,9 @@ Future<void> serviceInjectables(GetIt serviceLocator) async {
     ),
   );
 
+  // Hive database
+  // serviceLocator.registerLazySingleton(() => ADatabase);
+
   //Dio Interceptors
   serviceLocator
     ..registerLazySingleton(() => DioAuthInterceptor())

@@ -1,4 +1,3 @@
-import 'package:domain_driven/src/domain/model/abstracts/failures/a_copify_status.dart';
 import 'package:domain_driven/src/domain/model/abstracts/a_api_copify_repository.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,18 +13,22 @@ part 'category_bloc.freezed.dart';
 class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
   final AApiCopifyRepository api;
 
-  CategoryBloc({required this.api}) : super(const CategoryState.initial()) {
+  CategoryBloc({
+    required this.api,
+  }) : super(
+          const CategoryState.getCategory(),
+        ) {
     on<CategoryEvent>(_getCategory);
   }
 
   Future<void> _getCategory(event, emit) async {
-    emit(const CategoryState.loading());
+    emit(const CategoryState.loadingCategory());
 
     final categoryList = await api.getCategory();
 
     if (categoryList.categories.items.isEmpty) {
       emit(
-        const CategoryState.error(),
+        const CategoryState.errorFetching(),
       );
     }
     emit(CategoryState.loaded(categoryList));

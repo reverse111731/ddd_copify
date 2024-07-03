@@ -223,51 +223,55 @@ abstract class _Started implements AlbumSongListEvent {
 mixin _$AlbumSongListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getAlbumSongList,
+    required TResult Function() loadingAlbumSongList,
     required TResult Function(SelectedAlbumTrackModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getAlbumSongList,
+    TResult? Function()? loadingAlbumSongList,
     TResult? Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getAlbumSongList,
+    TResult Function()? loadingAlbumSongList,
     TResult Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_AlbumSongListScreenStateLoading value) loading,
+    required TResult Function(_Initial value) getAlbumSongList,
+    required TResult Function(_AlbumSongListScreenStateLoading value)
+        loadingAlbumSongList,
     required TResult Function(_AlbumSongListScreenStateLoaded value) loaded,
-    required TResult Function(_AlbumSongListScreenStateError value) error,
+    required TResult Function(_AlbumSongListScreenStateError value)
+        errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_AlbumSongListScreenStateLoading value)? loading,
+    TResult? Function(_Initial value)? getAlbumSongList,
+    TResult? Function(_AlbumSongListScreenStateLoading value)?
+        loadingAlbumSongList,
     TResult? Function(_AlbumSongListScreenStateLoaded value)? loaded,
-    TResult? Function(_AlbumSongListScreenStateError value)? error,
+    TResult? Function(_AlbumSongListScreenStateError value)? errorFetching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_AlbumSongListScreenStateLoading value)? loading,
+    TResult Function(_Initial value)? getAlbumSongList,
+    TResult Function(_AlbumSongListScreenStateLoading value)?
+        loadingAlbumSongList,
     TResult Function(_AlbumSongListScreenStateLoaded value)? loaded,
-    TResult Function(_AlbumSongListScreenStateError value)? error,
+    TResult Function(_AlbumSongListScreenStateError value)? errorFetching,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -314,7 +318,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'AlbumSongListState.initial()';
+    return 'AlbumSongListState.getAlbumSongList()';
   }
 
   @override
@@ -329,36 +333,36 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getAlbumSongList,
+    required TResult Function() loadingAlbumSongList,
     required TResult Function(SelectedAlbumTrackModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
-    return initial();
+    return getAlbumSongList();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getAlbumSongList,
+    TResult? Function()? loadingAlbumSongList,
     TResult? Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
-    return initial?.call();
+    return getAlbumSongList?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getAlbumSongList,
+    TResult Function()? loadingAlbumSongList,
     TResult Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial();
+    if (getAlbumSongList != null) {
+      return getAlbumSongList();
     }
     return orElse();
   }
@@ -366,36 +370,40 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_AlbumSongListScreenStateLoading value) loading,
+    required TResult Function(_Initial value) getAlbumSongList,
+    required TResult Function(_AlbumSongListScreenStateLoading value)
+        loadingAlbumSongList,
     required TResult Function(_AlbumSongListScreenStateLoaded value) loaded,
-    required TResult Function(_AlbumSongListScreenStateError value) error,
+    required TResult Function(_AlbumSongListScreenStateError value)
+        errorFetching,
   }) {
-    return initial(this);
+    return getAlbumSongList(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_AlbumSongListScreenStateLoading value)? loading,
+    TResult? Function(_Initial value)? getAlbumSongList,
+    TResult? Function(_AlbumSongListScreenStateLoading value)?
+        loadingAlbumSongList,
     TResult? Function(_AlbumSongListScreenStateLoaded value)? loaded,
-    TResult? Function(_AlbumSongListScreenStateError value)? error,
+    TResult? Function(_AlbumSongListScreenStateError value)? errorFetching,
   }) {
-    return initial?.call(this);
+    return getAlbumSongList?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_AlbumSongListScreenStateLoading value)? loading,
+    TResult Function(_Initial value)? getAlbumSongList,
+    TResult Function(_AlbumSongListScreenStateLoading value)?
+        loadingAlbumSongList,
     TResult Function(_AlbumSongListScreenStateLoaded value)? loaded,
-    TResult Function(_AlbumSongListScreenStateError value)? error,
+    TResult Function(_AlbumSongListScreenStateError value)? errorFetching,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(this);
+    if (getAlbumSongList != null) {
+      return getAlbumSongList(this);
     }
     return orElse();
   }
@@ -432,7 +440,7 @@ class _$AlbumSongListScreenStateLoadingImpl
 
   @override
   String toString() {
-    return 'AlbumSongListState.loading()';
+    return 'AlbumSongListState.loadingAlbumSongList()';
   }
 
   @override
@@ -448,36 +456,36 @@ class _$AlbumSongListScreenStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getAlbumSongList,
+    required TResult Function() loadingAlbumSongList,
     required TResult Function(SelectedAlbumTrackModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
-    return loading();
+    return loadingAlbumSongList();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getAlbumSongList,
+    TResult? Function()? loadingAlbumSongList,
     TResult? Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
-    return loading?.call();
+    return loadingAlbumSongList?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getAlbumSongList,
+    TResult Function()? loadingAlbumSongList,
     TResult Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading();
+    if (loadingAlbumSongList != null) {
+      return loadingAlbumSongList();
     }
     return orElse();
   }
@@ -485,36 +493,40 @@ class _$AlbumSongListScreenStateLoadingImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_AlbumSongListScreenStateLoading value) loading,
+    required TResult Function(_Initial value) getAlbumSongList,
+    required TResult Function(_AlbumSongListScreenStateLoading value)
+        loadingAlbumSongList,
     required TResult Function(_AlbumSongListScreenStateLoaded value) loaded,
-    required TResult Function(_AlbumSongListScreenStateError value) error,
+    required TResult Function(_AlbumSongListScreenStateError value)
+        errorFetching,
   }) {
-    return loading(this);
+    return loadingAlbumSongList(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_AlbumSongListScreenStateLoading value)? loading,
+    TResult? Function(_Initial value)? getAlbumSongList,
+    TResult? Function(_AlbumSongListScreenStateLoading value)?
+        loadingAlbumSongList,
     TResult? Function(_AlbumSongListScreenStateLoaded value)? loaded,
-    TResult? Function(_AlbumSongListScreenStateError value)? error,
+    TResult? Function(_AlbumSongListScreenStateError value)? errorFetching,
   }) {
-    return loading?.call(this);
+    return loadingAlbumSongList?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_AlbumSongListScreenStateLoading value)? loading,
+    TResult Function(_Initial value)? getAlbumSongList,
+    TResult Function(_AlbumSongListScreenStateLoading value)?
+        loadingAlbumSongList,
     TResult Function(_AlbumSongListScreenStateLoaded value)? loaded,
-    TResult Function(_AlbumSongListScreenStateError value)? error,
+    TResult Function(_AlbumSongListScreenStateError value)? errorFetching,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading(this);
+    if (loadingAlbumSongList != null) {
+      return loadingAlbumSongList(this);
     }
     return orElse();
   }
@@ -606,10 +618,10 @@ class _$AlbumSongListScreenStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getAlbumSongList,
+    required TResult Function() loadingAlbumSongList,
     required TResult Function(SelectedAlbumTrackModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
     return loaded(collections);
   }
@@ -617,10 +629,10 @@ class _$AlbumSongListScreenStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getAlbumSongList,
+    TResult? Function()? loadingAlbumSongList,
     TResult? Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
     return loaded?.call(collections);
   }
@@ -628,10 +640,10 @@ class _$AlbumSongListScreenStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getAlbumSongList,
+    TResult Function()? loadingAlbumSongList,
     TResult Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -643,10 +655,12 @@ class _$AlbumSongListScreenStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_AlbumSongListScreenStateLoading value) loading,
+    required TResult Function(_Initial value) getAlbumSongList,
+    required TResult Function(_AlbumSongListScreenStateLoading value)
+        loadingAlbumSongList,
     required TResult Function(_AlbumSongListScreenStateLoaded value) loaded,
-    required TResult Function(_AlbumSongListScreenStateError value) error,
+    required TResult Function(_AlbumSongListScreenStateError value)
+        errorFetching,
   }) {
     return loaded(this);
   }
@@ -654,10 +668,11 @@ class _$AlbumSongListScreenStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_AlbumSongListScreenStateLoading value)? loading,
+    TResult? Function(_Initial value)? getAlbumSongList,
+    TResult? Function(_AlbumSongListScreenStateLoading value)?
+        loadingAlbumSongList,
     TResult? Function(_AlbumSongListScreenStateLoaded value)? loaded,
-    TResult? Function(_AlbumSongListScreenStateError value)? error,
+    TResult? Function(_AlbumSongListScreenStateError value)? errorFetching,
   }) {
     return loaded?.call(this);
   }
@@ -665,10 +680,11 @@ class _$AlbumSongListScreenStateLoadedImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_AlbumSongListScreenStateLoading value)? loading,
+    TResult Function(_Initial value)? getAlbumSongList,
+    TResult Function(_AlbumSongListScreenStateLoading value)?
+        loadingAlbumSongList,
     TResult Function(_AlbumSongListScreenStateLoaded value)? loaded,
-    TResult Function(_AlbumSongListScreenStateError value)? error,
+    TResult Function(_AlbumSongListScreenStateError value)? errorFetching,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -717,7 +733,7 @@ class _$AlbumSongListScreenStateErrorImpl
 
   @override
   String toString() {
-    return 'AlbumSongListState.error()';
+    return 'AlbumSongListState.errorFetching()';
   }
 
   @override
@@ -733,36 +749,36 @@ class _$AlbumSongListScreenStateErrorImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
+    required TResult Function() getAlbumSongList,
+    required TResult Function() loadingAlbumSongList,
     required TResult Function(SelectedAlbumTrackModel collections) loaded,
-    required TResult Function() error,
+    required TResult Function() errorFetching,
   }) {
-    return error();
+    return errorFetching();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
+    TResult? Function()? getAlbumSongList,
+    TResult? Function()? loadingAlbumSongList,
     TResult? Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult? Function()? error,
+    TResult? Function()? errorFetching,
   }) {
-    return error?.call();
+    return errorFetching?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
+    TResult Function()? getAlbumSongList,
+    TResult Function()? loadingAlbumSongList,
     TResult Function(SelectedAlbumTrackModel collections)? loaded,
-    TResult Function()? error,
+    TResult Function()? errorFetching,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error();
+    if (errorFetching != null) {
+      return errorFetching();
     }
     return orElse();
   }
@@ -770,36 +786,40 @@ class _$AlbumSongListScreenStateErrorImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_AlbumSongListScreenStateLoading value) loading,
+    required TResult Function(_Initial value) getAlbumSongList,
+    required TResult Function(_AlbumSongListScreenStateLoading value)
+        loadingAlbumSongList,
     required TResult Function(_AlbumSongListScreenStateLoaded value) loaded,
-    required TResult Function(_AlbumSongListScreenStateError value) error,
+    required TResult Function(_AlbumSongListScreenStateError value)
+        errorFetching,
   }) {
-    return error(this);
+    return errorFetching(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_AlbumSongListScreenStateLoading value)? loading,
+    TResult? Function(_Initial value)? getAlbumSongList,
+    TResult? Function(_AlbumSongListScreenStateLoading value)?
+        loadingAlbumSongList,
     TResult? Function(_AlbumSongListScreenStateLoaded value)? loaded,
-    TResult? Function(_AlbumSongListScreenStateError value)? error,
+    TResult? Function(_AlbumSongListScreenStateError value)? errorFetching,
   }) {
-    return error?.call(this);
+    return errorFetching?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_AlbumSongListScreenStateLoading value)? loading,
+    TResult Function(_Initial value)? getAlbumSongList,
+    TResult Function(_AlbumSongListScreenStateLoading value)?
+        loadingAlbumSongList,
     TResult Function(_AlbumSongListScreenStateLoaded value)? loaded,
-    TResult Function(_AlbumSongListScreenStateError value)? error,
+    TResult Function(_AlbumSongListScreenStateError value)? errorFetching,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(this);
+    if (errorFetching != null) {
+      return errorFetching(this);
     }
     return orElse();
   }
