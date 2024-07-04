@@ -5,4 +5,5 @@ abstract class ADatabase {
   String get dbKey;
   Future<AHiveStatus> getFavorite();
   Future<void> updateFavorite(FavoritesModel selectedFavorite);
+  Future<void> deleteAll();
 }

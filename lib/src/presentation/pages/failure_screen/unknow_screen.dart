@@ -9,30 +9,36 @@ class UnknowScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const GlobalAppBar(
-        hasBackButton: false,
-        title: Constants.unknowScreenTitle,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            GlobalContainer(
-              child: Text(
-                Constants.notFoundText,
-                style: Theme.of(context).textTheme.headlineLarge,
+    return WillPopScope(
+      onWillPop: () async {
+        context.toMainScreen();
+        return true;
+      },
+      child: Scaffold(
+        appBar: const GlobalAppBar(
+          hasBackButton: false,
+          title: Constants.unknowScreenTitle,
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GlobalContainer(
+                child: Text(
+                  Constants.notFoundText,
+                  style: Theme.of(context).textTheme.headlineLarge,
+                ),
               ),
-            ),
-            GlobalContainer(
-              child: ElevatedButton(
-                onPressed: () {
-                  context.toMainScreen();
-                },
-                child: const Text(Constants.backToHomeText),
+              GlobalContainer(
+                child: ElevatedButton(
+                  onPressed: () {
+                    context.toMainScreen();
+                  },
+                  child: const Text(Constants.backToHomeText),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -41,6 +41,10 @@ class ArtistSection extends StatelessWidget {
                       route: '/artistSongList',
                       arguments: id,
                     ),
+                    // onPressCard: (HomeSection selected) => context.toView(
+                    //   route: '/artistSongList',
+                    //   arguments: selected,
+                    // ),
                     sections: HomeScreenSectionModel(artist: artists),
                   );
                 },

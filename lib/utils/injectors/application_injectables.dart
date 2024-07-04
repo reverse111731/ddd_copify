@@ -59,13 +59,15 @@ Future<void> injectApplications(GetIt serviceLocator) async {
 
   //Favorite bloc
   serviceLocator.registerFactory(
-    () => FavoriteBloc(localDb: serviceLocator<ADatabase>()),
+    () => ToggleFavoriteBloc(localDb: serviceLocator<ADatabase>()),
   );
 
   //Favorite checker bloc
   serviceLocator.registerFactory(
-    () => FavoriteCheckerBloc(
-      db: serviceLocator<ADatabase>(),
+    () => GetFavoriteBloc(
+      localDb: serviceLocator<ADatabase>(),
     ),
   );
+
+  serviceLocator.registerLazySingleton(() => StateListenable());
 }

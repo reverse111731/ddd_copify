@@ -1,5 +1,6 @@
 import 'package:domain_driven/src/domain/model/valueobjects/category_model/category_model.dart';
 import 'package:domain_driven/utils/extensions/build_context_extension.dart';
+import 'package:domain_driven/utils/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class CategoryGridView extends StatelessWidget {
@@ -28,7 +29,12 @@ class CategoryGridView extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodySmall,
               ),
               child: Image.network(
-                  category.categories.items[index].icons.first.url),
+                category.categories.items[index].icons.first.url,
+                errorBuilder: (BuildContext context, Object exception,
+                    StackTrace? stackTrace) {
+                  return Assets.images.logo.image();
+                },
+              ),
             ),
           ),
         );

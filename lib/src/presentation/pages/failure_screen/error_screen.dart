@@ -9,31 +9,37 @@ class ErrorScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const GlobalAppBar(
-        hasBackButton: false,
-        title: Constants.errorScreenTitle,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            GlobalContainer(
-              child: Text(
-                Constants.somethingWentWrongText,
-                style: Theme.of(context).textTheme.headlineLarge,
-                textAlign: TextAlign.center,
+    return WillPopScope(
+      onWillPop: () async {
+        context.toMainScreen();
+        return true;
+      },
+      child: Scaffold(
+        appBar: const GlobalAppBar(
+          hasBackButton: false,
+          title: Constants.errorScreenTitle,
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GlobalContainer(
+                child: Text(
+                  Constants.somethingWentWrongText,
+                  style: Theme.of(context).textTheme.headlineLarge,
+                  textAlign: TextAlign.center,
+                ),
               ),
-            ),
-            GlobalContainer(
-              child: ElevatedButton(
-                onPressed: () {
-                  context.toMainScreen();
-                },
-                child: const Text(Constants.backToHomeText),
+              GlobalContainer(
+                child: ElevatedButton(
+                  onPressed: () {
+                    context.toMainScreen();
+                  },
+                  child: const Text(Constants.backToHomeText),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

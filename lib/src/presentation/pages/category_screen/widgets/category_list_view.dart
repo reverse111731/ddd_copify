@@ -1,5 +1,6 @@
 import 'package:domain_driven/src/domain/model/valueobjects/category_model/category_model.dart';
 import 'package:domain_driven/utils/extensions/build_context_extension.dart';
+import 'package:domain_driven/utils/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class CategoryListView extends StatelessWidget {
@@ -19,8 +20,13 @@ class CategoryListView extends StatelessWidget {
                 arguments: category.categories.items[index].id);
           },
           child: ListTile(
-            trailing:
-                Image.network(category.categories.items[index].icons.first.url),
+            trailing: Image.network(
+              category.categories.items[index].icons.first.url,
+              errorBuilder: (BuildContext context, Object exception,
+                  StackTrace? stackTrace) {
+                return Assets.images.logo.image();
+              },
+            ),
             title: Text(
               category.categories.items[index].name,
               style: Theme.of(context).textTheme.bodySmall,

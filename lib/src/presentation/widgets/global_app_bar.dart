@@ -18,13 +18,13 @@ class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
         title,
         style: Theme.of(context).textTheme.labelMedium,
       ),
-      automaticallyImplyLeading: false,
-      leading: hasBackButton
-          ? IconButton(
-              icon: const Icon(Icons.backspace),
-              onPressed: () => context.back(),
-            )
-          : null,
+      leading: IconButton(
+        onPressed: () => context.toMainScreen(),
+        icon: const Icon(
+          Icons.arrow_back,
+          color: Colors.white,
+        ),
+      ),
     );
   }
 

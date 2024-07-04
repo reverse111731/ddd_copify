@@ -43,6 +43,7 @@ class Database extends ADatabase {
           (favorite) => favorite!.id == selectedFavorite.id,
         );
       } else {
+        //this add 1st to the list of favorites
         dataAsFavorites.add(
           FavoritesModel(
             name: selectedFavorite.name,
@@ -51,7 +52,7 @@ class Database extends ADatabase {
           ),
         );
       }
-      //Save to database
+      //This save the updated list to the database
       db.put(dbKey, FavoritesModelCollection(listOfFavorites: dataAsFavorites));
     }
   }
@@ -59,4 +60,12 @@ class Database extends ADatabase {
   //this is to make injectable for different DBs
   @override
   String get dbKey => 'spotifyfavorites';
+
+  @override
+  Future<void> deleteAll() async {
+    final Box db = await dependencyLocator<HiveInterface>()
+        .openBox<FavoritesModelCollection>('favoriteDatabase');
+
+    db.delete(dbKey);
+  }
 }

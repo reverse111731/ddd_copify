@@ -3,6 +3,7 @@ import 'package:domain_driven/src/domain/model/valueobjects/artist_model/artist_
 import 'package:domain_driven/src/domain/model/valueobjects/category_model/category_model.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/favorites_model/favorites_model_collection.dart';
 import 'package:domain_driven/src/domain/model/valueobjects/home_screen_section_collection_model/home_screen_section_model.dart';
+import 'package:domain_driven/utils/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 // This is a record
@@ -15,6 +16,7 @@ typedef HomeSection = ({
 class SectionListView<Type> extends StatefulWidget {
   final HomeScreenSectionModel sections;
   final void Function(String arg)? onPressCard;
+  // final void Function(HomeSection arg)? onPressCard;
 
   const SectionListView({
     this.onPressCard,
@@ -140,6 +142,10 @@ class _SectionListViewCard extends StatelessWidget {
               height: 150,
               width: double.infinity,
               fit: BoxFit.cover,
+              errorBuilder: (BuildContext context, Object exception,
+                  StackTrace? stackTrace) {
+                return Assets.images.logo.image();
+              },
             ),
           ),
           const SizedBox(height: 8),

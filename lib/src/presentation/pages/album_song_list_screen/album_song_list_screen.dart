@@ -32,6 +32,7 @@ class _AlbumSongListScreenState extends State<AlbumSongListScreen> {
               loaded: (songList) {
                 return AlbumSongListComponent(
                   songsList: songList,
+                  albumName: widget.id,
                 );
               },
               errorFetching: () => Center(

@@ -5,10 +5,11 @@ import 'package:domain_driven/src/application/usecase/blocs/album_song_list_bloc
 import 'package:domain_driven/src/application/usecase/blocs/artist_bloc/artist_bloc.dart';
 import 'package:domain_driven/src/application/usecase/blocs/category_bloc/category_bloc.dart';
 import 'package:domain_driven/src/application/usecase/blocs/category_song_list_bloc/category_song_list_bloc.dart';
-import 'package:domain_driven/src/application/usecase/blocs/favorite_bloc/favorite_bloc.dart';
+import 'package:domain_driven/src/application/usecase/blocs/favorite_bloc/toggle_favorite_bloc.dart';
 import 'package:domain_driven/src/application/usecase/blocs/artist_song_list_bloc/artist_song_list_bloc.dart';
-import 'package:domain_driven/src/application/usecase/blocs/favorite_checker_bloc/favorite_checker_bloc.dart';
+import 'package:domain_driven/src/application/usecase/blocs/favorite_checker_bloc/get_favorite_bloc.dart';
 import 'package:domain_driven/src/application/usecase/blocs/token_bloc/token_initializer_bloc.dart';
+import 'package:domain_driven/src/application/usecase/listenable/state_listenable.dart';
 import 'package:domain_driven/src/domain/model/abstracts/a_api_auth_repository.dart';
 import 'package:domain_driven/src/domain/model/abstracts/a_api_copify_repository.dart';
 import 'package:domain_driven/src/domain/model/abstracts/database/a_database.dart';
@@ -26,7 +27,6 @@ import 'package:domain_driven/src/presentation/theme/theme.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:path_provider/path_provider.dart';
 
 part 'application_injectables.dart'; // This file is a part of this file
 part 'dependency_injectables.dart'; // Annalogy this injector file is the book the "part" are the table of content and the actual part files are the pages

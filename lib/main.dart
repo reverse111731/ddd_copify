@@ -25,13 +25,3 @@ class CopifyApp extends StatelessWidget {
     );
   }
 }
-
-
-// TODO
-//? - done
-//! - need help
-
-// 1 - Do all the coments inside global list tile / home screen and artist list component
-// 2 - convert or do the same to categeoty and album
-// 3 - move the global sliver app bar inside the global custom list and make it private
-// 4 - fix or connect the new getFavorite bloc on Favorite Screen

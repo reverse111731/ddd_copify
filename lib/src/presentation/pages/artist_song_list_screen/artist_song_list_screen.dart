@@ -6,21 +6,16 @@ import 'package:domain_driven/utils/injectors/injector.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ArtistSongListScreen extends StatefulWidget {
+class ArtistSongListScreen extends StatelessWidget {
   final String id;
 
   const ArtistSongListScreen({required this.id, super.key});
 
   @override
-  State<ArtistSongListScreen> createState() => _ArtistSongListScreenState();
-}
-
-class _ArtistSongListScreenState extends State<ArtistSongListScreen> {
-  @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => dependencyLocator<ArtistSongListBloc>()
-        ..add(ArtistSongListEvent.getTracks(id: widget.id)),
+        ..add(ArtistSongListEvent.getTracks(id: id)),
       child: Scaffold(
         body: BlocBuilder<ArtistSongListBloc, ArtistSongListState>(
           builder: (context, state) {
@@ -28,9 +23,7 @@ class _ArtistSongListScreenState extends State<ArtistSongListScreen> {
               getArtistSonglist: () => const SizedBox(),
               loadingArtistSonglist: () => const GlobalCircularLoading(),
               loaded: (songList) {
-                return ArtistSongListComponent(
-                  songsList: songList,
-                );
+                return ArtistSongListComponent(songsList: songList);
               },
               errorFetching: () => Center(
                 child: Container(

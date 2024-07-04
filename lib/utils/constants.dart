@@ -29,4 +29,5 @@ class Constants {
   static const String notFoundText = "404 page not found";
   static const String backToHomeText = "Back to home screen";
   static const String somethingWentWrongText = "Something went wrong";
+  static const String deleteAllText = "Delete All";
 }
